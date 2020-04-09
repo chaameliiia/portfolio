@@ -26,8 +26,6 @@
 
 .page0 a h1 {
   height: 200px;
-  /* min-height: 100px;
-  min-width: 300px; */
   position: relative;
   width: 500px;
 }
@@ -78,9 +76,11 @@
   width: 90%;
 }
 
+/* ------------------------------ header -------------------------- */
 /* script 수정 */
 header {
   align-items: center;
+  background: #fff;
   border: 1px solid #00f;
   display: flex;
   justify-content: space-between;
@@ -89,6 +89,7 @@ header {
   position: fixed;
   top: 0;
   width: 90%;
+  z-index: 100;
 }
 /* script 수정 */
 
@@ -150,7 +151,6 @@ header .page-title {
 }
 
 .page1 .index {
-  border: 1px solid orange;
   display: flex;
   /* display: none; */
   flex-wrap: wrap;
@@ -167,6 +167,20 @@ header .page-title {
 }
 
 .page1 .index a img {
+  position: relative;
+  width: 100%;
+}
+
+.page1 .index a:after {
+  background: rgba(255, 255, 255, .4);
+  content: '';
+  height: 100%;
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
   width: 100%;
 }
 
@@ -182,6 +196,7 @@ header .page-title {
   text-transform: uppercase;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: .5s;
   width: 350px;
 }
 
@@ -196,13 +211,14 @@ header .page-title {
   width: 95%;
 }
 
+/* ------------------------------ page1 popup -------------------------- */
 .page1 .popup {
   border: 1px dotted #3a5485;
   background: #fff;
   display: flex;
-  /* display: none; */
   height: 50vh;
   left: 50%;
+  opacity: 0;
   padding: 50px 100px;
   position: absolute;
   top: 55%;
@@ -294,14 +310,15 @@ header .page-title {
   flex-direction: column;
   justify-content: flex-end;
   height: 100vh;
+  /* padding-top: 100px; */
   position: relative;
   width: 100%;
 }
 
 .page2 .text {
-  padding: 240px 0 80px 0;
+  padding: 240px 50px 60px 0;
   text-align: right;
-  width: 100%;  
+  width: 100%;
 }
 
 .page2 .text h2 {
@@ -317,7 +334,7 @@ header .page-title {
   height: 4px;
   position: absolute;
   right: 0;
-  top: -50px;
+  top: -40px;
   width: 200px; 
 }
 
@@ -330,13 +347,26 @@ header .page-title {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-bottom: 80px;
+  padding-bottom: 70px;
   width: 100%;
 }
 
 .page2 .index a {
   position: relative;
   width: 24%;
+}
+
+.page2 .index a:after {
+  background: rgba(255, 255, 255, .4);
+  content: '';
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  width: 100%;
 }
 
 .page2 .index a img {
@@ -346,8 +376,9 @@ header .page-title {
 .page2 .index a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
+  font-size: .9em;
   left: 50%;
-  padding: 20px 60px;
+  padding: 20px 70px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -358,68 +389,109 @@ header .page-title {
   content: '';
   height: 80%;
   left: 50%;
-  /* opacity: 0; */
   opacity: 1;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
+  transition: .5s;
   width: 95%;
 }
 
+/* ---------------------------- page2 popup gallery ------------------------ */
 .page2 .popup-gallery {
   border: 1px dotted #3a5485;
   background: #fff;
-  display: flex;
   /* display: none; */
-  flex-direction: column;
-  height: 70vh;
+  height: 80vh;
   left: 50%;
   /* overflow: hidden; */
-  padding: 50px 100px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
 }
 
-.page2 .popup-gallery h3 {}
-
-.page2 .popup-gallery figure {}
-.page2 .popup-gallery figure .tpo-blue {}
-.page2 .popup-gallery figure .tpo-blue a {}
-.page2 .popup-gallery figure .tpo-blue a img {}
-.page2 .popup-gallery figure .tpo-blue a figcaption {}
-
-.page2 .popup-gallery figure .tpo-newtro {}
-.page2 .popup-gallery figure .tpo-newtro a {}
-.page2 .popup-gallery figure .tpo-newtro a img {}
-.page2 .popup-gallery figure .tpo-newtro a figcaption {}
-
-.page2 .popup-gallery figure .tpo-shorts {}
-.page2 .popup-gallery figure .tpo-shorts a {}
-.page2 .popup-gallery figure .tpo-shorts a img {}
-.page2 .popup-gallery figure .tpo-shorts a figcaption {}
-
-
-.page2 .popup-gallery .gallery-container figure {
-  border: 1px solid #333;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  position: relative;
+.page2 .popup-gallery:before {
+  background: #3a5485;
+  content: '';
+  height: 90%;
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 5px;
 }
 
-.page2 .popup-gallery figure a {
+.page2 .popup-gallery h3 {
+  font-size: 1.25em;
+  padding-top: 80px;
   position: relative;
-  /* position: absolute; */
+  text-align: center;
+}
+
+.page2 .popup-gallery h3:before {
+  background: #3a5485;
+  bottom: -30px;
+  content: '';
+  height: 3px;
+  left: 50%;
+  position: absolute;
+  transform: translateX(-50%);
+  width: 90px;
+}
+
+.page2 .popup-gallery figure {
+  bottom: 25px;
+  height: 600px;
+  justify-content: space-between;
+  overflow: hidden;
+  position: absolute;
+  right: 25px;
+  width: 95%;
+}
+
+.page2 .popup-gallery figure div{
+  position: absolute;
   width: 33%;
 }
 
-.page2 .popup-gallery figure a img {
+.page2 .popup-gallery figure div:nth-of-type(1) {
+  left: 0;
+  top: -100px;
+}
+
+.page2 .popup-gallery figure div:nth-of-type(2) {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.page2 .popup-gallery figure div:nth-of-type(3) {
+  right: 0;
+  top: -50px;
+}
+
+.page2 .popup-gallery figure div a{
+  position: relative;
   width: 100%;
 }
 
-.page2 .popup-gallery figure a figcaption {
+.page2 .popup-gallery figure div a:after {
+  background: rgba(255, 255, 255, .4);
+  content: '';
+  height: 100%;
+  left: 50%;
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  transition: .5s;
+  width: 100%;
+}
+
+.page2 .popup-gallery figure div a img {
+  width: 100%;
+}
+
+.page2 .popup-gallery figure div a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
   font-size: .8em;
@@ -432,7 +504,7 @@ header .page-title {
   white-space: pre-line;
 }
 
-.page2 .popup-gallery figure a figcaption:after {
+.page2 .popup-gallery figure div a figcaption:after {
   border: 1px solid #3a5485;
   content: '';
   height: 80%;
@@ -445,8 +517,344 @@ header .page-title {
   width: 95%;
 }
 
-.popup-detail {
-  display: none;
+.page2 .popup-gallery > a {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
+/* ---------------------------- page2 popup detail ------------------------ */
+.page2 .popup-detail {
+  border: 1px dotted #3a5485;
+  background: #fff;
+  display: flex;
+  /* display: none; */
+  flex-direction: row-reverse;
+  height: 80vh;
+  justify-content: space-around;
+  left: 50%;
+  /* overflow: hidden; */
+  padding: 150px 50px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+}
+
+.page2 .popup-detail .pop-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 50px;
+  text-align: right;
+  width: 50%;
+}
+
+.page2 .popup-detail .pop-text h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  padding-bottom: 80px;
+}
+
+.page2 .popup-detail .pop-text span {
+  padding-bottom: 40px;
+  position: relative;
+  white-space: pre-line;
+}
+
+.page2 .popup-detail .pop-text span:before {
+  background: #3a5485;
+  bottom: -30px;
+  content: '';
+  height: 3px;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+
+.page2 .popup-detail .pop-text span a{
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.page2 .popup-detail .pop-text span a:last-of-type {
+  margin-bottom: 0;
+}
+
+.page2 .popup-detail .pop-img {
+  display: flex;
+  align-items: center;
+  /* padding-bottom: 100px; */
+  width: 40%;
+}
+
+.page2 .popup-detail .pop-img img {
+  width: 100%
+}
+
+.page2 .popup-detail > a{
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
+/* ---------------------------- page3 ------------------------ */
+.page3 {
+  border: 1px solid #333;
+  display: flex;
+  height: 100vh;
+  justify-content: flex-start;
+  padding: 100px 150px 0;
+  position: relative;
+  width: 100%;
+}
+
+.page3 .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 50%;
+}
+
+.page3 .text h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  position: relative;
+}
+
+.page3 .text h2:before {
+  background: #3a5485;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: -40px;
+  width: 100px
+}
+
+.page3 .text span {
+  font-size: 1.25em;
+  padding-top: 80px;
+  white-space: pre-line;
+}
+
+.page3 .text .index {
+  padding-top: 100px;
+  white-space: pre-line;
+}
+
+.page3 .text .index a {
+  font-size: 1.25em;
+  margin-bottom: 50px;
+  text-transform: uppercase;
+  transition: .5s;
+}
+
+.page3 .text .index a:hover {
+  letter-spacing: 1em;
+}
+
+.page3 .text .index a img {
+  padding-right: 20px;
+  vertical-align: middle;
+}
+
+.page3 figure {
+  align-items: center;
+  display: flex;
+  width: 45%;
+}
+
+.page3 figure img {
+  width: 100%;
+}
+
+/* ---------------------------- page3 popup------------------------ */
+.page3 .popup-detail {
+  align-items: flex-end;
+  border: 1px dotted #3a5485;
+  background: #fff;
+  display: flex;
+  /* display: none; */
+  flex-direction: row-reverse;
+  height: 60vh;
+  justify-content: space-between;
+  left: 50%;
+  padding: 80px 100px 50px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 75%;
+}
+
+.page3 .popup-detail .pop-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 60%;
+}
+
+.page3 .popup-detail .pop-text h3 {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding-bottom: 150px;
+  position: relative;
+  white-space: pre-line;
+}
+
+.page3 .popup-detail .pop-text h3:before {
+  background: #3a5485;
+  content: '';
+  height: 3px;
+  left: 0;
+  position: absolute;
+  top: -50px;
+  width: 150px;
+}
+
+.page3 .popup-detail .pop-text .text-container {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 30px;
+}
+
+.page3 .popup-detail .pop-text .text-container p {
+  padding-bottom: 50px;
+  text-align: right;
+  white-space: pre-line;
+  width: 48%;
+}
+.page3 .popup-detail .pop-text .text-container p strong {
+  font-size: 1.1em;
+  font-weight: 600;
+}
+
+.page3 .popup-detail .pop-img {
+  width: 30%;
+}
+
+.page3 .popup-detail .pop-img img {
+  width: 100%;
+}
+
+.page3 .popup-detail > a {
+  position: absolute;
+  right: 25px;
+  top: 25px;
+}
+
+/* ---------------------------- page4 ------------------------ */
+.page4 {
+  border: 1px solid #333;
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  height: 100vh;
+  padding-top: 100px;
+  width: 100%;
+}
+
+.page4 .notice {
+  padding: 0 30px;
+  width: 25%;
+}
+
+.page4 .notice h2 {
+  font-size: 1.5em;
+  font-weight: 600;
+  padding: 30px 0;
+}
+
+.page4 .notice > p {
+  padding-bottom: 20px;
+  white-space: pre-line;
+}
+
+.page4 .notice #register {
+  width: 100%;
+}
+
+#register .user-info {
+  padding-bottom: 20px;
+  width: 100%;
+}
+
+#register .user-info tbody th {
+  text-align: left;
+  width: 15%;
+}
+
+#register .user-info tbody td input {
+  outline-style: none;
+  width: 100%;
+}
+
+#register .review-container {
+  padding-bottom: 30px;
+}
+
+#register .review-container h3 {}
+
+#register .review-container textarea {
+  margin-bottom: 20px;
+  outline-style: none;
+  width: 100%;
+}
+
+#register button {
+  background: #fff;
+  border: 1px solid #3a5485;
+  cursor: pointer;
+  padding: 10px 0;
+  width: 100%;
+}
+
+#register button:hover {
+  background: #3a5485;
+  color: #fff;
+}
+
+.page4 .reply-container {
+  background: rgba(238, 238, 238, .4);
+  border: 1px solid #00f;
+  overflow: hidden;
+  position: relative;
+  width: 75%;
+}
+
+.page4 .reply-container .reply {
+  background: #fff;
+  border: 1px solid #3a5485;
+  border-radius: 10px;
+  margin-bottom: 30px;
+  padding: 20px 30px;
+  position: absolute;
+  width: 70%;
+}
+
+.page4 .reply-container .reply:nth-of-type(odd) {
+  left: 30px;
+  top: 30px;
+}
+
+.page4 .reply-container .reply:nth-of-type(even) {
+  right: 30px;
+  top: 180px;
+}
+
+.page4 .reply-container .reply p {
+  font-size: 1.1em;
+  padding-bottom: 20px;
+}
+
+.page4 .reply-container .reply code {
+  color: #999;
+  padding-right: 5px;
+}
+
+.page4 .reply-container .reply span {
+  color: #999;
+  padding-left: 5px;
 }
 
 

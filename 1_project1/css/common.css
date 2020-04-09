@@ -3,8 +3,9 @@
 /* font: font-style font-variant font-weight font-size/line-height font-family */
 
 * {
+  box-sizing: border-box;
   color: #3a5485;
-  font: 16px/1.5em 'Noto Serif KR', serif;
+  font: 400 14px/1.5em 'Noto Serif KR', serif;
   margin: 0;
   padding: 0;
 }
@@ -15,7 +16,7 @@ img,
 span,
 strong,
 video {
-  display: inline-block
+  display: inline-block;
 }
 
 a {
