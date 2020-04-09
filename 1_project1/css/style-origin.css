@@ -2,12 +2,8 @@
 
 /* font: font-style font-variant font-weight font-size/line-height font-family */
 
-body {
-  /* overflow: hidden; */
-}
-
 #wrapper {
-  height: 100vh;
+  height: 100vh; 
   width: 100%;
 }
 
@@ -24,7 +20,6 @@ body {
   padding: 40px;
   position: absolute;
   top: 15%;
-  /* top: -300px; */
   z-index: 10;
 }
 
@@ -49,7 +44,6 @@ body {
 .page0 a h1 strong {
   font-size: 2em;
   font-weight: 600;
-  letter-spacing: .2em;
   line-height: 1.5em;
   right: 0;
   position: absolute; 
@@ -83,11 +77,11 @@ header {
   display: flex;
   justify-content: space-between;
   padding-top: 40px;
-  /* position: fixed; */
-  position: absolute;
+  position: fixed;
+  /* position: absolute; */
   top: 0;
-  /* width: 90%; */
-  width: 100%;
+  width: 90%;
+  /* width: 100%; */
   z-index: 100;
 }
 
@@ -188,7 +182,7 @@ header .page-title {
 .page1 .index a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
-  /* display: none; */
+  display: none;
   font-size: 1.2em;
   left: 50%;
   opacity: 0;
@@ -222,8 +216,9 @@ header .page-title {
 .page1 .popup {
   border: 1px dotted #3a5485;
   background: #fff;
+  display: flex;
   display: none;
-  height: 60vh;
+  height: 50vh;
   left: 50%;
   padding: 50px 100px;
   position: absolute;
@@ -241,7 +236,7 @@ header .page-title {
 
 .page1 .popup .text h3 {
   font-size: 1.5em;
-  padding-bottom: 100px;
+  padding-bottom: 60px;
   position: relative;
 }
 
@@ -414,6 +409,7 @@ header .page-title {
   display: none;
   height: 80vh;
   left: 50%;
+  /* overflow: hidden; */
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -452,7 +448,7 @@ header .page-title {
   bottom: 30px;
   height: 600px;
   justify-content: space-between;
-  overflow: hidden;
+  /* overflow: hidden; */
   position: absolute;
   right: 25px;
   width: 95%;
@@ -545,6 +541,7 @@ header .page-title {
 .page2 .popup-detail {
   border: 1px dotted #3a5485;
   background: #fff;
+  display: flex;
   display: none;
   flex-direction: row-reverse;
   height: 80vh;
@@ -553,9 +550,9 @@ header .page-title {
   /* overflow: hidden; */
   padding: 150px 50px;
   position: absolute;
-  top: 50%;
+  top: 55%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 75%;
 }
 
 .page2 .popup-detail .pop-text {
@@ -693,6 +690,7 @@ header .page-title {
   align-items: flex-end;
   border: 1px dotted #3a5485;
   background: #fff;
+  display: flex;
   display: none;
   flex-direction: row-reverse;
   height: 60vh;
