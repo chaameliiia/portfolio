@@ -372,37 +372,85 @@ header .page-title {
   display: flex;
   /* display: none; */
   flex-direction: column;
-  height: 50vh;
+  height: 70vh;
   left: 50%;
+  /* overflow: hidden; */
   padding: 50px 100px;
   position: absolute;
-  top: 55%;
+  top: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
 }
 
 .page2 .popup-gallery h3 {}
-.page2 .popup-gallery figure {
+
+.page2 .popup-gallery figure {}
+.page2 .popup-gallery figure .tpo-blue {}
+.page2 .popup-gallery figure .tpo-blue a {}
+.page2 .popup-gallery figure .tpo-blue a img {}
+.page2 .popup-gallery figure .tpo-blue a figcaption {}
+
+.page2 .popup-gallery figure .tpo-newtro {}
+.page2 .popup-gallery figure .tpo-newtro a {}
+.page2 .popup-gallery figure .tpo-newtro a img {}
+.page2 .popup-gallery figure .tpo-newtro a figcaption {}
+
+.page2 .popup-gallery figure .tpo-shorts {}
+.page2 .popup-gallery figure .tpo-shorts a {}
+.page2 .popup-gallery figure .tpo-shorts a img {}
+.page2 .popup-gallery figure .tpo-shorts a figcaption {}
+
+
+.page2 .popup-gallery .gallery-container figure {
   border: 1px solid #333;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  position: relative;
 }
+
 .page2 .popup-gallery figure a {
-  width: 33%
+  position: relative;
+  /* position: absolute; */
+  width: 33%;
 }
+
 .page2 .popup-gallery figure a img {
   width: 100%;
 }
-.page2 .popup-gallery figure a figcaption {}
 
+.page2 .popup-gallery figure a figcaption {
+  background: #fff;
+  border: 1px solid #3a5485;
+  font-size: .8em;
+  left: 50%;
+  padding: 15px 30px;
+  position: absolute;
+  text-align: center;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  white-space: pre-line;
+}
+
+.page2 .popup-gallery figure a figcaption:after {
+  border: 1px solid #3a5485;
+  content: '';
+  height: 80%;
+  left: 50%;
+  /* opacity: 0; */
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 95%;
+}
 
 .popup-detail {
   display: none;
 }
 
 
-/* ------------------------------ page1 -------------------------- */
+/* ------------------------------ js 활용 -------------------------- */
 .hovered {
   opacity: 1;
 }

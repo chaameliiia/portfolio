@@ -1,12 +1,10 @@
 @import url(https://fonts.googleapis.com/css2?family=Noto+Serif+KR&display=swap);
 
 /* font: font-style font-variant font-weight font-size/line-height font-family */
-body, html {
-}
 
 * {
   color: #3a5485;
-  font: 400 16px/1.5em 'Noto Serif KR', serif;
+  font: 16px/1.5em 'Noto Serif KR', serif;
   margin: 0;
   padding: 0;
 }
@@ -22,4 +20,8 @@ video {
 
 a {
   text-decoration: none;
+}
+
+img {
+  font-size: 0;
 }
