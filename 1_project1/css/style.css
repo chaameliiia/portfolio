@@ -235,7 +235,6 @@ header .page-title.active{
 .page1 .index a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
-  /* display: none; */
   font-size: 1.2em;
   left: 50%;
   opacity: 0;
@@ -471,6 +470,10 @@ header .page-title.active{
   width: 80%;
 }
 
+.page2 .popup-gallery.active {
+  display: flex;
+}
+
 .page2 .popup-gallery:before {
   background: #3a5485;
   content: '';
@@ -601,12 +604,16 @@ header .page-title.active{
   height: 80vh;
   justify-content: space-around;
   left: 50%;
-  /* overflow: hidden; */
+  overflow: hidden;
   padding: 150px 50px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
   width: 80%;
+}
+
+.page2 .popup-detail.active {
+ display: flex;
 }
 
 .page2 .popup-detail .pop-text {
@@ -754,6 +761,10 @@ header .page-title.active{
   top: 50%;
   transform: translate(-50%, -50%);
   width: 75%;
+}
+
+.page3 .popup-detail.active {
+  display: flex;
 }
 
 .page3 .popup-detail .pop-text {

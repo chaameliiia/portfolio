@@ -4,6 +4,7 @@ var headerJs = document.querySelector('#container header');
 var pageTitle = headerJs.querySelector('.page-title');
 var page1 = document.querySelector('.page1');
 var page2 = document.querySelector('.page2');
+var page3 = document.querySelector('.page3');
 
 
 // page0 ---------------------------------------------------------------------- 
@@ -46,9 +47,9 @@ window.addEventListener('scroll', function() {
 
 // page1 ---------------------------------------------------------------------- 
 var page1Index = page1.querySelector('.index');
-var indexAAll = page1Index.querySelectorAll('a');
+var p1IndexA = page1Index.querySelectorAll('a');
 var page1Pop = page1.querySelector('.popup');
-var popClose = page1Pop.querySelector('.close');
+var p1PopClose = page1Pop.querySelector('.close');
 
 page1Title.addEventListener('click', function (e) {
   // page1 title 클릭할 때
@@ -63,64 +64,61 @@ page1Title.addEventListener('click', function (e) {
 page1Index.addEventListener('click', function(e) {
   e.preventDefault();
   classAdd(page1Pop, 'active'); // page1 팝업창 띄우기
-  for(var i =0; i < indexAAll.length; i++) {
-    classAdd(indexAAll[i].children[1], 'non-active'); // caption 숨기기
+  for(var i =0; i < p1IndexA.length; i++) {
+    classAdd(p1IndexA[i].children[1], 'non-active'); // caption 숨기기
   }
 });
 
-popClose.addEventListener('click', function(e) {
-  closeBtn(e); // 팝업창 내리기
-  for(var i =0; i < indexAAll.length; i++) {
-    classRemove(indexAAll[i].children[1], 'non-active'); // caption 보이기
+p1PopClose.addEventListener('click', function(e) {
+  closeBtn(e); // page1 팝업창 내리기
+  for(var i =0; i < p1IndexA.length; i++) {
+    classRemove(p1IndexA[i].children[1], 'non-active'); // caption 보이기
   }
 });
 
 // page2 ---------------------------------------------------------------------- 
 var page2Index = page2.querySelector('.index');
-var page2Caption = page2.querySelectorAll('figcaption');
-var popGallery = page2.querySelector('.popup-gallery');
-var popDetail = page2.querySelector('.popup-detail');
+var p2IndexA = page2Index.querySelectorAll('a');
+var p2PoGallery = page2.querySelector('.popup-gallery');
+var p2PopDetail = page2.querySelector('.popup-detail');
 
-var popImg = popGallery.querySelectorAll('a');
-var popClose = popGallery.querySelector('.close');
-var detailClose = popDetail.querySelector('.close');
+var popImg = p2PoGallery.querySelectorAll('a');
+var p2PopClose = p2PoGallery.querySelector('.close');
+var detailClose = p2PopDetail.querySelector('.close');
 
 page2Index.addEventListener('click', function(e) {
   e.preventDefault();
-  for(var i = 0; i < page2Caption.length; i++) {
-    page2Caption[i].style.display = 'none'; // caption 숨기기
+  for(var i =0; i < p2IndexA.length; i++) {
+    classAdd(p2IndexA[i].children[1], 'non-active'); // caption 숨기기
   }
-  popGallery.style.display = 'block'; // 팝업창 띄우기
+  classAdd(page2.querySelector('.popup-gallery'), 'active'); // 팝업창 띄우기
 });
 
-popClose.addEventListener('click', function(e) { // 팝업창 내리기
+p2PopClose.addEventListener('click', function(e) { // 팝업창 내리기
   closeBtn(e);
-  for(var i = 0; i < page2Caption.length; i++) {
-    page2Caption[i].style.display = 'block';
+  for(var i =0; i < p2IndexA.length; i++) {
+    classRemove(p2IndexA[i].children[1], 'non-active'); // caption 보이기
   }
 });
 
-popGallery.addEventListener('click', function(e) {
+p2PoGallery.addEventListener('click', function(e) {
   e.preventDefault();
-  if(e.target.nodeName != 'A') {
-    return;
-  }
-  popDetail.querySelector('img').src = e.target.children[0].src; // 이미지 교체
-  popDetail.style.display = 'flex'; // 팝업창 띄우기
+  p2PopDetail.querySelector('img').src = e.target.children[0].src; // 이미지 교체
+  classAdd(p2PopDetail, 'active'); // 팝업창 보이기
 });
 
-detailClose.addEventListener('click', closeBtn); // 팝업창 내리기
+detailClose.addEventListener('click', closeBtn); // 팝업창 숨기기
 
 // page3 ---------------------------------------------------------------------- 
-var page3 = document.querySelector('.page3');
 var page3Pop = page3.querySelector('.popup-detail');
 var tipPopClose = page3.querySelector('.close')
 
 page3.addEventListener('click', function(e) { // 팝업창 띄우기
   e.preventDefault();
-  if(e.target.nodeName == 'A') {
-    page3Pop.style.display = 'flex';
+  if(e.target.nodeName != 'A') {
+    return;
   }
+  classAdd(page3Pop, 'active');
 });
 
 tipPopClose.addEventListener('click', closeBtn); // 팝업창 내리기
