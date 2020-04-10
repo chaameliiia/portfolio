@@ -319,29 +319,34 @@ header .page-title.active{
   width: 60%;
 }
 
-.page1 .popup .gallery img{
+.page1 .popup .gallery .draggable {
+  width: 100%;
+  position: absolute;
+}
+
+.page1 .popup .gallery .draggable img{
   position: absolute;
   width: 48%;
 }
 
-.page1 .popup .gallery img:nth-of-type(1) {
+.page1 .popup .gallery .draggable img:nth-of-type(1) {
   left: 0;
   top: 0;
   z-index: 10;
 }
 
-.page1 .popup .gallery img:nth-of-type(2) {
+.page1 .popup .gallery .draggable img:nth-of-type(2) {
   margin-top: 50px;
   right: 0;
   top: 0;
 }
 
-.page1 .popup .gallery img:nth-of-type(3) {
+.page1 .popup .gallery .draggable img:nth-of-type(3) {
   left: 0;
   top: 500px;
 }
 
-.page1 .popup .gallery img:nth-of-type(4) {
+.page1 .popup .gallery .draggable img:nth-of-type(4) {
   margin-top: 100px;
   right: 0;
   top: 450px;

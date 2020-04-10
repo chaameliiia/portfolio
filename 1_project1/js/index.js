@@ -50,6 +50,8 @@ var page1Index = page1.querySelector('.index');
 var p1IndexA = page1Index.querySelectorAll('a');
 var page1Pop = page1.querySelector('.popup');
 var p1PopClose = page1Pop.querySelector('.close');
+var p1PopGallery = page1Pop.querySelector('.gallery');
+
 
 page1Title.addEventListener('click', function (e) {
   // page1 title 클릭할 때
@@ -74,6 +76,10 @@ p1PopClose.addEventListener('click', function(e) {
   for(var i =0; i < p1IndexA.length; i++) {
     classRemove(p1IndexA[i].children[1], 'non-active'); // caption 보이기
   }
+});
+
+p1PopGallery.addEventListener('drag', function(e) {
+  console.log(e.target);
 });
 
 // page2 ---------------------------------------------------------------------- 
