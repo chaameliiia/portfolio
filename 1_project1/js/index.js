@@ -1,3 +1,4 @@
+
 // 큰 단위 변수
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
@@ -78,9 +79,6 @@ p1PopClose.addEventListener('click', function(e) {
   }
 });
 
-p1PopGallery.addEventListener('drag', function(e) {
-  console.log(e.target);
-});
 
 // page2 ---------------------------------------------------------------------- 
 var page2Index = page2.querySelector('.index');
@@ -117,17 +115,79 @@ detailClose.addEventListener('click', closeBtn); // 팝업창 숨기기
 
 // page3 ---------------------------------------------------------------------- 
 var page3Pop = page3.querySelector('.popup-detail');
-var tipPopClose = page3.querySelector('.close')
+var tipPopClose = page3.querySelector('.close');
+var popImg = page3.querySelector('.pop-img');
+var changeImg = popImg.getElementsByTagName('img');
 
 page3.addEventListener('click', function(e) { // 팝업창 띄우기
   e.preventDefault();
   if(e.target.nodeName != 'A') {
     return;
   }
+
+  // pop-img 이미지 교체
+  var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
+  xhr.addEventListener('load', function () { // When readystate changes
+    var data = JSON.parse(xhr.responseText);
+    var i = 0;
+
+
+
+// var first = page3.querySelector('.first');
+// var last = page3.querySelector('.last');
+    function loop() {
+      setInterval(function() {
+
+        for(var i = 0; i < 2; i++) {
+          changeImg[k].style.opacity
+        }
+        
+        changeImg[0].src = data.changeImg.shorts[i];
+        changeImg[k].style.opacity = (i%2==0)?0:1;
+
+        // classAdd(changeImg[0], 'non-visible');
+        
+        i++;
+        if(i == data.changeImg.shorts.length) {
+          i = 0;
+        }
+
+        changeImg[1].src = data.changeImg.shorts[i];
+         changeImg[k].style.opacity = (i%2==0)?0:1;
+
+        //changeImg[1].insertAdjacentElement('afterbegin',popImg);
+        // classAdd(changeImg[1], 'visible');
+
+        // setTimeout(function() {
+        //   changeImg[0].style.opacity = 1;
+        //   changeImg[1].style.opacity = 0;
+        // }, 500);
+
+      }, 1000);
+    }
+   
+    loop();
+
+    // page3Pop.addEventListener('click', function() {
+    //   classAdd(changeImg[1], 'non-visible');
+    //   changeImg[1].src = data.changeImg.shorts[2];
+    //   classRemove(changeImg[1], 'non-visible');
+    //   changeImg[0].src = data.changeImg.shorts[3];
+    // });
+
+
+  });
+  xhr.open('GET', 'data.json', true); // Prepare the request
+  xhr.send(null);
+
+
+
   classAdd(page3Pop, 'active');
 });
 
 tipPopClose.addEventListener('click', closeBtn); // 팝업창 내리기
+
+
 
 // functions ----------------------------------------------------------------- 
 function scrolling() {

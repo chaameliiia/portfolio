@@ -314,39 +314,45 @@ header .page-title.active{
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: auto;
   position: relative;
   width: 60%;
 }
 
-.page1 .popup .gallery .draggable {
-  width: 100%;
-  position: absolute;
+.page1 .popup .gallery::-webkit-scrollbar {
+  display: none
 }
 
-.page1 .popup .gallery .draggable img{
+.page1 .popup .gallery figure {
+  width: 100%;
+  left: 0;
+  position: absolute;
+  top: 0;
+}
+
+.page1 .popup .gallery figure img{
   position: absolute;
   width: 48%;
 }
 
-.page1 .popup .gallery .draggable img:nth-of-type(1) {
+.page1 .popup .gallery figure img:nth-of-type(1) {
   left: 0;
   top: 0;
   z-index: 10;
 }
 
-.page1 .popup .gallery .draggable img:nth-of-type(2) {
+.page1 .popup .gallery figure img:nth-of-type(2) {
   margin-top: 50px;
   right: 0;
   top: 0;
 }
 
-.page1 .popup .gallery .draggable img:nth-of-type(3) {
+.page1 .popup .gallery figure img:nth-of-type(3) {
   left: 0;
   top: 500px;
 }
 
-.page1 .popup .gallery .draggable img:nth-of-type(4) {
+.page1 .popup .gallery figure img:nth-of-type(4) {
   margin-top: 100px;
   right: 0;
   top: 450px;
@@ -477,6 +483,7 @@ header .page-title.active{
 
 .page2 .popup-gallery.active {
   display: flex;
+  flex-direction: column;
 }
 
 .page2 .popup-gallery:before {
@@ -511,10 +518,14 @@ header .page-title.active{
   bottom: 30px;
   height: 600px;
   justify-content: space-between;
-  overflow: hidden;
+  overflow-y: auto;
   position: absolute;
   right: 25px;
   width: 95%;
+}
+
+.page2 .popup-gallery figure::-webkit-scrollbar {
+  display: none;
 }
 
 .page2 .popup-gallery figure div{
@@ -524,17 +535,18 @@ header .page-title.active{
 
 .page2 .popup-gallery figure div:nth-of-type(1) {
   left: 0;
-  top: -100px;
+  top: 0;
 }
 
 .page2 .popup-gallery figure div:nth-of-type(2) {
   left: 50%;
+  top: 0;
   transform: translateX(-50%);
 }
 
 .page2 .popup-gallery figure div:nth-of-type(3) {
   right: 0;
-  top: -50px;
+  top: 0;
 }
 
 .page2 .popup-gallery figure div a{
@@ -753,7 +765,6 @@ header .page-title.active{
 
 /* ---------------------------- page3 popup------------------------ */
 .page3 .popup-detail {
-  align-items: flex-end;
   border: 1px dotted #3a5485;
   background: #fff;
   display: none;
@@ -815,11 +826,22 @@ header .page-title.active{
 }
 
 .page3 .popup-detail .pop-img {
+  position: relative;
   width: 30%;
 }
 
 .page3 .popup-detail .pop-img img {
+  left: 0;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  transition: 1s;
   width: 100%;
+}
+
+.page3 .popup-detail .pop-img img:nth-of-type(2) {
+  opacity: 0;
 }
 
 .page3 .popup-detail > a {
@@ -950,7 +972,6 @@ header .page-title.active{
   padding-left: 5px;
 }
 
-
 /* ------------------------------ js 활용 -------------------------- */
 .active-flex {
   display: flex;
@@ -960,10 +981,14 @@ header .page-title.active{
   display: block;
 }
 
-.hovered {
-  opacity: 1;
+.non-visible {
+  opacity: 0;
 }
 
 .non-active {
   display: none;
+}
+
+.visible {
+  opacity: 1;
 }
