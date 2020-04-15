@@ -117,7 +117,6 @@ detailClose.addEventListener('click', closeBtn); // 팝업창 숨기기
 var page3Pop = page3.querySelector('.popup-detail');
 var tipPopClose = page3.querySelector('.close');
 var popImg = page3.querySelector('.pop-img');
-var changeImg = popImg.getElementsByTagName('img');
 
 page3.addEventListener('click', function(e) { // 팝업창 띄우기
   e.preventDefault();
@@ -131,39 +130,18 @@ page3.addEventListener('click', function(e) { // 팝업창 띄우기
     var data = JSON.parse(xhr.responseText);
     var i = 0;
 
-
-
-// var first = page3.querySelector('.first');
-// var last = page3.querySelector('.last');
     function loop() {
       setInterval(function() {
-
-        for(var i = 0; i < 2; i++) {
-          changeImg[k].style.opacity
-        }
-        
-        changeImg[0].src = data.changeImg.shorts[i];
-        changeImg[k].style.opacity = (i%2==0)?0:1;
-
-        // classAdd(changeImg[0], 'non-visible');
-        
+        popImg.children[0].src = data.changeImg.shorts[i];
+        popImg.children[0].style.opacity = 0;
         i++;
         if(i == data.changeImg.shorts.length) {
           i = 0;
         }
-
-        changeImg[1].src = data.changeImg.shorts[i];
-         changeImg[k].style.opacity = (i%2==0)?0:1;
-
-        //changeImg[1].insertAdjacentElement('afterbegin',popImg);
-        // classAdd(changeImg[1], 'visible');
-
-        // setTimeout(function() {
-        //   changeImg[0].style.opacity = 1;
-        //   changeImg[1].style.opacity = 0;
-        // }, 500);
-
-      }, 1000);
+        popImg.children[1].src = data.changeImg.shorts[i];
+        popImg.children[1].style.opacity = 1;
+        popImg.insertBefore(popImg.children[1], popImg.children[0]);
+      }, 2000);
     }
    
     loop();
