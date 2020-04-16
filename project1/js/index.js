@@ -2,20 +2,28 @@
 // 큰 단위 변수
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
-var pageTitle = headerJs.querySelector('.page-title');
 var page1 = document.querySelector('.page1');
 var page2 = document.querySelector('.page2');
 var page3 = document.querySelector('.page3');
+var page4 = document.querySelector('.page4');
 
 
+// scroll event ----------------------------------------------------------
 // page0 ---------------------------------------------------------------------- 
+var winHeight = window.innerHeight;
+var conOffsetTop;
+var winScrollY;
+
+
 var mainTitle = document.querySelector('.page0 a');
-var page1Title = page1.querySelector('h2');
+var pageTitle = headerJs.querySelector('.page-title');
+
 
 var scrollFirst = 0;
 var scrollSecond = 0;
 var num = 0;
 var a = 0;
+var bln = true;
 
 window.addEventListener('scroll', function() {
   scrolling();
@@ -26,9 +34,8 @@ window.addEventListener('scroll', function() {
 
   // header 화면 하단에 도착
   var vidContainer = document.querySelector('.vid-container');
-  var conOffsetTop = containerJs.offsetTop;
-  var winHeight = window.innerHeight;
-  var winScrollY = window.scrollY;
+  conOffsetTop = containerJs.offsetTop;
+  winScrollY = window.scrollY;
 
   if(conOffsetTop - winHeight <= winScrollY) {
     a += 3;
@@ -44,9 +51,166 @@ window.addEventListener('scroll', function() {
     // classRemove(headerJs, 'fixed');
     classRemove(page1Title, 'visible');
   }
+
+  // pageTitle translateY 조정 -------------------------------------------------
+  var allSect = container.querySelectorAll('section');
+  var b = 0;
+
+  // for(var i = 1; i < allSect.length; i++) {
+  //   if(i != allSect.length - 1) {
+  //     if(conOffsetTop + allSect[i].offsetTop - (winHeight * .2) <= winScrollY && conOffsetTop + allSect[i + 1].offsetTop >= winScrollY) {
+  //       b += i;
+  //       if(b == 3){
+  //         classRemove(pageTitle, 'active');
+  //         bln=false;
+  //       }
+  //     } else {
+  //         titleText(allSect[i], 'h2');
+  //       }
+  //     }
+  //   }
+    
+    // else {
+    //   switch(allSect[i].dataset.num) {
+    //     case 1:
+    //       titleText(allSect[1], 'h2');
+    //       break;
+    //     case 2:
+    //       titleText(allSect[2], 'h2');
+    //       break;
+    //     case 3:
+    //       titleText(allSect[3], 'h2');
+    //       break;
+    //   }
+    // }
+    
+
+  // page2 ~ 4 → pageTitle text 교체
+  // if(conOffsetTop + page4.offsetTop <= winScrollY) {
+  //   titleText(page4, 'h2'); 
+  // } else if(conOffsetTop + page3.offsetTop <= winScrollY) {
+  //   titleText(page3, 'h2'); 
+  // } else if(conOffsetTop + page2.offsetTop <= winScrollY) {
+  //   titleText(page2, 'h2'); 
+  // }
+
+
+  // var b = 0;
+
+  // for(var i=1;i<=4;i++){
+    
+  //   k = i;
+  //    if(k != 4) {
+      
+      
+  //     if((conOffsetTop + (eval("page"+k).offsetHeight)*k)*0.9 < winScrollY && conOffsetTop + eval("page"+(k+1)).offsetTop > winScrollY){
+      
+  //     b += i;
+  //       if(b == 3){
+  //         classRemove(pageTitle, 'active');
+  //         bln=false;
+  //         console.log(k) 
+  //       }
+  //     }else{
+  //       var avv = eval("page"+(k+1));
+  //       titleText(avv, 'h2'); 
+  //       console.log(avv)
+  //     }
+  //   }
+  // }
+
+
+
+/* 지우지 말기
+  // if(conOffsetTop + allSect[1].offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active');
+  // }
+
+  // if(conOffsetTop + allSect[2].offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active');
+  // }
+
+  // if(conOffsetTop + allSect[3].offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active');
+  // }
+
+  // if(conOffsetTop + allSect[1].offsetTop <= winScrollY) {
+  //   titleText(page2, 'h2');
+  // }
+
+  // if(conOffsetTop + allSect[2].offsetTop <= winScrollY) {
+  //   titleText(page3, 'h2');
+  // }
+
+  // if(conOffsetTop + allSect[3].offsetTop <= winScrollY) {
+  //   titleText(page4, 'h2');
+  // }
+*/
+
+var i = 0;
+  if(conOffsetTop + allSect[i].offsetTop - (winHeight * .2) <= winScrollY) {
+    classRemove(pageTitle, 'active');
+    var scrollDown = setInterval(function() {
+      event.stopPropagation();
+      i++;
+      window.scrollTo(0, winScrollY + i);
+      if(conOffsetTop + allSect[2].offsetTop <= winScrollY) {
+        clearInterval(scrollDown);
+      }
+    }, 10);
+  }
+
+
+
+  // var b = 0;
+
+  // for(var i=1;i<=4;i++){
+    
+  //   k = i;
+  //    if(k != 4) {
+      
+      
+  //     if((conOffsetTop + (eval("page"+k).offsetHeight)*k)*0.9 < winScrollY && conOffsetTop + eval("page"+(k+1)).offsetTop > winScrollY){
+      
+  //     b += i;
+  //       if(b == 3){
+  //         classRemove(pageTitle, 'active');
+  //         bln=false;
+  //         console.log(k) 
+  //       }
+  //     }else{
+  //       var avv = eval("page"+(k+1));
+  //       titleText(avv, 'h2'); 
+  //       console.log(avv)
+
+        
+
+  //     }
+  //   }
+  // }
+
+
+
+  // if((conOffsetTop + page1.offsetHeight) * .95 <= winScrollY) {
+  //   classRemove(pageTitle, 'active'); 
+  // }
+
+  // if((conOffsetTop + page2.offsetTop) * .9 <= winScrollY) {
+  //   classRemove(pageTitle, 'active'); 
+  // } else if((conOffsetTop + page3.offsetTop) * .9 <= winScrollY) {
+  //   classRemove(pageTitle, 'active'); 
+  // } else if((conOffsetTop + page4.offsetTop) * .9 <= winScrollY) {
+  //   classRemove(pageTitle, 'active'); 
+  // }
+
+
+  
+  
+
 });
 
 // page1 ---------------------------------------------------------------------- 
+var page1Title = page1.querySelector('h2');
 var page1Index = page1.querySelector('.index');
 var p1IndexA = page1Index.querySelectorAll('a');
 var page1Pop = page1.querySelector('.popup');
@@ -59,9 +223,9 @@ page1Title.addEventListener('click', function (e) {
   e.preventDefault();
   classAdd(page1Index, 'active'); // 키워드 선택창 보이기
   classAdd(page1Title, 'non-active'); // 타이틀 숨기기
+
   // header에 page title text넣기
-  pageTitle.textContent = page1.querySelector('.title').textContent;
-  classAdd(pageTitle, 'active');
+  titleText(page1, '.title'); // pageTitle text 교체
 });
 
 page1Index.addEventListener('click', function(e) {
@@ -141,7 +305,7 @@ page3.addEventListener('click', function(e) { // 팝업창 띄우기
         popImg.children[1].src = data.changeImg.shorts[i];
         popImg.children[1].style.opacity = 1;
         popImg.insertBefore(popImg.children[1], popImg.children[0]);
-      }, 2000);
+      }, 2500);
     }
    
     loop();
@@ -159,15 +323,39 @@ page3.addEventListener('click', function(e) { // 팝업창 띄우기
   xhr.send(null);
 
 
-
   classAdd(page3Pop, 'active');
 });
 
 tipPopClose.addEventListener('click', closeBtn); // 팝업창 내리기
 
+// page4 ---------------------------------------------------------------------- 
+var submitBtn = page4.querySelector('button');
+var registerForm = document.querySelector('#register');
 
+submitBtn.addEventListener('click', function(e) {
+  e.preventDefault();
+  
+  function setCookie(name, value, expiry) {
+    document.cookie = `${name}=${value}`;
+    
+  }
+});
 
 // functions ----------------------------------------------------------------- 
+function classAdd(elmnt, clsName) { // 클래스 추가
+  elmnt.classList.add(clsName);  
+}
+
+function classRemove(elmnt, clsName) { // 클래스 제거
+  elmnt.classList.remove(clsName);
+}
+
+function closeBtn(e) { // 팝업창 닫기
+  e.preventDefault();
+  let closeTarget = e.target.parentNode.parentNode;
+  classRemove(closeTarget, 'active');
+}
+
 function scrolling() {
   // 타이틀 박스 스크롤따라 이동
   scrollFirst = window.scrollY;
@@ -185,16 +373,7 @@ function scrolling() {
   scrollSecond = scrollFirst;
 }
 
-function closeBtn(e) { // 팝업창 닫기
-  e.preventDefault();
-  let closeTarget = e.target.parentNode.parentNode;
-  classRemove(closeTarget, 'active');
-}
-
-function classAdd(elmnt, clsName) { // 클래스 추가
-  elmnt.classList.add(clsName);  
-}
-
-function classRemove(elmnt, clsName) { // 클래스 제거
-  elmnt.classList.remove(clsName);
+function titleText(selector, target) {
+  pageTitle.textContent = selector.querySelector(target).textContent;
+  classAdd(pageTitle, 'active');
 }
