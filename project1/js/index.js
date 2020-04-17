@@ -23,7 +23,10 @@ var scrollFirst = 0;
 var scrollSecond = 0;
 var num = 0;
 var a = 0;
-var bln = true;
+
+
+var bln = true, check = true;
+
 
 window.addEventListener('scroll', function() {
   scrolling();
@@ -54,8 +57,75 @@ window.addEventListener('scroll', function() {
 
   // pageTitle translateY 조정 -------------------------------------------------
   var allSect = container.querySelectorAll('section');
-  var b = 0;
+  // 다시 시작
+  var pageName = "";
+    // if(conOffsetTop + allSect[1].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
 
+    // if(conOffsetTop + allSect[2].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
+
+    // if(conOffsetTop + allSect[3].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
+
+    if(conOffsetTop + allSect[1].offsetTop <= winScrollY && conOffsetTop + allSect[2].offsetTop > winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page2, 'h2');}, 500);
+      // titleText(page2, 'h2');
+      
+      console.log("aa");
+    }
+
+    if(conOffsetTop + allSect[2].offsetTop <= winScrollY && conOffsetTop + allSect[3].offsetTop > winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page3, 'h2');}, 500);
+      // titleText(page3, 'h2');
+      console.log("aa22");
+    }
+
+    if(conOffsetTop + allSect[3].offsetTop <= winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page4, 'h2');}, 500);
+      // titleText(page4, 'h2');
+      console.log("aa33");
+    }
+    console.log(conOffsetTop + allSect[1].offsetTop);
+    console.log(winScrollY);
+
+
+  // page 2 ~ 4 화면 상단에서 클래스 제거
+
+ /* // 재혁이꺼
+  // if((conOffsetTop + page1.offsetHeight) * .95 <= winScrollY) {
+  //       classRemove(pageTitle, 'active'); 
+  //     }
+
+  // if(conOffsetTop + page2.offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active'); 
+  //   console.log("aaa");
+  // } else if(conOffsetTop + page3.offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active');  
+  
+  // } else if(conOffsetTop + page4.offsetTop - (winHeight * .2) <= winScrollY) {
+  //   classRemove(pageTitle, 'active');  
+  // }
+  // // page2 ~ 4 → pageTitle text 교체
+  //   if(conOffsetTop + page4.offsetTop <= winScrollY) {
+  //   titleText(page4, 'h2'); 
+  // } else if(conOffsetTop + page3.offsetTop <= winScrollY) {
+  //   setTimeout(function(){titleText(page3, 'h2');},500);  
+    
+  //   console.log("asdasd");
+  // } else if(conOffsetTop + page2.offsetTop <= winScrollY) {
+  //   titleText(page2, 'h2'); 
+  // }
+*/
+  
+
+// 
   // for(var i = 1; i < allSect.length; i++) {
   //   if(i != allSect.length - 1) {
   //     if(conOffsetTop + allSect[i].offsetTop - (winHeight * .2) <= winScrollY && conOffsetTop + allSect[i + 1].offsetTop >= winScrollY) {
@@ -85,14 +155,7 @@ window.addEventListener('scroll', function() {
     // }
     
 
-  // page2 ~ 4 → pageTitle text 교체
-  // if(conOffsetTop + page4.offsetTop <= winScrollY) {
-  //   titleText(page4, 'h2'); 
-  // } else if(conOffsetTop + page3.offsetTop <= winScrollY) {
-  //   titleText(page3, 'h2'); 
-  // } else if(conOffsetTop + page2.offsetTop <= winScrollY) {
-  //   titleText(page2, 'h2'); 
-  // }
+  
 
 
   // var b = 0;
@@ -145,22 +208,21 @@ window.addEventListener('scroll', function() {
   // if(conOffsetTop + allSect[3].offsetTop <= winScrollY) {
   //   titleText(page4, 'h2');
   // }
+
 */
 
-var i = 0;
-  if(conOffsetTop + allSect[i].offsetTop - (winHeight * .2) <= winScrollY) {
-    classRemove(pageTitle, 'active');
-    var scrollDown = setInterval(function() {
-      event.stopPropagation();
-      i++;
-      window.scrollTo(0, winScrollY + i);
-      if(conOffsetTop + allSect[2].offsetTop <= winScrollY) {
-        clearInterval(scrollDown);
-      }
-    }, 10);
-  }
-
-
+// var i = 0;
+//   if(conOffsetTop + allSect[i].offsetTop - (winHeight * .2) <= winScrollY) {
+//     classRemove(pageTitle, 'active');
+//     var scrollDown = setInterval(function() {
+//       event.stopPropagation();
+//       i++;
+//       window.scrollTo(0, winScrollY + i);
+//       if(conOffsetTop + allSect[2].offsetTop <= winScrollY) {
+//         clearInterval(scrollDown);
+//       }
+//     }, 10);
+//   }
 
   // var b = 0;
 
@@ -188,24 +250,6 @@ var i = 0;
   //     }
   //   }
   // }
-
-
-
-  // if((conOffsetTop + page1.offsetHeight) * .95 <= winScrollY) {
-  //   classRemove(pageTitle, 'active'); 
-  // }
-
-  // if((conOffsetTop + page2.offsetTop) * .9 <= winScrollY) {
-  //   classRemove(pageTitle, 'active'); 
-  // } else if((conOffsetTop + page3.offsetTop) * .9 <= winScrollY) {
-  //   classRemove(pageTitle, 'active'); 
-  // } else if((conOffsetTop + page4.offsetTop) * .9 <= winScrollY) {
-  //   classRemove(pageTitle, 'active'); 
-  // }
-
-
-  
-  
 
 });
 
@@ -331,13 +375,68 @@ tipPopClose.addEventListener('click', closeBtn); // 팝업창 내리기
 // page4 ---------------------------------------------------------------------- 
 var submitBtn = page4.querySelector('button');
 var registerForm = document.querySelector('#register');
+var cmntCont = page4.querySelector('.comment-container');
+var formInputs = registerForm.querySelectorAll('input');
+
+var cmntWriter, cmntTxt;
+
+// 현재 시간
+var now = new Date();
+localStorage.setItem('realTime',  now.getTime());
 
 submitBtn.addEventListener('click', function(e) {
   e.preventDefault();
-  
-  function setCookie(name, value, expiry) {
-    document.cookie = `${name}=${value}`;
-    
+  if(registerForm.agree.checked) {
+
+    // 사용자 입력 내용 localstorage 저장
+    for(var i = 0; i < formInputs.length; i++) {
+      if(formInputs[i].type != 'checkbox') {
+        if(formInputs[i].value) {
+          localStorage.setItem(formInputs[i].id, formInputs[i].value);        
+        } else {
+          alert('정보를 입력해주세요.');
+          formInputs[i].focus();
+          return;
+        }
+      }
+    }
+    if(registerForm.review.value) {
+      localStorage.setItem(registerForm.review.id, registerForm.review.value);  
+    } else {
+      alert('내용을 입력해주세요.');
+      registerForm.review.focus();
+      return;
+    }
+
+    // 시간 변환
+    var cmntTime = new Date();
+    var submitTime = cmntTime.getTime();
+    var timeDiffer = Math.ceil((submitTime - localStorage.realTime) / 1000 / 60 / 60);
+    // 분
+    var cmntTime;
+
+    if(timeDiffer == 1) { // ~ 1분
+      cmntTime = '방금 전';
+    } else if(timeDiffer > 1 && timeDiffer < 60) { // 2 ~ 59분
+      cmntTime = timeDiffer + '분 전';
+    } else { // 1시간 ~
+      timeDiffer = timeDiffer / 60;
+      cmntTime = timeDiffer + '시간 전';
+    }
+
+    // 사용자 입력 내용 출력
+    var allCmnt = cmntCont.querySelectorAll('.comment');
+    var newCmnt = document.createElement("DIV");
+
+    cmntWriter = localStorage.writer;
+    cmntTxt = localStorage.review;
+
+    classAdd(newCmnt, 'comment');
+    newCmnt.innerHTML = `<p>${cmntTxt}</p>
+                        <code>${cmntTime}</code> | <span class="writer">${cmntWriter}</span>`
+    cmntCont.insertBefore(newCmnt, allCmnt[0]);
+  } else {
+    alert('개인정보 수집 및 이용 동의를 확인해주세요.');
   }
 });
 
