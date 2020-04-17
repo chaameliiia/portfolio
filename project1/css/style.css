@@ -9,10 +9,6 @@ body {
   /* overflow: hidden; */
 }
 
-section {
-  border: 1px solid #f00;
-}
-
 #wrapper {
   height: 100vh;
   width: 100%;
@@ -127,15 +123,6 @@ header a h1 img {
   width: 100%;
 }
 
-/* header .page-title {
-  font-size: 1.2em;
-  transform: translateY(100%);
-  transition: .5s;
-}
-
-header .page-title.active{
-  transform: translateY(0);  
-} */
 header .page-title {
   font-size: 1.2em;
   transform: translateY(100%);
@@ -344,27 +331,45 @@ header .page-title.active{
   width: 48%;
 }
 
-.page1 .popup .gallery figure img:nth-of-type(1) {
+.page1 .popup .gallery figure img:nth-of-type(odd) {
   left: 0;
   top: 0;
-  z-index: 10;
 }
 
-.page1 .popup .gallery figure img:nth-of-type(2) {
-  margin-top: 50px;
+.page1 .popup .gallery figure img:nth-of-type(even) {
   right: 0;
-  top: 0;
+  top: 50px;
 }
 
+.page1 .popup .gallery figure img:nth-of-type(1) {
+  top: 0;
+}
+.page1 .popup .gallery figure img:nth-of-type(2) {
+  top: 50px;
+}
 .page1 .popup .gallery figure img:nth-of-type(3) {
-  left: 0;
   top: 500px;
 }
-
 .page1 .popup .gallery figure img:nth-of-type(4) {
-  margin-top: 100px;
-  right: 0;
-  top: 450px;
+  top: 550px;
+}
+.page1 .popup .gallery figure img:nth-of-type(5) {
+  top: 1000px;
+}
+.page1 .popup .gallery figure img:nth-of-type(6) {
+  top: 1050px;
+}
+.page1 .popup .gallery figure img:nth-of-type(7) {
+  top: 1500px;
+}
+.page1 .popup .gallery figure img:nth-of-type(8) {
+  top: 1550px;
+}
+.page1 .popup .gallery figure img:nth-of-type(9) {
+  top: 2000px;
+}
+.page1 .popup .gallery figure img:nth-of-type(10) {
+  top: 2050px;
 }
 
 .page1 .popup a {

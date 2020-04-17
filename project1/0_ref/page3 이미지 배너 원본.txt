@@ -1,0 +1,30 @@
+var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
+    xhr.addEventListener('load', function () { // When readystate changes
+      var data = JSON.parse(xhr.responseText);
+      var i = 0;
+
+      function loop() {
+        setInterval(function() {
+          popImg.children[0].src = data.snapshot.shorts[i];
+          popImg.children[0].style.opacity = 0;
+          i++;
+          if(i == data.snapshot.shorts.length) {
+            i = 0;
+          }
+          popImg.children[1].src = data.snapshot.shorts[i];
+          popImg.children[1].style.opacity = 1;
+          popImg.insertBefore(popImg.children[1], popImg.children[0]);
+        }, 2500);
+      }
+    
+      loop();
+
+      // page3Pop.addEventListener('click', function() {
+      //   classAdd(snapshot[1], 'non-visible');
+      //   snapshot[1].src = data.snapshot.shorts[2];
+      //   classRemove(snapshot[1], 'non-visible');
+      //   snapshot[0].src = data.snapshot.shorts[3];
+      // });
+
+
+    });

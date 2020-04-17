@@ -1,0 +1,87 @@
+// ¿Á«ı¿Ã≤®
+  if((conOffsetTop + page1.offsetHeight) * .95 <= winScrollY) {
+        classRemove(pageTitle, 'active'); 
+      }
+
+  if(conOffsetTop + page2.offsetTop - (winHeight * .2) <= winScrollY) {
+    classRemove(pageTitle, 'active'); 
+    console.log("aaa");
+  } else if(conOffsetTop + page3.offsetTop - (winHeight * .2) <= winScrollY) {
+    classRemove(pageTitle, 'active');  
+  
+  } else if(conOffsetTop + page4.offsetTop - (winHeight * .2) <= winScrollY) {
+    classRemove(pageTitle, 'active');  
+  }
+  // page2 ~ 4 °Ê pageTitle text ±≥√º
+    if(conOffsetTop + page4.offsetTop <= winScrollY) {
+    titleText(page4, 'h2'); 
+  } else if(conOffsetTop + page3.offsetTop <= winScrollY) {
+    setTimeout(function(){titleText(page3, 'h2');},500);  
+    
+    console.log("asdasd");
+  } else if(conOffsetTop + page2.offsetTop <= winScrollY) {
+    titleText(page2, 'h2'); 
+  }
+
+
+  // ¿Á«ı¿Ã 2
+  var pageName = "";
+    // if(conOffsetTop + allSect[1].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
+
+    // if(conOffsetTop + allSect[2].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
+
+    // if(conOffsetTop + allSect[3].offsetTop - (winHeight * .2) <= winScrollY) {
+    //   classRemove(pageTitle, 'active');
+    // }
+
+    if(conOffsetTop + allSect[1].offsetTop <= winScrollY && conOffsetTop + allSect[2].offsetTop > winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page2, 'h2');}, 500);
+      // titleText(page2, 'h2');
+      
+      console.log("aa");
+    }
+
+    if(conOffsetTop + allSect[2].offsetTop <= winScrollY && conOffsetTop + allSect[3].offsetTop > winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page3, 'h2');}, 500);
+      // titleText(page3, 'h2');
+      console.log("aa22");
+    }
+
+    if(conOffsetTop + allSect[3].offsetTop <= winScrollY) {
+      classRemove(pageTitle, 'active');
+      setTimeout(function(){titleText(page4, 'h2');}, 500);
+      // titleText(page4, 'h2');
+      console.log("aa33");
+    }
+    console.log(conOffsetTop + allSect[1].offsetTop);
+    console.log(winScrollY);
+
+
+  // ¬˜Ω‹
+  var b = 0;
+  for(var i=1;i<=4;i++){
+    
+    k = i;
+     if(k != 4) {
+      
+      if((conOffsetTop + (eval("page"+k).offsetHeight)*k)*0.9 < winScrollY && conOffsetTop + eval("page"+(k+1)).offsetTop > winScrollY){
+      
+      b += i;
+        if(b == 3){
+          classRemove(pageTitle, 'active');
+          bln=false;
+          console.log(k) 
+        }
+      }else{
+        var avv = eval("page"+(k+1));
+        titleText(avv, 'h2'); 
+        console.log(avv)
+      }
+    }
+  }
