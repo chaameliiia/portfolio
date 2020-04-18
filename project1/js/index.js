@@ -1,3 +1,8 @@
+// 제안내용
+// 팝업 뜨면 화면 중앙에 오게
+// 출근룩 일상룩 글씨 너무 작음
+// 스크롤 페이지 단위로 움직이게() or 페이지 배경색 구분
+
 // 큰 단위 변수
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
