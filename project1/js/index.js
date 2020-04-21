@@ -34,10 +34,10 @@ window.addEventListener('scroll', function() {
 
   if(conOffsetTop < winScrollY) { // header 화면 최상단일 때
     classAdd(headerJs, 'fixed');
-    classAdd(p1Title, 'visible');
+    // classAdd(p1Title, 'visible');
   } else {
-    // classRemove(headerJs, 'fixed');
-    classRemove(p1Title, 'visible');
+    classRemove(headerJs, 'fixed');
+    // classRemove(p1Title, 'visible');
     classRemove(pageTitle, 'active');
     bln = true; 
   }
@@ -104,25 +104,25 @@ window.addEventListener('scroll', function() {
 });
 
 // page1 ---------------------------------------------------------------------- 
-var p1Title = page1.querySelector('h2');
+// var p1Title = page1.querySelector('h2');
 var p1Index = page1.querySelector('.index');
 var p1IndexA = p1Index.querySelectorAll('a');
 var p1Pop = page1.querySelector('.popup');
 var p1PopClose = p1Pop.querySelector('.close');
-var nodeLength, p1PopFigure;
+var nodeLength, p1PopFigure, imgHeight;
 
 var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
 xhr.addEventListener('load', function () { // When readystate changes
   var data = JSON.parse(xhr.responseText);
 
-  p1Title.addEventListener('click', function (e) {
-    // page1 title 클릭할 때
-    e.preventDefault();
-    classAdd(p1Index, 'active'); // 키워드 선택창 보이기
-    classAdd(p1Title, 'non-active'); // 타이틀 숨기기
-    // header에 page title text넣기
-    titleText(page1, '.title'); // pageTitle text 교체
-  });
+  // p1Title.addEventListener('click', function (e) {
+  //   // page1 title 클릭할 때
+  //   e.preventDefault();
+  //   classAdd(p1Index, 'active'); // 키워드 선택창 보이기
+  //   classAdd(p1Title, 'non-active'); // 타이틀 숨기기
+  //   // header에 page title text넣기
+  //   titleText(page1, '.title'); // pageTitle text 교체
+  // });
 
   p1Index.addEventListener('click', function(e) {
     e.preventDefault();
@@ -136,12 +136,27 @@ xhr.addEventListener('load', function () { // When readystate changes
     for(var i = 0; i < nodeLength; i++) {
       // img node 추가
       p1PopFigure.innerHTML += `<img src=${data.runway.shorts[i]} alt="">`;
+      p1PopImg = p1PopFigure.querySelectorAll('img');
+
+      a = p1PopImg[i].clientHeight;
+      aa = p1PopImg[i].height;
+      aaa = p1PopImg[i].offsetHeight;
+
+      console.log(a);
+      console.log(aa);
+      console.log(aaa);
 
       if(i % 2 == 0) { //img node top 조정
         imgTop(arrOdd, i, 0);
       } else {
         imgTop(arrEven, i, 50);
       }
+    }
+
+    function imgTop(arr, idx, pos) {
+      arr.push(idx);
+      var j = arr.indexOf(idx);
+      p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
     }
 
     classAdd(p1Pop, 'active'); // page1 팝업창 띄우기
@@ -301,11 +316,7 @@ function closeBtn(e) { // 팝업창 닫기
   classRemove(closeTarget, 'active');
 }
 
-function imgTop(arr, idx, pos) {
-  arr.push(idx);
-  var j = arr.indexOf(idx);
-  p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
-}
+
 
 function loop(data) { // page3 이미지 배너
   popImg = page3.querySelector('.pop-img');

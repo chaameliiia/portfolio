@@ -26,7 +26,7 @@ body {
   right: 10%;
   padding: 40px;
   position: fixed;
-  top: -250px;
+  top: -300px;
   transition: .5s;
   z-index: 10;
 }
@@ -195,7 +195,7 @@ header .page-title.active{
 .page1 .index {
   align-items: center;
   display: flex;
-  display: none;
+  /* display: none; */
   flex-wrap: wrap;
   justify-content: space-between;
   padding-bottom: 100px;
@@ -967,14 +967,6 @@ header .page-title.active{
 }
 
 /* ------------------------------ js 활용 -------------------------- */
-.active-flex {
-  display: flex;
-}
-
-.active-block {
-  display: block;
-}
-
 .non-visible {
   opacity: 0;
 }
@@ -983,6 +975,20 @@ header .page-title.active{
   display: none;
 }
 
-.visible {
-  opacity: 1;
+/* ------------------------------ media -------------------------- */
+
+/* 미디어쿼리 분기점
+420px maximum width: cover all smartphones in portrait mode
+768px to 1023px: most Android tablets and iPads in portrait mode
+1024px to 1365px: most Android tablets and iPads in landscape mode, older desktop/laptop monitors
+1366px and above: iPad PRO, HDready and FullHD desktop laptop monitors
+*/
+
+@media (max-width: 1365px) {
+  #wrapper{
+  
+  }
+
+
+  
 }
