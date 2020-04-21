@@ -16,7 +16,7 @@ var pageTitle = headerJs.querySelector('.page-title');
 
 var scrollFirst = 0;
 var scrollSecond = 0;
-var num = 0;
+var num = -300;
 var a = 0;
 
 var bln = true, check = true;
@@ -43,9 +43,8 @@ window.addEventListener('scroll', function() {
   }
 
   // 스크롤 고정 -------------------------------------------------------------
-  var a = conOffsetTop;
-
   if(conOffsetTop - winHeight <= winScrollY) {
+
     // header 화면 하단에 도착
     a += 3;
     mainTitle.style = 'top: ' + (mainTitle.offsetTop - a) + 'px';
@@ -58,7 +57,7 @@ window.addEventListener('scroll', function() {
 
   // pageTitle 클래스 제거
   for(var i = 1; i < allSect.length; i++) {
-    if(conOffsetTop + allSect[i].offsetTop - winHeight * .2 <= winScrollY && conOffsetTop + allSect[i].offsetTop > winScrollY) {
+    if(conOffsetTop + allSect[i].offsetTop - winHeight * .3 <= winScrollY && conOffsetTop + allSect[i].offsetTop > winScrollY) {
       if(check) {
         check = false;
         classRemove(pageTitle, 'active');
@@ -67,7 +66,7 @@ window.addEventListener('scroll', function() {
     }
   }
   // allSect0
-  if(conOffsetTop <= winScrollY && conOffsetTop + allSect[1].offsetTop - winHeight * .2 > winScrollY) {
+  if(conOffsetTop <= winScrollY && conOffsetTop + allSect[1].offsetTop - winHeight * .3 > winScrollY) {
     if(p1Index.classList.contains('active')) {
       if(bln) {
         bln = false;
@@ -77,7 +76,7 @@ window.addEventListener('scroll', function() {
     }
   }
   // allSect1
-  if(conOffsetTop + allSect[1].offsetTop <= winScrollY && conOffsetTop + allSect[2].offsetTop - winHeight * .2 > winScrollY) {
+  if(conOffsetTop + allSect[1].offsetTop <= winScrollY && conOffsetTop + allSect[2].offsetTop - winHeight * .3 > winScrollY) {
     if(bln) {
       bln = false;
       check = true;
@@ -85,7 +84,7 @@ window.addEventListener('scroll', function() {
     }
   }
   // allSect2
-  if(conOffsetTop + allSect[2].offsetTop <= winScrollY && conOffsetTop + allSect[3].offsetTop - winHeight * .2 > winScrollY) {
+  if(conOffsetTop + allSect[2].offsetTop <= winScrollY && conOffsetTop + allSect[3].offsetTop - winHeight * .3 > winScrollY) {
     if(bln) {
       bln = false;
       check = true;
@@ -173,40 +172,56 @@ xhr.addEventListener('load', function () { // When readystate changes
   });
 
   // page2 ---------------------------------------------------------------------- 
-  var page2Index = page2.querySelector('.index');
-  var p2IndexA = page2Index.querySelectorAll('a');
-  var p2PoGallery = page2.querySelector('.popup-gallery');
-  var p2PopDetail = page2.querySelector('.popup-detail');
-  var p2PopClose = p2PoGallery.querySelector('.close');
-  var detailClose = p2PopDetail.querySelector('.close');
+  var p2Category = page2.querySelector('.category');
+  var popGallery = page2.querySelector('.popup-gallery');
+  var popCategory = page2.querySelector('.pop-category');
+  var popImages = popGallery.querySelector('.images');
+  var target, dNum;
 
-  page2Index.addEventListener('click', function(e) {
+
+  p2Category.addEventListener('click', function(e) {
     e.preventDefault();
-    for(var i =0; i < p2IndexA.length; i++) {
-      classAdd(p2IndexA[i].children[1], 'non-active'); // caption 숨기기
+    target = e.target;
+
+    if(target.nodeName == 'A') { 
+      dNum = target.dataset.num;
     }
-    classAdd(page2.querySelector('.popup-gallery'), 'active'); // 팝업창 띄우기
+
+    if(target.nodeName == 'FIGCAPTION') {
+      dNum = target.parentNode.dataset.num;
+    }
+
+    classAdd(popCategory.children[dNum].firstChild, 'selected'); // 클릭한 카테고리 강조
+    addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
+    classAdd(popGallery, 'active'); // 팝업창 띄우기
   });
 
-  p2PopClose.addEventListener('click', function(e) { // 팝업창 내리기
-    closeBtn(e);
-    for(var i =0; i < p2IndexA.length; i++) {
-      classRemove(p2IndexA[i].children[1], 'non-active'); // caption 보이기
-    }
-  });
-
-  p2PoGallery.addEventListener('click', function(e) {
+  popGallery.addEventListener('click', function(e) {
     e.preventDefault();
-    // 이미지 교체 
-    if(e.target.nodeName == 'FIGCAPTION') {
-      p2PopDetail.querySelector('img').src = e.target.previousElementSibling.src;
-    } else {
-      p2PopDetail.querySelector('img').src = e.target.children[0].src; 
-    }
-    classAdd(p2PopDetail, 'active'); // 팝업창 보이기
-  });
+    target = e.target;
+    dNum = target.dataset.num;
 
-  detailClose.addEventListener('click', closeBtn); // 팝업창 숨기기
+    if(target.parentNode.nodeName == 'H3') {
+      for(var i = 0; i < popCategory.children.length; i++) {
+        classRemove(popCategory.children[i].firstChild, 'selected');
+      }
+      classAdd(target, 'selected'); // 클릭한 카테고리 강조
+      popImages.innerHTML = null;
+      addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
+    }
+
+    // 클릭한 대상에 맞게 바로가기 변경
+
+
+    
+    
+
+
+
+    if(target.classList.contains('close')) {
+      classRemove(popGallery, 'active');
+    }
+  });
 
   // page3 ---------------------------------------------------------------------- 
   var page3Pop = page3.querySelector('.popup-detail');
@@ -301,6 +316,15 @@ xhr.open('GET', 'data.json', true); // Prepare the request
 xhr.send(null);
 
 // functions ----------------------------------------------------------------- 
+function addTpoList(target, data, idx) {  
+  for(var i = 0; i < data.tpo[idx].length; i++) {
+    target.innerHTML += `<a href="#">
+                            <img src="${data.tpo[idx][i].src}" alt="">
+                            <figcaption>${data.tpo[idx][i].caption}</figcaption>
+                          </a>`;
+  }
+}
+
 function classAdd(elmnt, clsName) { // 클래스 추가
   elmnt.classList.add(clsName);  
 }
@@ -315,8 +339,6 @@ function closeBtn(e) { // 팝업창 닫기
   let closeTarget = e.target.parentNode.parentNode;
   classRemove(closeTarget, 'active');
 }
-
-
 
 function loop(data) { // page3 이미지 배너
   popImg = page3.querySelector('.pop-img');
@@ -338,12 +360,14 @@ function loop(data) { // page3 이미지 배너
 function scrolling() { // 타이틀 박스 스크롤따라 이동
   scrollFirst = window.scrollY;
   if(scrollFirst > scrollSecond) { // 스크롤 내림
-    num += 5;
-    mainTitle.style = 'top: ' + (mainTitle.offsetTop + num) + 'px';
+    if(num < 0){num += 5;}
   } else { // 스크롤 올림
-    num -= 5;
-    mainTitle.style = 'top: ' + (mainTitle.offsetTop - num) + 'px';
+    if(num > -300){num -= 5;} 
   }
+  // console.log(num)
+
+  // console.log(mainTitle.style.top)
+  mainTitle.style.top = num + 'px';
   scrollSecond = scrollFirst;
 }
 

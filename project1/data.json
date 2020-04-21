@@ -1,85 +1,212 @@
 {
-"runway": {
-  "blue": [
-    "img/page1/img_blue01.jpg",
-    "img/page1/img_blue02.jpg",
-    "img/page1/img_blue03.jpg",
-    "img/page1/img_blue04.jpg",
-    "img/page1/img_blue05.jpg",
-    "img/page1/img_blue06.jpg",
-    "img/page1/img_blue07.jpg",
-    "img/page1/img_blue08.jpg",
-    "img/page1/img_blue09.jpg",
-    "img/page1/img_blue10.jpg"
+  "prod-link": [
+    [],
+    [],
+    [],
+    []
   ],
 
-  "newtro": [
-    "img/page1/img_newtro01.jpg",
-    "img/page1/img_newtro02.jpg",
-    "img/page1/img_newtro03.jpg",
-    "img/page1/img_newtro04.jpg",
-    "img/page1/img_newtro05.jpg",
-    "img/page1/img_newtro06.jpg",
-    "img/page1/img_newtro07.jpg",
-    "img/page1/img_newtro08.jpg",
-    "img/page1/img_newtro09.jpg",
-    "img/page1/img_newtro10.jpg"
-  ],
+  "snapshot": {
+    "blue": [ 
+      "img/page3/img_blue01.jpg",
+      "img/page3/img_blue02.jpg",
+      "img/page3/img_blue03.jpg",
+      "img/page3/img_blue04.jpg",
+      "img/page3/img_blue05.jpg",
+      "img/page3/img_blue06.jpg",
+      "img/page3/img_blue07.jpg",
+      "img/page3/img_blue08.jpg",
+      "img/page3/img_blue09.jpg",
+      "img/page3/img_blue010.jpg"
+    ],
 
-  "shorts": [
-    "img/page1/img_shorts01.jpg",
-    "img/page1/img_shorts02.jpg",
-    "img/page1/img_shorts03.jpg",
-    "img/page1/img_shorts04.jpg",
-    "img/page1/img_shorts05.jpg",
-    "img/page1/img_shorts06.jpg",
-    "img/page1/img_shorts07.jpg",
-    "img/page1/img_shorts08.jpg",
-    "img/page1/img_shorts09.jpg",
-    "img/page1/img_shorts10.jpg"
+    "newtro": [
+      "img/page3/img_newtro01.jpg",
+      "img/page3/img_newtro02.jpg",
+      "img/page3/img_newtro03.jpg",
+      "img/page3/img_newtro04.jpg",
+      "img/page3/img_newtro05.jpg",
+      "img/page3/img_newtro06.jpg",
+      "img/page3/img_newtro07.jpg",
+      "img/page3/img_newtro08.jpg",
+      "img/page3/img_newtro09.jpg",
+      "img/page3/img_newtro10.jpg"
+    ],
+    
+    "shorts": [
+      "img/page3/img_shorts01.jpg",
+      "img/page3/img_shorts02.jpg",
+      "img/page3/img_shorts03.jpg",
+      "img/page3/img_shorts04.jpg",
+      "img/page3/img_shorts05.jpg",
+      "img/page3/img_shorts06.jpg",
+      "img/page3/img_shorts07.jpg",
+      "img/page3/img_shorts08.jpg",
+      "img/page3/img_shorts09.jpg",
+      "img/page3/img_shorts10.jpg"
+    ]
+  },
+
+  "runway": {
+    "blue": [
+      "img/page1/img_blue01.jpg",
+      "img/page1/img_blue02.jpg",
+      "img/page1/img_blue03.jpg",
+      "img/page1/img_blue04.jpg",
+      "img/page1/img_blue05.jpg",
+      "img/page1/img_blue06.jpg",
+      "img/page1/img_blue07.jpg",
+      "img/page1/img_blue08.jpg",
+      "img/page1/img_blue09.jpg",
+      "img/page1/img_blue10.jpg"
+    ],
+
+    "newtro": [
+      "img/page1/img_newtro01.jpg",
+      "img/page1/img_newtro02.jpg",
+      "img/page1/img_newtro03.jpg",
+      "img/page1/img_newtro04.jpg",
+      "img/page1/img_newtro05.jpg",
+      "img/page1/img_newtro06.jpg",
+      "img/page1/img_newtro07.jpg",
+      "img/page1/img_newtro08.jpg",
+      "img/page1/img_newtro09.jpg",
+      "img/page1/img_newtro10.jpg"
+    ],
+
+    "shorts": [
+      "img/page1/img_shorts01.jpg",
+      "img/page1/img_shorts02.jpg",
+      "img/page1/img_shorts03.jpg",
+      "img/page1/img_shorts04.jpg",
+      "img/page1/img_shorts05.jpg",
+      "img/page1/img_shorts06.jpg",
+      "img/page1/img_shorts07.jpg",
+      "img/page1/img_shorts08.jpg",
+      "img/page1/img_shorts09.jpg",
+      "img/page1/img_shorts10.jpg"
+    ]
+  },
+
+  "tpo": [
+    [
+      {
+        "src": "img/tpo1/img_blue01.jpg",
+        "caption": "지금 입기 딱이야"},
+      {
+        "src": "img/tpo1/img_blue02.jpg",
+        "caption": "생기 넘치는 일상룩"},
+      {
+        "src": "img/tpo1/img_blue03.jpg",
+        "caption": "봄 시즌 맞춤 스타일링"},
+      {
+        "src": "img/tpo1/img_newtro01.jpg",
+        "caption": "꽃이 피었다"},
+      {
+        "src": "img/tpo1/img_newtro02.jpg",
+        "caption": "봄과 어울리는 오프숄더"},
+      {
+        "src": "img/tpo1/img_newtro03.jpg",
+        "caption": "힙한 스트릿 무드의 청-청 아웃핏"},
+      {
+        "src": "img/tpo1/img_shorts01.jpg",
+        "caption": "파스텔 나들이 룩"},
+      {
+        "src": "img/tpo1/img_shorts02.jpg",
+        "caption": "체크 패턴 쇼츠로 기분 전환"},
+      {
+        "src": "img/tpo1/img_shorts03.jpg",
+        "caption": "버뮤다 쇼츠와 크롭 티셔츠의 찰떡궁합"}
+    ],
+    [
+      {
+        "src": "img/tpo2/img_blue01.jpg",
+        "caption": "봄바람 타고 온 러블리 아이템"},
+      {
+        "src": "img/tpo2/img_blue02.jpg",
+        "caption": "스타일링 고민은 NO!"},
+      {
+        "src": "img/tpo2/img_blue03.jpg",
+        "caption": "한눈에 봐도 산뜻한 봄 코디"},
+      {
+        "src": "img/tpo2/img_newtro01.jpg",
+        "caption": "영화 '작은 아씨들'에 나올 것 같아!"},
+      {
+        "src": "img/tpo2/img_newtro02.jpg",
+        "caption": "사뿐사뿐 봄나들이 룩"},
+      {
+        "src": "img/tpo2/img_newtro03.jpg",
+        "caption": "어디서 봄향기 안 나요?"},
+      {
+        "src": "img/tpo2/img_shorts01.jpg",
+        "caption": "필수 영양소 인간 비타민C"},
+      {
+        "src": "img/tpo2/img_shorts02.jpg",
+        "caption": "위빙 아이템과 함께 시원하게"},
+      {
+        "src": "img/tpo2/img_shorts03.jpg",
+        "caption": "소재의 믹스매치! 니트&쇼츠 조합"}
+    ],
+    [
+      {
+        "src": "img/tpo3/img_blue01.jpg",
+        "caption": "편한하게 운동하기 딱 좋은 캐주얼 룩"},
+      {
+        "src": "img/tpo3/img_blue02.jpg",
+        "caption": "웨이트 트레이닝도 스타일리시하게!"},
+      {
+        "src": "img/tpo3/img_blue03.jpg",
+        "caption": "쌀쌀한 야간 러닝을 위한 맞춤 스타일링"},
+      {
+        "src": "img/tpo3/img_newtro01.jpg",
+        "caption": "개성을 드러낼 애슬레저 룩"},
+      {
+        "src": "img/tpo3/img_newtro02.jpg",
+        "caption": "가벼운 산책에도 컬러로 포인트 주기"},
+      {
+        "src": "img/tpo3/img_newtro03.jpg",
+        "caption": "아디다스 셋업으로 운동 텐션 UP!"},
+      {
+        "src": "img/tpo3/img_shorts01.jpg",
+        "caption": "티셔츠 한 벌로 시선을 강탈하는 코디"},
+      {
+        "src": "img/tpo3/img_shorts02.jpg",
+        "caption": "스포츠 룩&스트릿 룩, 하나도 놓칠 수 없어!"},
+      {
+        "src": "img/tpo3/img_shorts03.jpg",
+        "caption": "여름 필수 아이템 아노락재킷&쇼츠"}
+    ],
+    [
+      {
+        "src": "img/tpo4/img_blue01.jpg",
+        "caption": "수영은 못해도 멋은 포기 못해!"},
+      {
+        "src": "img/tpo4/img_blue02.jpg",
+        "caption": "바캉스 주인공은 나야 나"},
+      {
+        "src": "img/tpo4/img_blue03.jpg",
+        "caption": "여름처럼 밝은 그녀의 데님 쇼츠 스타일"},
+      {
+        "src": "img/tpo4/img_newtro01.jpg",
+        "caption": "가장 강력한 포인트 컬러 레드"},
+      {
+        "src": "img/tpo4/img_newtro02.jpg",
+        "caption": "당장 입어도 좋은 걸리시 룩"},
+      {
+        "src": "img/tpo4/img_newtro03.jpg",
+        "caption": "로맨스를 부르는 특급 코디"},
+      {
+        "src": "img/tpo4/img_shorts01.jpg",
+        "caption": "실패 없는 조합 화이트+데님"},
+      {
+        "src": "img/tpo4/img_shorts02.jpg",
+        "caption": "화이트 쇼츠로 완성한 리조트 무드"},
+      {
+        "src": "img/tpo4/img_shorts03.jpg",
+        "caption": "기분좋은 휴식에 어울리는 코디"}
+    ]
   ]
-},
-
-"snapshot": {
-  "blue": [ 
-    "img/page3/img_blue01.jpg",
-    "img/page3/img_blue02.jpg",
-    "img/page3/img_blue03.jpg",
-    "img/page3/img_blue04.jpg",
-    "img/page3/img_blue05.jpg",
-    "img/page3/img_blue06.jpg",
-    "img/page3/img_blue07.jpg",
-    "img/page3/img_blue08.jpg",
-    "img/page3/img_blue09.jpg",
-    "img/page3/img_blue010.jpg"
-  ],
-
-  "newtro": [
-    "img/page3/img_newtro01.jpg",
-    "img/page3/img_newtro02.jpg",
-    "img/page3/img_newtro03.jpg",
-    "img/page3/img_newtro04.jpg",
-    "img/page3/img_newtro05.jpg",
-    "img/page3/img_newtro06.jpg",
-    "img/page3/img_newtro07.jpg",
-    "img/page3/img_newtro08.jpg",
-    "img/page3/img_newtro09.jpg",
-    "img/page3/img_newtro10.jpg"
-  ],
-  
-  "shorts": [
-    "img/page3/img_shorts01.jpg",
-    "img/page3/img_shorts02.jpg",
-    "img/page3/img_shorts03.jpg",
-    "img/page3/img_shorts04.jpg",
-    "img/page3/img_shorts05.jpg",
-    "img/page3/img_shorts06.jpg",
-    "img/page3/img_shorts07.jpg",
-    "img/page3/img_shorts08.jpg",
-    "img/page3/img_shorts09.jpg",
-    "img/page3/img_shorts10.jpg"
-  ]
-  }}
+}
 
 
 

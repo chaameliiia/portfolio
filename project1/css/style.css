@@ -19,25 +19,40 @@ body {
   height: 200vh;
   position: relative;
   width: 100%;
+  
 }
 
-.page0 a {
+.page0 .vid-container {
+  left: 50%;
+  margin: 0 auto;
+  position: fixed;
+  top: 40px;
+  transform: translateX(-50%);
+  width: 1728px;
+  overflow: hidden;
+}
+
+.page0 video {
+  width: 100%;
+}
+
+.page0 .vid-container a {
   background: #fff;
   right: 10%;
   padding: 40px;
-  position: fixed;
+  position: absolute;
   top: -300px;
   transition: .5s;
   z-index: 10;
 }
 
-.page0 a h1 {
+.page0 .vid-container a h1 {
   height: 200px;
   position: relative;
   width: 500px;
 }
 
-.page0 a h1 span {
+.page0 .vid-container a h1 span {
   border: 1px solid #3a5485;
   left: 0;
   padding: 10px 5px;
@@ -45,11 +60,11 @@ body {
   top: 0;
 }
 
-.page0 a h1 span img {
+.page0 .vid-container a h1 span img {
   width: 100%;
 }
 
-.page0 a h1 strong {
+.page0 .vid-container a h1 strong {
   font-size: 2.5em;
   font-weight: 600;
   letter-spacing: .2em;
@@ -60,18 +75,8 @@ body {
   white-space: pre;
 }
 
-.page0 .vid-container {
-  left: 50%;
-  margin: 0 auto;
-  position: fixed;
-  top: 40px;
-  transform: translateX(-50%);
-  width: 1728px;
-}
 
-.page0 video {
-  width: 100%;
-}
+
 
 .page0 .scroll {
   bottom: 50px;
@@ -99,7 +104,7 @@ header {
   padding-top: 40px;
   position: absolute;
   width: 100%;
-  z-index: 100;
+  z-index: 20;
 }
 
 header.fixed{
@@ -247,7 +252,7 @@ header .page-title.active{
   transform: translate(-50%, -50%);
   transition: .5s;
   width: 350px;
-  z-index: 1;
+  z-index: 10;
 }
 
 .page1 .index a:hover figcaption {
@@ -391,7 +396,7 @@ header .page-title.active{
   white-space: pre-line;
 }
 
-.page2 .index {
+.page2 .category {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
@@ -399,12 +404,12 @@ header .page-title.active{
   width: 100%;
 }
 
-.page2 .index a {
+.page2 .category a {
   position: relative;
   width: 24%;
 }
 
-.page2 .index a:after {
+.page2 .category a:after {
   background: rgba(255, 255, 255, .4);
   content: '';
   height: 100%;
@@ -417,15 +422,15 @@ header .page-title.active{
   width: 100%;
 }
 
-.page2 .index a:hover:after {
+.page2 .category a:hover:after {
   opacity: 1
 }
 
-.page2 .index a img {
+.page2 .category a img {
   width: 100%;
 }
 
-.page2 .index a figcaption {
+.page2 .category a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
   font-size: 1.1em;
@@ -439,11 +444,11 @@ header .page-title.active{
   z-index: 10;
 }
 
-.page2 .index a:hover figcaption {
+.page2 .category a:hover figcaption {
   opacity: 1;
 }
 
-.page2 .index a figcaption:after {
+.page2 .category a figcaption:after {
   border: 1px solid #3a5485;
   content: '';
   height: 80%;
@@ -461,12 +466,16 @@ header .page-title.active{
   border: 1px dotted #3a5485;
   background: #fff;
   display: none;
-  height: 80vh;
+  flex-direction: column;
+  height: 95vh;
+  justify-content: flex-end;
   left: 50%;
+  padding: 30px 50px;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
-  width: 80%;
+  width: 100%;
+  z-index: 20;
 }
 
 .page2 .popup-gallery.active {
@@ -480,18 +489,53 @@ header .page-title.active{
   height: 90%;
   left: 0;
   position: absolute;
-  top: 0;
+  top: 30px;
   width: 5px;
 }
 
-.page2 .popup-gallery h3 {
-  font-size: 1.5em;
-  padding-top: 80px;
+.page2 .popup-gallery .pop-category {
+  display: flex;
+  justify-content: flex-end;
+  padding-bottom: 5vw;
   position: relative;
-  text-align: center;
+  width: 70%;
+  /* text-align: center; */
 }
 
-.page2 .popup-gallery h3:before {
+/* .page2 .popup-gallery .pop-category:before {
+  background: #3a5485;
+  content: '';
+  height: 50px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 4px;
+} */
+
+.page2 .popup-gallery .pop-category h3 {
+  padding-right: 30px;
+}
+
+.page2 .popup-gallery .pop-category h3:last-of-type {
+  padding: 0;
+}
+
+.page2 .popup-gallery .pop-category h3 a {
+  font-size: 1.5em;
+  transition: .5s;
+}
+
+.page2 .popup-gallery .pop-category h3 a:hover {
+  letter-spacing: .3em;
+}
+
+.page2 .popup-gallery .pop-category h3 a.selected {
+  font-size: 1.6em;
+  font-weight: 600;
+  letter-spacing: .3em;
+}
+
+/* .page2 .popup-gallery h3:before {
   background: #3a5485;
   bottom: -30px;
   content: '';
@@ -500,54 +544,36 @@ header .page-title.active{
   position: absolute;
   transform: translateX(-50%);
   width: 90px;
-}
+} */
 
-.page2 .popup-gallery figure {
-  bottom: 30px;
-  height: 600px;
-  justify-content: space-between;
-  overflow-y: auto;
-  position: absolute;
-  right: 25px;
-  width: 95%;
-}
-
-.page2 .popup-gallery figure::-webkit-scrollbar {
-  display: none;
-}
-
-.page2 .popup-gallery figure div{
-  position: absolute;
-  width: 33%;
-}
-
-.page2 .popup-gallery figure div:nth-of-type(1) {
-  left: 0;
-  top: 0;
-}
-
-.page2 .popup-gallery figure div:nth-of-type(2) {
-  left: 50%;
-  top: 0;
-  transform: translateX(-50%);
-}
-
-.page2 .popup-gallery figure div:nth-of-type(3) {
-  right: 0;
-  top: 0;
-}
-
-.page2 .popup-gallery figure div a{
-  position: relative;
+.page2 .popup-gallery .contents {
+  display: flex;
   width: 100%;
 }
 
-.page2 .popup-gallery figure div a:after {
+.page2 .popup-gallery .contents .images {
+  flex-wrap: wrap;
+  height: 70vh;
+  justify-content: space-between;
+  overflow-y: auto;
+  width: 70%;
+}
+
+.page2 .popup-gallery .contents .images::-webkit-scrollbar {
+  display: none;
+}
+
+.page2 .popup-gallery .contents .images a{
+  position: relative;
+  width: 33%;
+}
+
+.page2 .popup-gallery .contents .images a:after {
   background: rgba(255, 255, 255, .4);
   content: '';
   height: 100%;
   left: 50%;
-  opacity: 0;
+  opacity: 1;
   position: absolute;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -555,15 +581,15 @@ header .page-title.active{
   width: 100%;
 }
 
-.page2 .popup-gallery figure div a:hover:after {
-  opacity: 1;
+.page2 .popup-gallery .contents .images a:hover:after {
+  opacity: 0;
 }
 
-.page2 .popup-gallery figure div a img {
+.page2 .popup-gallery .contents .images a img {
   width: 100%;
 }
 
-.page2 .popup-gallery figure div a figcaption {
+.page2 .popup-gallery .contents .images a figcaption {
   background: #fff;
   border: 1px solid #3a5485;
   left: 50%;
@@ -577,7 +603,7 @@ header .page-title.active{
   white-space: pre-line;
 }
 
-.page2 .popup-gallery figure div a figcaption:after {
+.page2 .popup-gallery .contents .images a figcaption:after {
   border: 1px solid #3a5485;
   content: '';
   height: 80%;
@@ -589,9 +615,54 @@ header .page-title.active{
   width: 95%;
 }
 
-.page2 .popup-gallery figure div a:hover figcaption {
+.page2 .popup-gallery .contents .images a:hover figcaption {
   opacity: 1;
   z-index: 10;
+}
+
+.page2 .popup-gallery .text {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-right: 50px;
+  text-align: right;
+  width: 30%;
+}
+
+.page2 .popup-gallery .text h3 {
+  font-size: 1.25em;
+  font-weight: 600;
+  padding-bottom: 80px;
+  text-align: right;
+}
+
+.page2 .popup-gallery .text span {
+  padding-bottom: 40px;
+  position: relative;
+  white-space: pre-line;
+}
+
+.page2 .popup-gallery .text span:before {
+  background: #3a5485;
+  bottom: -30px;
+  content: '';
+  height: 3px;
+  position: absolute;
+  right: 0;
+  width: 150px;
+}
+
+.page2 .popup-gallery .text span a{
+  display: inline-block;
+  margin-bottom: 5px;
+}
+
+.page2 .popup-gallery .text span a:hover {
+  color: #ccc5eb;
+}
+
+.page2 .popup-gallery .text span a:last-of-type {
+  margin-bottom: 0;
 }
 
 .page2 .popup-gallery > a {
