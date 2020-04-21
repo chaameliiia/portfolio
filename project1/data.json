@@ -1,10 +1,39 @@
 {
-  "prod-link": [
-    [],
-    [],
-    [],
-    []
-  ],
+  "prodLink": {
+    "tpo1": [
+      {"prodName": [
+        "릴렉스드 코튼 트러커 재킷 [베이지]",
+        "후디드 스웨트 집업_짧은 길이 [멜란지 그레이]",
+        "폰테 롱 슬리브 크루 넥 티셔츠 [오프 화이트]",
+        "레귤러 핏 치노 팬츠 [라이트 브라운]",
+        "코듀라 웨이스트 백 [블루]",
+        "닥터마틴 단테 화이트"],
+      "prodUrl": [
+        "https://store.musinsa.com/app/product/detail/1295832",
+        "https://store.musinsa.com/app/product/detail/1213655",
+        "https://store.musinsa.com/app/product/detail/1190264",
+        "https://store.musinsa.com/app/product/detail/1155298",
+        "https://store.musinsa.com/app/product/detail/937530",
+        "https://store.musinsa.com/app/product/detail/608934"]
+      },
+      {"prodName": [
+        "릴렉스드 코튼 트러커 재킷 [베이지]",
+        "후디드 스웨트 집업_짧은 길이 [멜란지 그레이]",
+        "폰테 롱 슬리브 크루 넥 티셔츠 [오프 화이트]",
+        "레귤러 핏 치노 팬츠 [라이트 브라운]",
+        "코듀라 웨이스트 백 [블루]",
+        "닥터마틴 단테 화이트"],
+      "prodUrl": [
+        "https://store.musinsa.com/app/product/detail/1295832",
+        "https://store.musinsa.com/app/product/detail/1213655",
+        "https://store.musinsa.com/app/product/detail/1190264",
+        "https://store.musinsa.com/app/product/detail/1155298",
+        "https://store.musinsa.com/app/product/detail/937530",
+        "https://store.musinsa.com/app/product/detail/608934"]
+      }
+    ]
+
+  },
 
   "snapshot": {
     "blue": [ 

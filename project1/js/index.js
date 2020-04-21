@@ -212,7 +212,6 @@ xhr.addEventListener('load', function () { // When readystate changes
 
     // 클릭한 대상에 맞게 바로가기 변경
 
-
     
     
 
