@@ -137,25 +137,11 @@ xhr.addEventListener('load', function () { // When readystate changes
       p1PopFigure.innerHTML += `<img src=${data.runway.shorts[i]} alt="">`;
       p1PopImg = p1PopFigure.querySelectorAll('img');
 
-      a = p1PopImg[i].clientHeight;
-      aa = p1PopImg[i].height;
-      aaa = p1PopImg[i].offsetHeight;
-
-      console.log(a);
-      console.log(aa);
-      console.log(aaa);
-
       if(i % 2 == 0) { //img node top 조정
         imgTop(arrOdd, i, 0);
       } else {
         imgTop(arrEven, i, 50);
       }
-    }
-
-    function imgTop(arr, idx, pos) {
-      arr.push(idx);
-      var j = arr.indexOf(idx);
-      p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
     }
 
     classAdd(p1Pop, 'active'); // page1 팝업창 띄우기
@@ -176,12 +162,17 @@ xhr.addEventListener('load', function () { // When readystate changes
   var popGallery = page2.querySelector('.popup-gallery');
   var popCategory = page2.querySelector('.pop-category');
   var popImages = popGallery.querySelector('.images');
+  var popText = popGallery.querySelector('.text');
   var target, dNum;
 
 
   p2Category.addEventListener('click', function(e) {
     e.preventDefault();
     target = e.target;
+
+    if(target.nodeName != 'A' && target.nodeName != 'FIGCAPTION') {
+      return;
+    }
 
     if(target.nodeName == 'A') { 
       dNum = target.dataset.num;
@@ -194,6 +185,8 @@ xhr.addEventListener('load', function () { // When readystate changes
     classAdd(popCategory.children[dNum].firstChild, 'selected'); // 클릭한 카테고리 강조
     addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
     classAdd(popGallery, 'active'); // 팝업창 띄우기
+
+    console.log(data.tpo[dNum]);
   });
 
   popGallery.addEventListener('click', function(e) {
@@ -211,6 +204,18 @@ xhr.addEventListener('load', function () { // When readystate changes
     }
 
     // 클릭한 대상에 맞게 바로가기 변경
+    /*
+    `<a href="#" data-num="${i}">
+      <img src="${data.tpo[idx][i].src}" alt="">
+      <figcaption data-num="${i}">${data.tpo[idx][i].caption}</figcaption>
+    </a>`
+    */
+
+    if(target.parentNode.classList.contains('images')) {
+      console.log(data.tpo[dNum]);
+      
+      // popText.querySelector('h3').textContent = data.tpo[dNum][i].caption;
+    }
 
     
     
@@ -317,9 +322,9 @@ xhr.send(null);
 // functions ----------------------------------------------------------------- 
 function addTpoList(target, data, idx) {  
   for(var i = 0; i < data.tpo[idx].length; i++) {
-    target.innerHTML += `<a href="#">
+    target.innerHTML += `<a href="#" data-num="${i}">
                             <img src="${data.tpo[idx][i].src}" alt="">
-                            <figcaption>${data.tpo[idx][i].caption}</figcaption>
+                            <figcaption data-num="${i}">${data.tpo[idx][i].caption}</figcaption>
                           </a>`;
   }
 }
@@ -337,6 +342,12 @@ function closeBtn(e) { // 팝업창 닫기
   e.stopPropagation();
   let closeTarget = e.target.parentNode.parentNode;
   classRemove(closeTarget, 'active');
+}
+
+function imgTop(arr, idx, pos) {
+  arr.push(idx);
+  var j = arr.indexOf(idx);
+  p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
 }
 
 function loop(data) { // page3 이미지 배너
