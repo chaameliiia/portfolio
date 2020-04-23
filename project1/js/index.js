@@ -163,8 +163,9 @@ xhr.addEventListener('load', function () { // When readystate changes
   var popCategory = page2.querySelector('.pop-category');
   var popImages = popGallery.querySelector('.images');
   var popText = popGallery.querySelector('.text');
-  var target, dNum;
-
+  var popSpan = popText.querySelector('span');
+  var target, dNum, dIdx;
+  var prodName, prodUrl;
 
   p2Category.addEventListener('click', function(e) {
     e.preventDefault();
@@ -185,72 +186,91 @@ xhr.addEventListener('load', function () { // When readystate changes
     classAdd(popCategory.children[dNum].firstChild, 'selected'); // 클릭한 카테고리 강조
     addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
     classAdd(popGallery, 'active'); // 팝업창 띄우기
-
-    console.log(data.tpo[dNum]);
   });
 
   popGallery.addEventListener('click', function(e) {
     e.preventDefault();
     target = e.target;
-    dNum = target.dataset.num;
 
     if(target.parentNode.nodeName == 'H3') {
+      dNum = target.dataset.num;
+      
       for(var i = 0; i < popCategory.children.length; i++) {
         classRemove(popCategory.children[i].firstChild, 'selected');
       }
-      classAdd(target, 'selected'); // 클릭한 카테고리 강조
-      popImages.innerHTML = null;
+      classAdd(target, 'selected'); // 클릭한 카테고리 강조  
+      clearPopText(popText, popSpan) // popGallery .text 내용 초기화
+      clearInnerHtml(popImages);
       addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
     }
 
-    // 클릭한 대상에 맞게 바로가기 변경
-    /*
-    `<a href="#" data-num="${i}">
-      <img src="${data.tpo[idx][i].src}" alt="">
-      <figcaption data-num="${i}">${data.tpo[idx][i].caption}</figcaption>
-    </a>`
-    */
+    if(target.classList.contains('list')) { // 클릭한 대상에 맞게 바로가기 변경
+      dIdx = target.dataset.idx;
 
-    if(target.parentNode.classList.contains('images')) {
-      console.log(data.tpo[dNum]);
-      
-      // popText.querySelector('h3').textContent = data.tpo[dNum][i].caption;
+      clearInnerHtml(popSpan); // 
+
+      popText.querySelector('h3').textContent = data.tpo[dNum][dIdx].caption;
+      popSpan.textContent = '제품 바로가기↓';
+
+      for(var j = 0; j < data.prodLink[dNum][dIdx].prodName.length; j++) {
+        prodName = data.prodLink[dNum][dIdx].prodName;
+        prodUrl = data.prodLink[dNum][dIdx].prodUrl;
+        popSpan.innerHTML += `<a href="${prodUrl[j]}">${prodName[j]}</a>`;
+      }
     }
 
-    
-    
-
-
-
-    if(target.classList.contains('close')) {
-      classRemove(popGallery, 'active');
+    if(target.classList.contains('close')) { // 닫기 아이콘 눌렀을 때
+      classRemove(popGallery, 'active'); // 팝업창 내리기
+      for(var i = 0; i < popCategory.children.length; i++) {
+        classRemove(popCategory.children[i].firstChild, 'selected'); // 카테고리 강조 효과 제거
+      }
+      clearInnerHtml(popImages); // popGallery 내용 초기화
+      clearPopText(popText, popSpan) // popGallery .text 내용 초기화
     }
   });
 
   // page3 ---------------------------------------------------------------------- 
   var page3Pop = page3.querySelector('.popup-detail');
-  var tipPopClose = page3.querySelector('.close');
-  var popImg; // loop()용
+  var p3Category = page3Pop.querySelectorAll('.pop-text h3 a span');
+  var popText = page3Pop.querySelectorAll('.text-container');
+  var popImg = page3Pop.querySelector('.pop-img');
+  var loopImg;
 
   page3.addEventListener('click', function(e) { // 팝업창 띄우기
     e.preventDefault();
-    if(e.target.nodeName != 'A') {
-      return;
+    target = e.target;
+
+    if(target.parentNode.classList.contains('index')) {
+      dNum = target.dataset.num;
+      loop(popImg, data, dNum); // pop-img 이미지 교체
+      classAdd(p3Category[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
+      classAdd(popText[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
+      classAdd(page3Pop, 'active'); // 팝업창 띄우기
     }
 
-    loop(data); // pop-img 이미지 교체
+    if(target.parentNode.parentNode.nodeName == 'H3') {
+      for(i = 0; i < p3Category.length; i++) { // 팝업 내용 초기화
+        classRemove(p3Category[i], 'selected');
+        classRemove(popText[i], 'selected');
+      }
+      clearInterval(loopImg);
 
-    // page3Pop.addEventListener('click', function() {
-    //   classAdd(snapshot[1], 'non-visible');
-    //   snapshot[1].src = data.snapshot.shorts[2];
-    //   classRemove(snapshot[1], 'non-visible');
-    //   snapshot[0].src = data.snapshot.shorts[3];
-    // });
+      dNum = target.dataset.num;
+      loop(popImg, data, dNum); // pop-img 이미지 교체
+      classAdd(p3Category[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
+      classAdd(popText[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
+      
+    }
 
-    classAdd(page3Pop, 'active');
+    if(target.classList.contains('close')) {
+      classRemove(page3Pop, 'active');
+      clearInterval(loopImg);
+      for(i = 0; i < popText.length; i++) { // 팝업 내용 초기화
+        classRemove(p3Category[i], 'selected');
+        classRemove(popText[i], 'selected');
+      }
+    }
   });
-
-  tipPopClose.addEventListener('click', closeBtn); // 팝업창 내리기
 
   // page4 ---------------------------------------------------------------------- 
   var submitBtn = page4.querySelector('button');
@@ -315,16 +335,35 @@ xhr.addEventListener('load', function () { // When readystate changes
       alert('개인정보 수집 및 이용 동의를 확인해주세요.');
     }
   });
+
+// functions -----------------------------------------------------------------
+  function loop(target, data, idx) { // page3 이미지 배너
+    var i = 0;
+    target.children[0].src = data.snapshot[idx][i];
+
+    loopImg = setInterval(function() {
+      target.children[0].src = data.snapshot[idx][i];
+      target.children[0].style.opacity = 0;
+      i++;
+      if(i == data.snapshot[idx].length) {
+        i = 0;
+      }
+      target.children[1].src = data.snapshot[idx][i];
+      target.children[1].style.opacity = 1;
+      target.insertBefore(target.children[1], target.children[0]);
+    }, 2500);
+  }
+  // fin. json load
 });
 xhr.open('GET', 'data.json', true); // Prepare the request
 xhr.send(null);
 
 // functions ----------------------------------------------------------------- 
-function addTpoList(target, data, idx) {  
-  for(var i = 0; i < data.tpo[idx].length; i++) {
-    target.innerHTML += `<a href="#" data-num="${i}">
-                            <img src="${data.tpo[idx][i].src}" alt="">
-                            <figcaption data-num="${i}">${data.tpo[idx][i].caption}</figcaption>
+function addTpoList(target, data, num) {  
+  for(var i = 0; i < data.tpo[num].length; i++) {
+    target.innerHTML += `<a href="#" data-idx="${i}" class="list">
+                            <img src="${data.tpo[num][i].src}" alt="">
+                            <figcaption data-idx="${i}" class="list">${data.tpo[num][i].caption}</figcaption>
                           </a>`;
   }
 }
@@ -337,11 +376,14 @@ function classRemove(elmnt, clsName) { // 클래스 제거
   elmnt.classList.remove(clsName);
 }
 
-function closeBtn(e) { // 팝업창 닫기
-  e.preventDefault();
-  e.stopPropagation();
-  let closeTarget = e.target.parentNode.parentNode;
-  classRemove(closeTarget, 'active');
+function clearInnerHtml(target) {
+  target.innerHTML = null;
+}
+
+function clearPopText(popText, popSpan) {
+  popText.querySelector('h3').textContent = '';
+  popSpan.textContent = '';
+  clearInnerHtml(popSpan);
 }
 
 function imgTop(arr, idx, pos) {
@@ -350,22 +392,7 @@ function imgTop(arr, idx, pos) {
   p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
 }
 
-function loop(data) { // page3 이미지 배너
-  popImg = page3.querySelector('.pop-img');
-  i = 0;
 
-  setInterval(function() {
-    popImg.children[0].src = data.snapshot.shorts[i];
-    popImg.children[0].style.opacity = 0;
-    i++;
-    if(i == data.snapshot.shorts.length) {
-      i = 0;
-    }
-    popImg.children[1].src = data.snapshot.shorts[i];
-    popImg.children[1].style.opacity = 1;
-    popImg.insertBefore(popImg.children[1], popImg.children[0]);
-  }, 2500);
-}
 
 function scrolling() { // 타이틀 박스 스크롤따라 이동
   scrollFirst = window.scrollY;

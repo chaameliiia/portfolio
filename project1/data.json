@@ -1,7 +1,6 @@
 {
-  "prodLink": {
-    "tpo1": [
-      {"prodName": [
+  "prodLink": [
+    [{"prodName": [
         "top: 후디드 스웨트 집업_짧은 길이",
         "top: 폰테 롱 슬리브 크루 넥 티셔츠",
         "pants: 레귤러 핏 치노 팬츠",
@@ -122,8 +121,7 @@
         "http://mss.kr/969742"]
       }      
     ],
-    "tpo2": [
-      {"prodName": [
+    [{"prodName": [
         "top: Dorothy Tie Blouse",
         "pants: 와이드 스티치 데님팬츠",
         "outer: String cotton jacket",
@@ -241,13 +239,12 @@
         "http://mss.kr/1089606"]
       }
     ],
-    "tpo3": [
-      {"prodName": [
+    [{"prodName": [
         "top: 블로킹 라인 로고 반팔 티셔츠",
         "pants: 와이케이 스테디라인 로고 팬츠",
         "shoes: 여성 시티러너 스니커즈",
         "bag: ICON MINI SHOULDER BAG"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/988763",
         "http://mss.kr/956856",
         "http://mss.kr/971824",
@@ -258,7 +255,7 @@
         "pants: 에어쿨링 뉴지니 9부 블루브릭",
         "shoes: 슈퍼스타 OG",
         "legwear: 씬 트레포일 크루 삭스"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1040868",
         "http://mss.kr/1041430",
         "http://mss.kr/714590",
@@ -269,7 +266,7 @@
         "pants: P LOGO HALF LEGGINGS",
         "outer: 블로킹 써머 자켓",
         "shoes: 222반다 챔프 라이트 스니커즈"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/980491",
         "http://mss.kr/972576",
         "http://mss.kr/988731",
@@ -279,7 +276,7 @@
         "top: 타이다이 프린지 티",
         "pants: 에어쿨링 뉴지니 9부 아이보리솝",
         "shoes: 지제 BFNB 스톤 [보통발볼]"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1021300",
         "http://mss.kr/1041426",
         "http://mss.kr/538184"]
@@ -289,19 +286,19 @@
         "pants: 루즈핏 헤리티지 테잎 시리즈 세미 와이드팬츠",
         "shoes: 222반다 챔프 라이트 스니커즈",
         "accessory: BA-110RG-7A 여성 레진시계"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/981898",
         "http://mss.kr/937949",
         "http://mss.kr/936908",
         "http://mss.kr/962466"]
       },
       {"prodName": [
-        "3 스트라이프 티",
-        "3 ST 레깅스",
+        "top: 3 스트라이프 티",
+        "bottom: 3 ST 레깅스",
         "shoes: FYW S-97"],
-      "pordUrl": [
-        "top: http://mss.kr/1022373",
-        "pants: http://mss.kr/867282",
+      "prodUrl": [
+        "http://mss.kr/1022373",
+        "http://mss.kr/867282",
         "http://mss.kr/1012656"]
       },
       {"prodName": [
@@ -310,7 +307,7 @@
         "shoes: 에라 59 - (Bleacher)",
         "bag: 로고 벨트 백 블루",
         "accessory: FURY BANDANA"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/766579",
         "http://mss.kr/771989",
         "http://mss.kr/624685",
@@ -323,7 +320,7 @@
         "pants: 여성 4부 바이커 쇼츠",
         "shoes: [CG6210] 팔콘 W",
         "bag: 키르시 포켓 미니 사코슈 백 IH"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1040867",
         "http://mss.kr/1004525",
         "http://mss.kr/1031214",
@@ -335,21 +332,20 @@
         "pants: 여름 청반바지",
         "shoes: 마노아 [H-9315]",
         "legwear: Q1 GR 양말"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1001418",
         "http://mss.kr/1035176",
         "http://mss.kr/1068774",
         "http://mss.kr/804588"]
       }
     ],
-    "tpo4": [
-      {"prodName": [
+    [{"prodName": [
         "top: RSVP 클래식 스윔수트 탑",
         "pants: RSVP 클래식 스윔수트 쇼츠",
         "shoes: SD High - R2D2",
         "outer: 스타피쉬 멀티 커버업 리조트웨어",
         "bag: summer mini bucket bag"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1063718",
         "http://mss.kr/1063765",
         "http://mss.kr/1041306",
@@ -362,7 +358,7 @@
         "shoes: 버켄스탁 아리조나 에바",
         "accessory: 리틀콩 소원팔찌",
         "accessory: SMILE BRC"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1401540",
         "http://mss.kr/1035609",
         "http://mss.kr/324275",
@@ -374,7 +370,7 @@
         "pants: 여름 청반바지",
         "shoes: 밀라노 BF [보통발볼]",
         "headwear: 와이드 브림 햇"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1006345",
         "http://mss.kr/1035179",
         "http://mss.kr/983506",
@@ -386,7 +382,7 @@
         "shoes: 더블 링 스트랩 버클 샌들",
         "bag: 썸머 써리얼백",
         "accessroy: The RED Hoof Earrings"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1053339",
         "http://mss.kr/782701",
         "http://mss.kr/1074438",
@@ -399,7 +395,7 @@
         "shoes: Pop Thump Gray-Hot pink",
         "bag: JUST CHILL OUT COOLER BAG",
         "headwear: 2RIBBON BEIGE SUN VISOR CAP"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1041713",
         "http://mss.kr/1041710",
         "http://mss.kr/800089",
@@ -411,7 +407,7 @@
         "shoes: CHERRY FLIP FLOPS",
         "bag: Lady Embellished Pocket Bag",
         "headwear: SUN VISOR / RATTAN"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1055507",
         "http://mss.kr/1035615",
         "http://mss.kr/975039",
@@ -423,7 +419,7 @@
         "shoes: 스트라잎 에스파듀 샌들",
         "bag: Stripe Shoulder_RVBSX19131ORX",
         "accessroy: hippie motifs earring"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1065737",
         "http://mss.kr/1073231",
         "http://mss.kr/1067259",
@@ -436,7 +432,7 @@
         "shoes: 리본 디테일 뮬 스트라이프",
         "bag: 힐 크로스백",
         "eyewear: CR39렌즈 UV400코팅 선글라스-리크리"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1017503",
         "http://mss.kr/766744",
         "http://mss.kr/978702",
@@ -448,18 +444,16 @@
         "pants: Cargo Half Pants",
         "shoes: Flipflop Orange-Ocean",
         "bag: 원통 라탄 미니백 BLBC19S62"],
-      "pordUrl": [
+      "prodUrl": [
         "http://mss.kr/1036740",
         "http://mss.kr/1036660",
         "http://mss.kr/820938",
         "http://mss.kr/1035247"]
       }
     ]
-
-  },
-
-  "snapshot": {
-    "blue": [ 
+  ],
+  "snapshot": [
+    [
       "img/page3/img_blue01.jpg",
       "img/page3/img_blue02.jpg",
       "img/page3/img_blue03.jpg",
@@ -469,10 +463,8 @@
       "img/page3/img_blue07.jpg",
       "img/page3/img_blue08.jpg",
       "img/page3/img_blue09.jpg",
-      "img/page3/img_blue010.jpg"
-    ],
-
-    "newtro": [
+      "img/page3/img_blue10.jpg"],
+    [
       "img/page3/img_newtro01.jpg",
       "img/page3/img_newtro02.jpg",
       "img/page3/img_newtro03.jpg",
@@ -482,10 +474,8 @@
       "img/page3/img_newtro07.jpg",
       "img/page3/img_newtro08.jpg",
       "img/page3/img_newtro09.jpg",
-      "img/page3/img_newtro10.jpg"
-    ],
-    
-    "shorts": [
+      "img/page3/img_newtro10.jpg"],
+    [
       "img/page3/img_shorts01.jpg",
       "img/page3/img_shorts02.jpg",
       "img/page3/img_shorts03.jpg",
@@ -495,10 +485,8 @@
       "img/page3/img_shorts07.jpg",
       "img/page3/img_shorts08.jpg",
       "img/page3/img_shorts09.jpg",
-      "img/page3/img_shorts10.jpg"
-    ]
-  },
-
+      "img/page3/img_shorts10.jpg"]
+  ],
   "runway": {
     "blue": [
       "img/page1/img_blue01.jpg",

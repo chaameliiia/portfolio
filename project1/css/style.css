@@ -632,11 +632,14 @@ header .page-title.active{
 .page2 .popup-gallery .text h3 {
   font-size: 1.25em;
   font-weight: 600;
-  padding-bottom: 80px;
+  padding-bottom: 40px;
   text-align: right;
+  transform: translateY(-100%);
+  transition: .5s;
 }
 
 .page2 .popup-gallery .text span {
+  font-size: .9em;
   padding-bottom: 40px;
   position: relative;
   white-space: pre-line;
@@ -653,12 +656,17 @@ header .page-title.active{
 }
 
 .page2 .popup-gallery .text span a{
-  display: inline-block;
+  display: block;
   margin-bottom: 5px;
+  /* white-space: pre-line; */
 }
 
 .page2 .popup-gallery .text span a:hover {
   color: #ccc5eb;
+}
+
+.page2 .popup-gallery .text span a:first-of-type {
+  padding-top: 20px;
 }
 
 .page2 .popup-gallery .text span a:last-of-type {
@@ -666,83 +674,6 @@ header .page-title.active{
 }
 
 .page2 .popup-gallery > a {
-  position: absolute;
-  right: 25px;
-  top: 25px;
-}
-
-/* ---------------------------- page2 popup detail ------------------------ */
-.page2 .popup-detail {
-  border: 1px dotted #3a5485;
-  background: #fff;
-  display: none;
-  flex-direction: row-reverse;
-  height: 80vh;
-  justify-content: space-around;
-  left: 50%;
-  overflow: hidden;
-  padding: 150px 50px;
-  position: absolute;
-  top: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-}
-
-.page2 .popup-detail.active {
- display: flex;
-}
-
-.page2 .popup-detail .pop-text {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding-right: 50px;
-  text-align: right;
-  width: 50%;
-}
-
-.page2 .popup-detail .pop-text h3 {
-  font-size: 1.25em;
-  font-weight: 600;
-  padding-bottom: 80px;
-}
-
-.page2 .popup-detail .pop-text span {
-  padding-bottom: 40px;
-  position: relative;
-  white-space: pre-line;
-}
-
-.page2 .popup-detail .pop-text span:before {
-  background: #3a5485;
-  bottom: -30px;
-  content: '';
-  height: 3px;
-  position: absolute;
-  right: 0;
-  width: 150px;
-}
-
-.page2 .popup-detail .pop-text span a{
-  display: inline-block;
-  margin-bottom: 5px;
-}
-
-.page2 .popup-detail .pop-text span a:last-of-type {
-  margin-bottom: 0;
-}
-
-.page2 .popup-detail .pop-img {
-  display: flex;
-  align-items: center;
-  width: 40%;
-}
-
-.page2 .popup-detail .pop-img img {
-  width: 100%
-}
-
-.page2 .popup-detail > a{
   position: absolute;
   right: 25px;
   top: 25px;
@@ -794,6 +725,8 @@ header .page-title.active{
 
 .page3 .text .index a {
   font-size: 1.25em;
+  font-weight: 600;
+
   margin-bottom: 50px;
   text-transform: uppercase;
   transition: .5s;
@@ -804,6 +737,7 @@ header .page-title.active{
 }
 
 .page3 .text .index a:hover {
+  color: #ccc5eb;
   letter-spacing: 1em;
 }
 
@@ -845,43 +779,70 @@ header .page-title.active{
 .page3 .popup-detail .pop-text {
   display: flex;
   flex-direction: column;
-  justify-content: flex-end;
+  justify-content: flex-start;
   width: 60%;
 }
 
 .page3 .popup-detail .pop-text h3 {
   font-size: 1.5em;
   font-weight: 600;
-  padding-bottom: 150px;
+  padding-top: 100px;
   position: relative;
-  white-space: pre-line;
+  text-align: right;
 }
 
 .page3 .popup-detail .pop-text h3:before {
   background: #3a5485;
+  bottom: -50px;
   content: '';
   height: 3px;
-  left: 0;
   position: absolute;
-  top: -50px;
+  right: 0;
   width: 150px;
 }
 
-.page3 .popup-detail .pop-text .text-container {
-  display: flex;
-  justify-content: space-between;
-  padding-right: 30px;
+.page3 .popup-detail .pop-text h3 a span {
+  font-size: 1.5rem;
+  padding-left: 30px;
+  text-transform: capitalize;
+  transition: .5s;
 }
 
-.page3 .popup-detail .pop-text .text-container p {
+.page3 .popup-detail .pop-text h3 a:hover span {
+  color: #ccc5eb;
+  letter-spacing: .3em;
+}
+
+.page3 .popup-detail .pop-text h3 a span.selected {
+  color: #ccc5eb;
+  font-weight: 600;
+  letter-spacing: .3em;
+}
+
+.page3 .text-container {
+  display: none;
+  justify-content: space-between;
+  padding-top: 150px;
+  width: 100%;
+}
+
+.page3 .text-container.selected {
+  display: flex;
+}
+
+.page3 .text-container p {
   padding-bottom: 50px;
   text-align: right;
   white-space: pre-line;
   width: 48%;
 }
-.page3 .popup-detail .pop-text .text-container p strong {
+
+.page3 .text-container p strong {
+  display: inline;
   font-size: 1.1em;
   font-weight: 600;
+  text-align: right;
+  white-space: pre-line;
 }
 
 .page3 .popup-detail .pop-img {
