@@ -487,9 +487,8 @@
       "img/page3/img_shorts09.jpg",
       "img/page3/img_shorts10.jpg"]
   ],
-  "runway": {
-    "blue": [
-      "img/page1/img_blue01.jpg",
+  "runway": [
+    ["img/page1/img_blue01.jpg",
       "img/page1/img_blue02.jpg",
       "img/page1/img_blue03.jpg",
       "img/page1/img_blue04.jpg",
@@ -500,9 +499,7 @@
       "img/page1/img_blue09.jpg",
       "img/page1/img_blue10.jpg"
     ],
-
-    "newtro": [
-      "img/page1/img_newtro01.jpg",
+    ["img/page1/img_newtro01.jpg",
       "img/page1/img_newtro02.jpg",
       "img/page1/img_newtro03.jpg",
       "img/page1/img_newtro04.jpg",
@@ -513,9 +510,7 @@
       "img/page1/img_newtro09.jpg",
       "img/page1/img_newtro10.jpg"
     ],
-
-    "shorts": [
-      "img/page1/img_shorts01.jpg",
+    ["img/page1/img_shorts01.jpg",
       "img/page1/img_shorts02.jpg",
       "img/page1/img_shorts03.jpg",
       "img/page1/img_shorts04.jpg",
@@ -526,7 +521,7 @@
       "img/page1/img_shorts09.jpg",
       "img/page1/img_shorts10.jpg"
     ]
-  },
+  ],
 
   "tpo": [
     [

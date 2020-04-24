@@ -5,34 +5,32 @@
 }
 
 body {
-  /* overflow: hidden; */
   width: 100%;
 }
 
 #wrapper {
-  height: 100vh;
+  left: 0;
+  position: fixed;
+  top: 0;
   width: 100%;
 }
 
 /* page0 */
 .page0 {
-  height: 200vh;
   position: relative;
   width: 100%;
   
 }
 
 .page0 .vid-container {
-  left: 50%;
-  margin: 0 auto;
-  position: fixed;
-  top: 40px;
-  transform: translateX(-50%);
-  width: 1728px;
+  margin: 40px auto 0 auto;
   overflow: hidden;
+  position: relative;
+  top: 40px;
+  width: 1728px;
 }
 
-.page0 video {
+.page0 .vid-container video {
   width: 100%;
 }
 
@@ -75,9 +73,6 @@ body {
   white-space: pre;
 }
 
-
-
-
 .page0 .scroll {
   bottom: 50px;
   left: 50%;
@@ -92,7 +87,7 @@ body {
 }
 
 section {
-  border: 1px solid #333;
+  /* border: 1px solid #333; */
 }
 
 /* ------------------------------ header -------------------------- */
