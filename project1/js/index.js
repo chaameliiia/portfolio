@@ -1,3 +1,8 @@
+/*
+전체에 relative
+팝업 열었을 때 fixed
+*/
+
 // 제안내용
 // 스크롤 페이지 단위로 움직이게() or 페이지 배경색 구분
 
@@ -15,92 +20,73 @@ var mainTitle = document.querySelector('.page0 a');
 var pageTitle = headerJs.querySelector('.page-title');
 
 var scrollFirst = 0;
-var scrollSecond = 0;
-var num = -300;
+var scrollSecond = -1;
+var num = -mainTitle.offsetHeight;
 var a = 0;
+
+var scrIdx = 0;
 
 var bln = true, check = true;
 
+document.querySelector('body').style.height = wrapper.offsetHeight+'px'
+
+var wrapperStyle = window.getComputedStyle(wrapper);
+var scrollFixed;
 // scroll event ----------------------------------------------------------
 window.addEventListener('scroll', function() {
-  var vidContainer = document.querySelector('.vid-container');
-  var conOffsetTop = containerJs.offsetTop;
   var winScrollY = window.scrollY;
+  var sectionOffset = [];
+  
+  if(getComputedStyle(p1Pop).display == 'block') {
+    this.scrollTo(0, scrollFixed);
+  }
 
+  if(getComputedStyle(popGallery).display == 'block') {
+    this.scrollTo(0, scrollFixed);
+  }
+    
   scrolling(); // page0 타이틀박스 이동
-  if(mainTitle.style.top >= 100 + 'px') {
-    mainTitle.style = 'top: 100px';
-  }
 
-  if(conOffsetTop < winScrollY) { // header 화면 최상단일 때
-    classAdd(headerJs, 'fixed');
-    // classAdd(p1Title, 'visible');
+  //wrapper - fixed or absolute
+  if(winHeight * 2 <= winScrollY) {
+    if(wrapperStyle.getPropertyValue('position') == 'fixed'){
+      wrapper.style = `position: absolute; top: ${winScrollY}px`;
+    }
   } else {
-    classRemove(headerJs, 'fixed');
-    // classRemove(p1Title, 'visible');
-    classRemove(pageTitle, 'active');
-    bln = true; 
+    wrapper.style = "position: fixed";
   }
-
-  // 스크롤 고정 -------------------------------------------------------------
-  if(conOffsetTop - winHeight <= winScrollY) {
-
-    // header 화면 하단에 도착
-    a += 3;
-    mainTitle.style = 'top: ' + (mainTitle.offsetTop - a) + 'px';
-    vidContainer.style = 'top: ' + (vidContainer.offsetTop - a) + 'px';
+   
+  //header fixed
+  var header = document.querySelector('header');
+  var containerRect = containerJs.getBoundingClientRect(); 
+  var containerTop = containerRect.top; 
+    
+  if(containerTop <= 0){
+    header.classList.add('fixed');
+  } else {
+    header.classList.remove('fixed');
   }
-
-
-  // pageTitle_each section -------------------------------------------------
+    
+  //title
   var allSect = container.querySelectorAll('section');
-
-  // pageTitle 클래스 제거
-  for(var i = 1; i < allSect.length; i++) {
-    if(conOffsetTop + allSect[i].offsetTop - winHeight * .3 <= winScrollY && conOffsetTop + allSect[i].offsetTop > winScrollY) {
-      if(check) {
-        check = false;
-        classRemove(pageTitle, 'active');
-        bln = true;
-      }
-    }
+  for(var i = 0; i < allSect.length; i++){
+    sectionOffset.push(allSect[i].offsetTop + (winHeight * 3));
   }
-  // allSect0
-  if(conOffsetTop <= winScrollY && conOffsetTop + allSect[1].offsetTop - winHeight * .3 > winScrollY) {
-    if(p1Index.classList.contains('active')) {
-      if(bln) {
-        bln = false;
-        check = true;
-        titleText(allSect[0], 'h2 a');
-      }
+  for(var i = 0; i < allSect.length; i++) { 
+    if(sectionOffset[i] <= winScrollY  && sectionOffset[i] + (winHeight * .5) > winScrollY) {
+      titleText(allSect[i], 'h2');
+    } else if(sectionOffset[i] + 500 < winScrollY && sectionOffset[i + 1] > winScrollY){
+      classRemove(pageTitle, 'active');    
     }
-  }
-  // allSect1
-  if(conOffsetTop + allSect[1].offsetTop <= winScrollY && conOffsetTop + allSect[2].offsetTop - winHeight * .3 > winScrollY) {
-    if(bln) {
-      bln = false;
-      check = true;
-      titleText(allSect[1], 'h2');
-    }
-  }
-  // allSect2
-  if(conOffsetTop + allSect[2].offsetTop <= winScrollY && conOffsetTop + allSect[3].offsetTop - winHeight * .3 > winScrollY) {
-    if(bln) {
-      bln = false;
-      check = true;
-      titleText(allSect[2], 'h2');
-    }
-  }
-  // allSect3
-  if(conOffsetTop + allSect[3].offsetTop <= winScrollY) {
-    if(bln) {
-      bln = false;
-      check = true;
-      titleText(allSect[3], 'h2');
+    
+    if(sectionOffset[3] - 300 <= winScrollY) {
+      titleText(allSect[i], 'h2');
     }
   }
   // scroll fin
 });
+
+
 
 // page1 ---------------------------------------------------------------------- 
 // var p1Title = page1.querySelector('h2');
@@ -109,6 +95,8 @@ var p1IndexA = p1Index.querySelectorAll('a');
 var p1Pop = page1.querySelector('.popup');
 var p1PopClose = p1Pop.querySelector('.close');
 var nodeLength, p1PopFigure, imgHeight;
+var popGallery = page2.querySelector('.popup-gallery');
+
 
 var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
 xhr.addEventListener('load', function () { // When readystate changes
@@ -143,6 +131,9 @@ xhr.addEventListener('load', function () { // When readystate changes
       for(var i =0; i < p1IndexA.length; i++) {
         classAdd(p1IndexA[i].children[1], 'non-active'); // caption 숨기기
       }
+
+      scrollFixed = window.scrollY;
+      disableWheel(p1Pop, '.gallery'); // 팝업 떴을 때 휠, 스크롤 이벤트 정지
     }
 
     if(e.target.classList.contains('close')) {
@@ -156,7 +147,6 @@ xhr.addEventListener('load', function () { // When readystate changes
 
   // page2 ---------------------------------------------------------------------- 
   var p2Category = page2.querySelector('.category');
-  var popGallery = page2.querySelector('.popup-gallery');
   var popCategory = page2.querySelector('.pop-category');
   var popImages = popGallery.querySelector('.images');
   var target, dNum, dIdx;
@@ -181,6 +171,9 @@ xhr.addEventListener('load', function () { // When readystate changes
     classAdd(popCategory.children[dNum].firstChild, 'selected'); // 클릭한 카테고리 강조
     addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
     classAdd(popGallery, 'active'); // 팝업창 띄우기
+    
+    scrollFixed = window.scrollY;
+    disableWheel(popGallery, '.images'); // 팝업 떴을 때 휠, 스크롤 이벤트 정지
   });
 
   popGallery.addEventListener('click', function(e) {
@@ -244,6 +237,9 @@ xhr.addEventListener('load', function () { // When readystate changes
       classAdd(p3Category[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
       classAdd(popText[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
       classAdd(page3Pop, 'active'); // 팝업창 띄우기
+    
+      scrollFixed = window.scrollY;
+      disableWheel(page3Pop); // 팝업 떴을 때 휠, 스크롤 이벤트 정지
     }
 
     if(target.parentNode.parentNode.nodeName == 'H3') {
@@ -351,7 +347,7 @@ xhr.addEventListener('load', function () { // When readystate changes
       target.insertBefore(target.children[1], target.children[0]);
     }, 2500);
   }
-  // fin. json load
+  // json load fin
 });
 xhr.open('GET', 'data.json', true); // Prepare the request
 xhr.send(null);
@@ -384,24 +380,35 @@ function clearPopText(popText, popSpan) {
   clearInnerHtml(popSpan);
 }
 
+function disableWheel(target, child) {  
+  if(!child) {
+    target.addEventListener('mousewheel',function(e){
+      e.preventDefault();
+      e.stopPropagation();
+    });
+  }
+  
+  if(child) {
+    target.addEventListener('mousewheel',function(e){
+      e.preventDefault();
+    });
+    target.querySelector(child).addEventListener('mousewheel',function(e){
+      e.stopPropagation();
+    });
+  }
+}
+
 function imgTop(arr, idx, pos) {
   arr.push(idx);
   var j = arr.indexOf(idx);
-  p1PopFigure.children[idx].style.top = pos + (500 * j) + 'px';
+  p1PopFigure.children[idx].style.top = pos + (550 * j) + 'px';
 }
 
 function scrolling() { // 타이틀 박스 스크롤따라 이동
-  scrollFirst = window.scrollY;
-  if(scrollFirst > scrollSecond) { // 스크롤 내림
-    if(num < 0){num += 5;}
-  } else { // 스크롤 올림
-    if(num > -300){num -= 5;} 
+  if(window.scrollY < 1300){
+    num = (window.scrollY * 0.3) - 300;
   }
-  // console.log(num)
-
-  // console.log(mainTitle.style.top)
   mainTitle.style.top = num + 'px';
-  scrollSecond = scrollFirst;
 }
 
 function titleText(selector, target) { // pageTitle text 교체
