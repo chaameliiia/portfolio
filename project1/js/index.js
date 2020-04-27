@@ -1,11 +1,3 @@
-/*
-전체에 relative
-팝업 열었을 때 fixed
-*/
-
-// 제안내용
-// 스크롤 페이지 단위로 움직이게() or 페이지 배경색 구분
-
 // 큰 단위 변수
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
@@ -18,6 +10,8 @@ var winHeight = window.innerHeight;
 
 var mainTitle = document.querySelector('.page0 a');
 var pageTitle = headerJs.querySelector('.page-title');
+var myVideo = document.querySelector('#myVideo');
+var scrollIc = document.querySelector('.scroll');
 
 var scrollFirst = 0;
 var scrollSecond = -1;
@@ -63,8 +57,10 @@ window.addEventListener('scroll', function() {
     
   if(containerTop <= 0){
     header.classList.add('fixed');
+    // myVideo.pause();
   } else {
     header.classList.remove('fixed');
+    // myVideo.play();
   }
     
   //title
@@ -72,30 +68,33 @@ window.addEventListener('scroll', function() {
   for(var i = 0; i < allSect.length; i++){
     sectionOffset.push(allSect[i].offsetTop + (winHeight * 3));
   }
+
   for(var i = 0; i < allSect.length; i++) { 
     if(sectionOffset[i] <= winScrollY  && sectionOffset[i] + (winHeight * .5) > winScrollY) {
       titleText(allSect[i], 'h2');
     } else if(sectionOffset[i] + 500 < winScrollY && sectionOffset[i + 1] > winScrollY){
-      classRemove(pageTitle, 'active');    
+      pageTitle.classList.remove('active');
     }
     
     if(sectionOffset[3] - 300 <= winScrollY) {
       titleText(allSect[i], 'h2');
+      scrollIc.querySelector('img').src = 'img/ic_upscroll.png';
+    } else {
+      scrollIc.querySelector('img').src = 'img/ic_scroll.png';
     }
   }
   // scroll fin
 });
-
-
 
 // page1 ---------------------------------------------------------------------- 
 // var p1Title = page1.querySelector('h2');
 var p1Index = page1.querySelector('.index');
 var p1IndexA = p1Index.querySelectorAll('a');
 var p1Pop = page1.querySelector('.popup');
-var p1PopClose = p1Pop.querySelector('.close');
+var p1PopText = p1Pop.querySelectorAll('.text');
 var nodeLength, p1PopFigure, imgHeight;
 var popGallery = page2.querySelector('.popup-gallery');
+var imgHeight;
 
 
 var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
@@ -109,6 +108,12 @@ xhr.addEventListener('load', function () { // When readystate changes
       p1PopFigure = p1Pop.querySelector('.gallery figure');
       
       dNum = e.target.dataset.num;
+
+      for(var i = 0; i < p1PopText.length; i++) {
+        p1PopText[i].classList.remove('active'); // 텍스트 내용 초기화
+      }
+
+      p1PopText[dNum].classList.add('active'); // 클릭한 카테고리 내용 보이기
 
       // img node 추가
       nodeLength = data.runway[dNum].length;
@@ -127,9 +132,9 @@ xhr.addEventListener('load', function () { // When readystate changes
         }
       }
 
-      classAdd(p1Pop, 'active'); // page1 팝업창 띄우기
+      p1Pop.classList.add('active'); // page1 팝업창 띄우기
       for(var i =0; i < p1IndexA.length; i++) {
-        classAdd(p1IndexA[i].children[1], 'non-active'); // caption 숨기기
+        p1IndexA[i].children[1].classList.add('non-active'); // caption 숨기기
       }
 
       scrollFixed = window.scrollY;
@@ -138,12 +143,13 @@ xhr.addEventListener('load', function () { // When readystate changes
 
     if(e.target.classList.contains('close')) {
       for(var i =0; i < p1IndexA.length; i++) {
-        classRemove(p1IndexA[i].children[1], 'non-active'); // caption 보이기
+        p1IndexA[i].children[1].classList.remove('non-active'); // caption 보이기
       }
       p1PopFigure.innerHTML = null;
-      classRemove(p1Pop, 'active'); // 팝업창 내리기
+      p1Pop.classList.remove('active'); // 팝업창 내리기
     }
   });
+
 
   // page2 ---------------------------------------------------------------------- 
   var p2Category = page2.querySelector('.category');
@@ -168,9 +174,10 @@ xhr.addEventListener('load', function () { // When readystate changes
       dNum = target.parentNode.dataset.num;
     }
 
-    classAdd(popCategory.children[dNum].firstChild, 'selected'); // 클릭한 카테고리 강조
+    popCategory.children[dNum].firstChild.classList.add('selected'); // 클릭한 카테고리 강조
+
     addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
-    classAdd(popGallery, 'active'); // 팝업창 띄우기
+    popGallery.classList.add('active'); // 팝업창 띄우기
     
     scrollFixed = window.scrollY;
     disableWheel(popGallery, '.images'); // 팝업 떴을 때 휠, 스크롤 이벤트 정지
@@ -187,9 +194,9 @@ xhr.addEventListener('load', function () { // When readystate changes
       dNum = target.dataset.num;
       
       for(var i = 0; i < popCategory.children.length; i++) {
-        classRemove(popCategory.children[i].firstChild, 'selected');
+        popCategory.children[i].firstChild.classList.remove('selected');
       }
-      classAdd(target, 'selected'); // 클릭한 카테고리 강조  
+      target.classList.add('selected'); // 클릭한 카테고리 강조  
       clearPopText(popText, popSpan) // popGallery .text 내용 초기화
       clearInnerHtml(popImages);
       addTpoList(popImages, data, dNum); // 클릭한 카테고리에 맞게 콘텐츠 변경
@@ -211,9 +218,9 @@ xhr.addEventListener('load', function () { // When readystate changes
     }
 
     if(target.classList.contains('close')) { // 닫기 아이콘 눌렀을 때
-      classRemove(popGallery, 'active'); // 팝업창 내리기
+      popGallery.classList.remove('active'); // 팝업창 내리기
       for(var i = 0; i < popCategory.children.length; i++) {
-        classRemove(popCategory.children[i].firstChild, 'selected'); // 카테고리 강조 효과 제거
+        popCategory.children[i].firstChild.classList.remove('selected'); // 카테고리 강조 효과 제거
       }
       clearInnerHtml(popImages); // popGallery 내용 초기화
       clearPopText(popText, popSpan) // popGallery .text 내용 초기화
@@ -234,9 +241,9 @@ xhr.addEventListener('load', function () { // When readystate changes
     if(target.parentNode.classList.contains('index')) {
       dNum = target.dataset.num;
       loop(popImg, data, dNum); // pop-img 이미지 교체
-      classAdd(p3Category[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
-      classAdd(popText[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
-      classAdd(page3Pop, 'active'); // 팝업창 띄우기
+      p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
+      popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
+      page3Pop.classList.add('active');
     
       scrollFixed = window.scrollY;
       disableWheel(page3Pop); // 팝업 떴을 때 휠, 스크롤 이벤트 정지
@@ -244,24 +251,23 @@ xhr.addEventListener('load', function () { // When readystate changes
 
     if(target.parentNode.parentNode.nodeName == 'H3') {
       for(i = 0; i < p3Category.length; i++) { // 팝업 내용 초기화
-        classRemove(p3Category[i], 'selected');
-        classRemove(popText[i], 'selected');
+        p3Category[i].classList.remove('selected');
+        popText[i].classList.remove('selected');
       }
       clearInterval(loopImg);
 
       dNum = target.dataset.num;
       loop(popImg, data, dNum); // pop-img 이미지 교체
-      classAdd(p3Category[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
-      classAdd(popText[dNum], 'selected'); // 클릭한 대상에 맞는 내용 출력
-      
+      p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
+      popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
     }
 
     if(target.classList.contains('close')) {
-      classRemove(page3Pop, 'active');
+      page3Pop.classList.remove('active');
       clearInterval(loopImg);
       for(i = 0; i < popText.length; i++) { // 팝업 내용 초기화
-        classRemove(p3Category[i], 'selected');
-        classRemove(popText[i], 'selected');
+        p3Category[i].classList.remove('selected');
+        popText[i].classList.remove('selected');
       }
     }
   });
@@ -321,7 +327,7 @@ xhr.addEventListener('load', function () { // When readystate changes
       cmntWriter = localStorage.writer;
       cmntTxt = localStorage.review;
 
-      classAdd(newCmnt, 'comment');
+      newCmnt.classList.add('comment');
       newCmnt.innerHTML = `<p>${cmntTxt}</p>
                           <code>${cmntTime}</code> | <span class="writer">${cmntWriter}</span>`
       cmntCont.insertBefore(newCmnt, allCmnt[0]);
@@ -360,14 +366,6 @@ function addTpoList(target, data, num) {
                             <figcaption data-idx="${i}" class="list">${data.tpo[num][i].caption}</figcaption>
                           </a>`;
   }
-}
-
-function classAdd(elmnt, clsName) { // 클래스 추가
-  elmnt.classList.add(clsName);  
-}
-
-function classRemove(elmnt, clsName) { // 클래스 제거
-  elmnt.classList.remove(clsName);
 }
 
 function clearInnerHtml(target) {
@@ -413,5 +411,5 @@ function scrolling() { // 타이틀 박스 스크롤따라 이동
 
 function titleText(selector, target) { // pageTitle text 교체
   pageTitle.textContent = selector.querySelector(target).textContent;
-  classAdd(pageTitle, 'active');
+  pageTitle.classList.add('active');
 }
