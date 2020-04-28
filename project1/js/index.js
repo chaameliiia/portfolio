@@ -231,7 +231,8 @@ xhr.addEventListener('load', function () { // When readystate changes
 
     if(target.parentNode.classList.contains('index')) {
       dNum = target.dataset.num;
-      loop(popImg, data, dNum); // pop-img 이미지 교체
+      this.addEventListener('load', loop(popImg, data, dNum));
+      // loop(popImg, data, dNum); // pop-img 이미지 교체
       p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       page3Pop.classList.add('active');
@@ -248,7 +249,9 @@ xhr.addEventListener('load', function () { // When readystate changes
       clearInterval(loopImg);
 
       dNum = target.dataset.num;
-      loop(popImg, data, dNum); // pop-img 이미지 교체
+
+      this.addEventListener('load', loop(popImg, data, dNum));
+      // loop(popImg, data, dNum); // pop-img 이미지 교체
       p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
     }
