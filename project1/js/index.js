@@ -25,7 +25,7 @@ document.querySelector('body').style.height = wrapper.offsetHeight+'px'
 window.addEventListener('scroll', function() {
   var winScrollY = window.scrollY;
   var sectionOffset = [];
-  
+  console.log('dfdf');
   if(getComputedStyle(p1Pop).display == 'block') {
     this.scrollTo(0, scrollFixed);
   }
@@ -48,9 +48,12 @@ window.addEventListener('scroll', function() {
   //header fixed
   var header = document.querySelector('header');
   var containerRect = containerJs.getBoundingClientRect(); 
-  var containerTop = containerRect.top; 
+  var containerTop = containerRect.top;
+
+  console.log(containerJs.offsetTop);
+  console.log(winScrollY);
     
-  if(containerTop <= 0){
+  if(containerJs.offsetTop <= window.scrollY){
     header.classList.add('fixed');
     myVideo.pause();
   } else {
@@ -232,7 +235,6 @@ xhr.addEventListener('load', function () { // When readystate changes
     if(target.parentNode.classList.contains('index')) {
       dNum = target.dataset.num;
       this.addEventListener('load', loop(popImg, data, dNum));
-      // loop(popImg, data, dNum); // pop-img 이미지 교체
       p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       page3Pop.classList.add('active');
@@ -251,7 +253,6 @@ xhr.addEventListener('load', function () { // When readystate changes
       dNum = target.dataset.num;
 
       this.addEventListener('load', loop(popImg, data, dNum));
-      // loop(popImg, data, dNum); // pop-img 이미지 교체
       p3Category[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
       popText[dNum].classList.add('selected'); // 클릭한 대상에 맞는 내용 출력
     }

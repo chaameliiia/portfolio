@@ -92,15 +92,18 @@ header {
   align-items: center;
   background: #fff;
   display: flex;
+  left: 0;
   justify-content: space-between;
   overflow: hidden;
   padding: 1.5vw 0 1vw;
   position: absolute;
+  top: 0;
   width: 100%;
   z-index: 20;
 }
 
 header.fixed{
+  left: 0;
   position: fixed;
   top: 0;
   width: 90%
@@ -1466,6 +1469,7 @@ header .page-title.active{
 
   /* ------------------------------ page1 -------------------------- */
   .page1 {
+    border: 1px solid #f00;
     display: flex;
     align-items: flex-end;
     height: 100vh;
