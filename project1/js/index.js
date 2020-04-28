@@ -51,9 +51,9 @@ window.addEventListener('scroll', function() {
   var containerTop = containerRect.top;
 
   console.log(containerJs.offsetTop);
-  console.log(winScrollY);
+  // console.log(winScrollY);
     
-  if(containerJs.offsetTop <= window.scrollY){
+  if(containerTop <= 0){
     header.classList.add('fixed');
     myVideo.pause();
   } else {

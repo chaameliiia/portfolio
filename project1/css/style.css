@@ -92,7 +92,6 @@ header {
   align-items: center;
   background: #fff;
   display: flex;
-  left: 0;
   justify-content: space-between;
   overflow: hidden;
   padding: 1.5vw 0 1vw;
@@ -103,7 +102,6 @@ header {
 }
 
 header.fixed{
-  left: 0;
   position: fixed;
   top: 0;
   width: 90%
