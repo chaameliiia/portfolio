@@ -1,4 +1,3 @@
-// 큰 단위 변수
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
 var page1 = document.querySelector('.page1');
@@ -6,26 +5,22 @@ var page2 = document.querySelector('.page2');
 var page3 = document.querySelector('.page3');
 var page4 = document.querySelector('.page4');
 
-var winHeight = window.innerHeight;
-
 var mainTitle = document.querySelector('.page0 a');
 var pageTitle = headerJs.querySelector('.page-title');
 var myVideo = document.querySelector('#myVideo');
 var scrollIc = document.querySelector('.scroll');
 
+var winHeight = window.innerHeight;
 var scrollFirst = 0;
 var scrollSecond = -1;
 var num = -mainTitle.offsetHeight;
-var a = 0;
-
-var scrIdx = 0;
-
-var bln = true, check = true;
-
-document.querySelector('body').style.height = wrapper.offsetHeight+'px'
 
 var wrapperStyle = window.getComputedStyle(wrapper);
 var scrollFixed;
+
+// body 높이 지정
+document.querySelector('body').style.height = wrapper.offsetHeight+'px'
+
 // scroll event ----------------------------------------------------------
 window.addEventListener('scroll', function() {
   var winScrollY = window.scrollY;
@@ -57,10 +52,10 @@ window.addEventListener('scroll', function() {
     
   if(containerTop <= 0){
     header.classList.add('fixed');
-    // myVideo.pause();
+    myVideo.pause();
   } else {
     header.classList.remove('fixed');
-    // myVideo.play();
+    myVideo.play();
   }
     
   //title
@@ -70,13 +65,13 @@ window.addEventListener('scroll', function() {
   }
 
   for(var i = 0; i < allSect.length; i++) { 
-    if(sectionOffset[i] <= winScrollY  && sectionOffset[i] + (winHeight * .5) > winScrollY) {
+    if(sectionOffset[i] <= winScrollY  && sectionOffset[i] + (winHeight * .4) > winScrollY) {
       titleText(allSect[i], 'h2');
-    } else if(sectionOffset[i] + 500 < winScrollY && sectionOffset[i + 1] > winScrollY){
+    } else if(sectionOffset[i] + 400 < winScrollY && sectionOffset[i + 1] > winScrollY){
       pageTitle.classList.remove('active');
     }
     
-    if(sectionOffset[3] - 300 <= winScrollY) {
+    if(sectionOffset[3] - 200 <= winScrollY) {
       titleText(allSect[i], 'h2');
       scrollIc.querySelector('img').src = 'img/ic_upscroll.png';
     } else {
@@ -92,9 +87,9 @@ var p1Index = page1.querySelector('.index');
 var p1IndexA = p1Index.querySelectorAll('a');
 var p1Pop = page1.querySelector('.popup');
 var p1PopText = p1Pop.querySelectorAll('.text');
-var nodeLength, p1PopFigure, imgHeight;
+var p1PopFigure = p1Pop.querySelector('.gallery figure');
 var popGallery = page2.querySelector('.popup-gallery');
-var imgHeight;
+var nodeLength;
 
 
 var xhr = new XMLHttpRequest(); // Create XMLHttpRequest object
@@ -105,8 +100,6 @@ xhr.addEventListener('load', function () { // When readystate changes
     e.preventDefault();
 
     if(e.target.dataset.num) {
-      p1PopFigure = p1Pop.querySelector('.gallery figure');
-      
       dNum = e.target.dataset.num;
 
       for(var i = 0; i < p1PopText.length; i++) {
@@ -123,7 +116,6 @@ xhr.addEventListener('load', function () { // When readystate changes
       for(var i = 0; i < nodeLength; i++) {
         // img node 추가
         p1PopFigure.innerHTML += `<img src=${data.runway[dNum][i]} alt="">`;
-        p1PopImg = p1PopFigure.querySelectorAll('img');
 
         if(i % 2 == 0) { //img node top 조정
           imgTop(arrOdd, i, 0);
@@ -149,7 +141,6 @@ xhr.addEventListener('load', function () { // When readystate changes
       p1Pop.classList.remove('active'); // 팝업창 내리기
     }
   });
-
 
   // page2 ---------------------------------------------------------------------- 
   var p2Category = page2.querySelector('.category');
@@ -250,7 +241,7 @@ xhr.addEventListener('load', function () { // When readystate changes
     }
 
     if(target.parentNode.parentNode.nodeName == 'H3') {
-      for(i = 0; i < p3Category.length; i++) { // 팝업 내용 초기화
+      for(var i = 0; i < p3Category.length; i++) { // 팝업 내용 초기화
         p3Category[i].classList.remove('selected');
         popText[i].classList.remove('selected');
       }
@@ -265,7 +256,7 @@ xhr.addEventListener('load', function () { // When readystate changes
     if(target.classList.contains('close')) {
       page3Pop.classList.remove('active');
       clearInterval(loopImg);
-      for(i = 0; i < popText.length; i++) { // 팝업 내용 초기화
+      for(var i = 0; i < popText.length; i++) { // 팝업 내용 초기화
         p3Category[i].classList.remove('selected');
         popText[i].classList.remove('selected');
       }
@@ -397,9 +388,14 @@ function disableWheel(target, child) {
 }
 
 function imgTop(arr, idx, pos) {
+  var k;
   arr.push(idx);
-  var j = arr.indexOf(idx);
-  p1PopFigure.children[idx].style.top = pos + (550 * j) + 'px';
+  k = arr.indexOf(idx);
+
+  setTimeout(function() {
+    imgHeight = p1PopFigure.children[0].offsetHeight;
+    p1PopFigure.children[idx].style.top = pos + (imgHeight * 1.1 * k) + 'px';
+  }, 100);
 }
 
 function scrolling() { // 타이틀 박스 스크롤따라 이동
