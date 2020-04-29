@@ -117,9 +117,9 @@ xhr.addEventListener('load', function () { // When readystate changes
         p1PopFigure.innerHTML += `<img src=${data.runway[dNum][i]} alt="">`;
 
         if(i % 2 == 0) { //img node top 조정
-          imgTop(arrOdd, i, 0);
+          // imgTop(arrOdd, i, 0);
         } else {
-          imgTop(arrEven, i, 50);
+          // imgTop(arrEven, i, 50);
         }
       }
 
