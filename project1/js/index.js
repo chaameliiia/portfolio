@@ -177,10 +177,11 @@ xhr.addEventListener('load', function () { // When readystate changes
   var popText = popGallery.querySelector('.text');
   var popSpan = popText.querySelector('span');
     
-    e.preventDefault();
     target = e.target;
 
     if(target.parentNode.nodeName == 'H3') {
+      e.preventDefault();
+      
       dNum = target.dataset.num;
       
       for(var i = 0; i < popCategory.children.length; i++) {
@@ -208,6 +209,8 @@ xhr.addEventListener('load', function () { // When readystate changes
     }
 
     if(target.classList.contains('close')) { // 닫기 아이콘 눌렀을 때
+      e.preventDefault();
+      
       popGallery.classList.remove('active'); // 팝업창 내리기
       for(var i = 0; i < popCategory.children.length; i++) {
         popCategory.children[i].firstChild.classList.remove('selected'); // 카테고리 강조 효과 제거

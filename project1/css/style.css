@@ -1182,7 +1182,7 @@ header .page-title.active{
   }
 
   .page0 .vid-container a h1 strong {
-    font-size: 1.5em;
+    font-size: 2em;
   }
 
   /* ------------------------------ header -------------------------- */
@@ -1451,7 +1451,7 @@ header .page-title.active{
   }
 
   header a h1 strong {
-    font-size: 1.5em;
+    font-size: 1.3em;
     font-weight: 600;
   }
 
@@ -1468,33 +1468,31 @@ header .page-title.active{
   /* ------------------------------ page1 -------------------------- */
   .page1 {
     border: 1px solid #f00;
-    display: flex;
-    align-items: flex-end;
-    height: 100vh;
-    position: relative;
-    width: 100%;
-  }
-
-  .page1 h2 {
-    display: none;
   }
 
   .page1 .index {
-    align-items: center;
+    align-items: flex-start;
+    border: 1px solid #333;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-bottom: 5vw;
-    width: 100%;
+    flex-direction: column;
+    justify-content: flex-end;
+    height: 100vh;
+    padding: 0;
   }
 
   .page1 .index a {
+    border: 1px solid #00f;
+    display: block;
+    /* width: 25%; */
     position: relative;
-    width: 30%;
+  }
+
+  .page1 .index a:nth-of-type(even) {
+    
   }
 
   .page1 .index a img {
-    width: 100%
+    width: 100%;
   }
 
   .page1 .index a:after {
@@ -1518,17 +1516,13 @@ header .page-title.active{
     background: #fff;
     border: 1px solid #3a5485;
     font-size: 1.2em;
-    left: 50%;
-    opacity: 0;
+    opacity: 1;
     padding: 20px 0;
-    position: absolute;
+    /* position: absolute; */
     text-align: center;
     text-transform: uppercase;
-    top: 50%;
-    transform: translate(-50%, -50%);
     transition: .5s;
-    width: 350px;
-    z-index: 10;
+    width: 100%;
   }
 
   .page1 .index a:hover figcaption {
