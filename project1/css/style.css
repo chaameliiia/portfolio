@@ -1169,7 +1169,7 @@ header .page-title.active{
 @media (max-width: 1024px) {
   /* ---------------------------- page4 ------------------------ */
   .page0 .vid-container {
-    top: 100px;
+    top: 400px;
     width: 920px;
   }
 
@@ -1182,7 +1182,7 @@ header .page-title.active{
   }
 
   .page0 .vid-container a h1 strong {
-    font-size: 2em;
+    font-size: 1.5em;
   }
 
   /* ------------------------------ header -------------------------- */

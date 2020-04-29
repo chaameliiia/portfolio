@@ -25,7 +25,6 @@ document.querySelector('body').style.height = wrapper.offsetHeight+'px'
 window.addEventListener('scroll', function() {
   var winScrollY = window.scrollY;
   var sectionOffset = [];
-  console.log('dfdf');
   if(getComputedStyle(p1Pop).display == 'block') {
     this.scrollTo(0, scrollFixed);
   }
@@ -49,16 +48,13 @@ window.addEventListener('scroll', function() {
   var header = document.querySelector('header');
   var containerRect = containerJs.getBoundingClientRect(); 
   var containerTop = containerRect.top;
-
-  console.log(containerJs.offsetTop);
-  // console.log(winScrollY);
     
   if(containerTop <= 0){
     header.classList.add('fixed');
-    myVideo.pause();
+    // myVideo.pause();
   } else {
     header.classList.remove('fixed');
-    myVideo.play();
+    // myVideo.play();
   }
     
   //title
