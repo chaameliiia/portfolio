@@ -152,15 +152,15 @@ xhr.addEventListener('load', function () { // When readystate changes
     e.preventDefault();
     target = e.target;
 
-    if(target.nodeName != 'A' && target.nodeName != 'FIGCAPTION') {
-      return;
+    if(target.nodeName != 'A' && target.nodeName != 'FIGCAPTION' && target.noneName != 'IMG') {
+      // return;
     }
 
-    if(target.nodeName == 'A') { 
+    if(target.nodeName == 'A' ) { 
       dNum = target.dataset.num;
     }
 
-    if(target.nodeName == 'FIGCAPTION') {
+    if(target.nodeName == 'FIGCAPTION' || target.nodeName == 'IMG') {
       dNum = target.parentNode.dataset.num;
     }
 
@@ -355,7 +355,7 @@ xhr.send(null);
 // functions ----------------------------------------------------------------- 
 function addTpoList(target, data, num) {  
   for(var i = 0; i < data.tpo[num].length; i++) {
-    target.innerHTML += `<a href="#" data-idx="${i}" class="list">
+    target.innerHTML += `<a href="#" data-idx="${i}" alt="blank" class="list">
                             <img src="${data.tpo[num][i].src}" alt="">
                             <figcaption data-idx="${i}" class="list">${data.tpo[num][i].caption}</figcaption>
                           </a>`;
