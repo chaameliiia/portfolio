@@ -9,7 +9,27 @@
   $db_con = new mysqli($host, $db_user, $db_password, $db_name);
 
   function mq($sql) {
-    global $dbcon;
-    return $dbcon->query($sql);
+    global $db_con;
+    return $db_con->query($sql);
+  }
+
+  function page($url) {
+    echo "
+      <script>
+        location.href='$url';
+      </script>"; // /index.php: 최상위 폴더에 있는 index.php
+  }
+
+  function back($msg) {
+    echo "
+      <script>
+        alert('$msg');
+        history.back();
+      </script>";
+  }
+
+  function callFunc($name) {
+    echo "
+      <script>{$name}</script>";
   }
 ?>

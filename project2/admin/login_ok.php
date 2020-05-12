@@ -1,15 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <form action="login_ok.php" method="post" enctype="multipart/form-data">
-    <input type="text" name="id">
-    <input type="password" name="pw">
-    <input type="submit" value="Login">
-  </form>
-</body>
-</html>
+<!-- 관리자로 로그인 확인 -->
+<?
+  include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/db.php";
+
+  $id = $_POST['id'];
+  $pw = $_POST['pw'];
+
+  if($id === 'admin' && $pw === '1234') {
+    $_SESSION['id'] = $id;
+    // $_SESSION[] 값 남기려면 앞에 session_start(); 해야 함
+    page('/project2/admin/index.php');
+  } else {
+    back('관리자가 아닙니다.');
+  }
+?>
