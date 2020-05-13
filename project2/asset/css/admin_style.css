@@ -53,22 +53,32 @@ ul, li {
   width: 100%;
 }
 
-/* ---------------------- work_list ----------------------*/
-.work_list {
+/* ---------------------- list ----------------------*/
+.list {
   margin: 0 auto;
   width: 80%;
 }
 
-.work_list ul {}
+.list ul {}
 
-.work_list ul li {
+.list ul li {
   border-top: 1px solid #ddd;
   padding: 20px 0;
 }
 
-.work_list ul li a,
-.work_list ul li code,
-.work_list ul li img {
+.list ul li .detail {
+  background: #ddd;
+  display: none;
+  padding: 20px;
+}
+
+.list ul li a {
+  padding: 10px 0;
+}
+
+.list ul li a,
+.list ul li code,
+.list ul li img {
   color: #333;
   display: inline-block;
   font-size: 20px;
@@ -77,7 +87,7 @@ ul, li {
   vertical-align: middle;
 }
 
-.work_list ul li img {
+.list ul li img {
   height: 100px;
 }
 
