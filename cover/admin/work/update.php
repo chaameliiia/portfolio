@@ -1,13 +1,13 @@
 <? // 글쓰기 페이지
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/head.php";
 
   $num = $_GET['num'];
 
-  $query = "delete from project2 where num='{$num}'"; // 선택한 항목만 수정
+  $query = "delete from cover where num='{$num}'"; // 선택한 항목만 수정
   $result = mq($query);
   $row = mysqli_fetch_array($result); // result값 배열 형태로 저장
 ?>
-  <script type="text/javascript" src="/project2/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
+  <script type="text/javascript" src="/cover/editor/js/HuskyEZCreator.js" charset="utf-8"></script>
   <article class="request">
     <h2>Register Project</h2>
     <form action="request_res.php" name="portfolio" method="post" enctype="multipart/form-data">
@@ -42,5 +42,5 @@
   </article>
 <?
   callFunc('reqEditor()');
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/foot.php";
 ?>

@@ -1,7 +1,7 @@
 <!-- 세션 삭제 -->
 
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/db.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/asset/inc/db.php";
 
   // session 삭제
   session_destroy();

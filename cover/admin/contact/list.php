@@ -1,13 +1,13 @@
 <!-- 문의 목록 -->
 
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/head.php";
 
   $query = "select * from contact_us";
   $result = mq($query);
   $row = mysqli_fetch_array($result);
 
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/page_var.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/asset/inc/page_var.php";
 ?>
   <article class="list">
     <h2>문의 목록</h2>
@@ -33,11 +33,11 @@
     </ul>
     <div class="page">
       <?
-        include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/paging.php";
+        include_once $_SERVER['DOCUMENT_ROOT']."/cover/asset/inc/paging.php";
       ?>
     </div>
   </article>
 <?
   callFunc('view()');
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/foot.php";
 ?>

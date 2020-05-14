@@ -8,13 +8,13 @@ if (bSuccessUpload) { //성공 시 파일 사이즈와 URL 전송
 	
 	$tmp_name = $_FILES['Filedata']['tmp_name'];
 	$name = $_FILES['Filedata']['name'];
-	$new_path = "http://localhost/project2/editor/".urlencode($_FILES['Filedata']['name']);
+	$new_path = "http://localhost/cover/editor/".urlencode($_FILES['Filedata']['name']);
 	@move_uploaded_file($tmp_name, $new_path);
 	$url .= "&bNewLine=true";
 	$url .= "&sFileName=".urlencode(urlencode($name));
 	//$url .= "&size=". $_FILES['Filedata']['size'];
 	//아래 URL을 변경하시면 됩니다.
-	$url .= "&sFileURL=http://localhost/project2/editor/".urlencode(urlencode($name));
+	$url .= "&sFileURL=http://localhost/cover/editor/".urlencode(urlencode($name));
 } else { //실패시 errstr=error 전송
 	$url .= '&errstr=error';
 }

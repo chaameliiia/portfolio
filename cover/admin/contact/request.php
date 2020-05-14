@@ -1,5 +1,5 @@
 <? // 글쓰기 페이지
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/head.php";
 ?>
   <article class="request">
     <h2>Contact us</h2>
@@ -18,5 +18,5 @@
   </article>
 <?
   // callFunc('contact()'); // 유효성 검사
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/foot.php";
 ?>

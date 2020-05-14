@@ -1,19 +1,19 @@
 <!-- 포트폴리오 목록 -->
 
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/head.php";
 
-  $query = "select * from project2";
+  $query = "select * from cover";
   $result = mq($query);
   $row = mysqli_fetch_array($result);
 
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/page_var.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/asset/inc/page_var.php";
 ?>
   <article class="list">
     <h2>Project List</h2>
     <ul>
       <?
-        $query = "select * from project2 order by num desc limit $start_num, $list"; // limit 시작번호, 갯수
+        $query = "select * from cover order by num desc limit $start_num, $list"; // limit 시작번호, 갯수
         $result = mq($query);
         while($row = mysqli_fetch_array($result)) {
       ?>
@@ -34,7 +34,7 @@
     </ul>
     <div class="page">
       <?
-        include_once $_SERVER['DOCUMENT_ROOT']."/project2/asset/inc/paging.php";
+        include_once $_SERVER['DOCUMENT_ROOT']."/cover/asset/inc/paging.php";
       ?>
     </div>
     <a href="request.php" class="btn">Register Portfolio</a>
@@ -42,5 +42,5 @@
   <div class="popup"></div>
 <?
   callFunc('prjList()');
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/foot.php";
 ?>

@@ -1,7 +1,7 @@
 <!-- 글정보처리 페이지 -->
 
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/project2/admin/admin_check.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/admin_check.php";
 
   // request에서 데이터 받아오기
   $writer = $_POST['writer'];

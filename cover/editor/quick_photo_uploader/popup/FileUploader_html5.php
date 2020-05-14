@@ -14,7 +14,7 @@
 	$file->size = $headers['file_size'];
 	$file->content = file_get_contents("php://input"); 
 	
-	$newPath = 'http://localhost/project2/editor/'.iconv("utf-8", "cp949", $file->name);
+	$newPath = 'http://localhost/cover/editor/'.iconv("utf-8", "cp949", $file->name);
 	                             
 	if(file_put_contents($newPath, $file->content)) {
 		$sFileInfo .= "&bNewLine=true";

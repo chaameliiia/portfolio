@@ -335,7 +335,7 @@
 	        sUploadURL;
 
 	    // sUploadURL= 'http://test.naver.com/popup/quick_photo/FileUploader_html5.php'; 	//upload URL
-	    sUploadURL = 'http://localhost/project2/editor/quick_photo_uploader/popup/FileUploader_html5.php'; //upload URL
+	    sUploadURL = 'http://localhost/cover/editor/quick_photo_uploader/popup/FileUploader_html5.php'; //upload URL
 
 	    //파일을 하나씩 보내고, 결과를 받음.
 	    for (var j = 0, k = 0; j < nImageInfoCnt; j++) {
@@ -477,7 +477,7 @@
 	 */
 	function callFileUploader() {
 	    oFileUploader = new jindo.FileUploader(jindo.$("uploadInputBox"), {
-	        sUrl: 'http://localhost/project2/editor/quick_photo_uploader/popup/FileUploader.php', //샘플 URL입니다.
+	        sUrl: 'http://localhost/cover/editor/quick_photo_uploader/popup/FileUploader.php', //샘플 URL입니다.
             
             
 	        sCallback: location.href.replace(/\/[^\/]*$/, '') + '/callback.html', //업로드 이후에 iframe이 redirect될 콜백페이지의 주소
