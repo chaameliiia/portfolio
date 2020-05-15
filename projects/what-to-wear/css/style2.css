@@ -589,10 +589,11 @@ header .page-title.active{
     width: 100%;
   }
 
-  .page2 .popup-gallery .text h3 {
+  .page2 .popup-gallery h3 {
     font-size: 1.25em;
     font-weight: 600;
-    width: 45%;
+    text-align: left;
+    width: 100%;
   }
 
   .page2 .popup-gallery .text span {
