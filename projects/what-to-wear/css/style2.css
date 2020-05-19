@@ -148,14 +148,10 @@ header .page-title.active{
 */
 
 @media (max-width: 768px) {
-  body {
-    border: 1px solid #333;
-  }
 
   /* ------------------------------ page0 -------------------------- */
   .page0 .vid-container {
     height: 110vh;
-    
     top: 300px;
     width: 690px;
   }
@@ -170,55 +166,9 @@ header .page-title.active{
   }
 
   /* ------------------------------ header -------------------------- */
-  /* header {
-    align-items: center;
-    background: #fff;
+  header {
     display: none;
-    justify-content: space-between;
-    overflow: hidden;
-    padding: 1vw 0 .5vw;
-    position: absolute;
-    width: 100%;
-    z-index: 20;
   }
-
-  header.fixed{
-    position: fixed;
-    top: 0;
-    width: 90%
-  }
-
-  header a h1 {
-    align-items: center;
-    display: flex;
-  }
-
-  header a h1 span {
-    background: #fff;
-    border: 1px solid #3a5485;
-    margin-right: 1vw;
-    padding: .3vw 0;
-  }
-
-  header a h1 img {
-    transform: scale(.8);
-    width: 100%;
-  }
-
-  header a h1 strong {
-    font-size: 1.2em;
-    font-weight: 600;
-  }
-
-  header .page-title {
-    font-size: 1.2em;
-    transform: translateY(200%);
-    transition: .5s;
-  }
-
-  header .page-title.active{
-    transform: translateY(0);  
-  } */
 
   /* ------------------------------ page1 -------------------------- */
   .page1 {
@@ -384,6 +334,7 @@ header .page-title.active{
     height: 100vh;
     padding: 3vw 0;
     position: relative;
+    width: 100%;
   }
 
   .page2 .text {
@@ -526,7 +477,7 @@ header .page-title.active{
   }
 
   .page2 .popup-gallery .pop-category h3 a {
-    font-size: 1.5em;
+    font-size: 1.25em;
     transition: .5s;
   }
 
@@ -589,17 +540,19 @@ header .page-title.active{
     width: 100%;
   }
 
-  .page2 .popup-gallery h3 {
+  .page2 .popup-gallery .text h3 {
     font-size: 1.25em;
     font-weight: 600;
     text-align: left;
-    width: 100%;
+    width: 40%;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   .page2 .popup-gallery .text span {
     font-size: .9em;
     text-align: right;
-    width: 55%;
+    width: 60%;
   }
 
   .page2 .popup-gallery .text span a{
@@ -622,11 +575,9 @@ header .page-title.active{
 
   /* ---------------------------- page3 ------------------------ */
   .page3 {
-    border: 1px solid #f00;
-    display: flex;
     height: 100vh;
     justify-content: flex-start;
-    padding: 5vw 8vw 0;
+    padding: 3vw 0;
     position: relative;
     width: 100%;
   }
@@ -634,47 +585,52 @@ header .page-title.active{
   .page3 .text {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    width: 50%;
+    height: 50%;
+    justify-content: flex-end;
+    text-align: center;
+    width: 100%;
   }
 
   .page3 .text h2 {
     font-size: 1.5em;
     font-weight: 600;
-    padding: 2vw 0 5vw;
+    padding-bottom: 10vw;
     position: relative;
   }
 
   .page3 .text h2:before {
     background: #3a5485;
+    bottom: 5vw;
     content: '';
     height: 3px;
-    left: 0;
+    left: 50%;
     position: absolute;
-    top: -30px;
-    width: 200px
+    transform: translateX(-50%);
+    width: 150px
   }
 
   .page3 .text span {
     font-size: 1.25em;
-    padding-bottom: 7vw;
+    padding-bottom: 18vw;
+    text-align: center;
     white-space: pre-line;
+    width: 100%;
   }
 
   .page3 .text .index {
-    white-space: pre-line;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
 
   .page3 .text .index a {
+    display: flex;
+    justify-content: center;
     font-size: 1.25em;
     font-weight: 600;
-    margin-bottom: 3vw;
     text-transform: uppercase;
     transition: .5s;
-  }
-
-  .page3 .text .index a:last-of-type {
-    margin: 0;
+    width: 33%;
   }
 
   .page3 .text .index a:hover {
@@ -690,11 +646,12 @@ header .page-title.active{
   .page3 figure {
     align-items: center;
     display: flex;
-    width: 45%;
+    height: 50%;
+    justify-content: center;
   }
 
   .page3 figure img {
-    width: 100%;
+    height: 60%;
   }
 
   /* ---------------------------- page3 popup------------------------ */
@@ -716,30 +673,30 @@ header .page-title.active{
     border: 1px dotted #3a5485;
     background: #fff;
     display: flex;
-    flex-direction: row-reverse;
-    height: 70vh;
+    flex-direction: column-reverse;
+    height: 90vh;
     justify-content: space-between;
     left: 50%;
-    padding: 5vw 8vw 3vw;
+    padding: 5vw 5vw;
     position: absolute;
     top: 50%;
     transform: translate(-50%, -50%);
-    width: 75%;
+    width: 90%;
   }
 
   .page3 .popup-detail .pop-text {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    width: 60%;
+    justify-content: flex-end;
+    width: 100%;
   }
 
   .page3 .popup-detail .pop-text h3 {
+    display: flex;
+    flex-wrap: wrap;
     font-size: 1.5em;
     font-weight: 600;
-    padding-top: 6vw;
     position: relative;
-    text-align: right;
   }
 
   .page3 .popup-detail .pop-text h3:before {
@@ -747,14 +704,16 @@ header .page-title.active{
     bottom: -60px;
     content: '';
     height: 3px;
+    left: 50%;
     position: absolute;
     right: 0;
-    width: 150px;
+    transform: translateX(-50%);
+    width: 200px;
   }
 
   .page3 .popup-detail .pop-text h3 a span {
     font-size: 1.5rem;
-    padding-left: 2vw;
+    padding-left: 8vw;
     text-transform: capitalize;
     transition: .5s;
   }
@@ -772,7 +731,7 @@ header .page-title.active{
   .page3 .text-container {
     display: none;
     justify-content: space-between;
-    padding-top: 10vw;
+    padding: 15vw 0 5vw;
     width: 100%;
   }
 
@@ -781,32 +740,33 @@ header .page-title.active{
   }
 
   .page3 .text-container p {
-    text-align: right;
     white-space: pre-line;
     width: 48%;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   .page3 .text-container p strong {
     display: inline;
     font-size: 1.1em;
     font-weight: 600;
-    text-align: right;
     white-space: pre-line;
   }
 
   .page3 .popup-detail .pop-img {
+    display: flex;
     position: relative;
-    width: 30%;
+    width: 100%;
   }
 
   .page3 .popup-detail .pop-img img {
-    left: 0;
+    height: 95%;
+    left: 50%;
     opacity: 1;
     position: absolute;
     top: 50%;
-    transform: translateY(-50%);
+    transform: translate(-50%, -50%);
     transition: 2s;
-    width: 100%;
   }
 
   .page3 .popup-detail .pop-img img:nth-of-type(2) {
@@ -822,38 +782,40 @@ header .page-title.active{
   /* ---------------------------- page4 ------------------------ */
   .page4 {
     display: flex;
-    flex-direction: row-reverse;
+    flex-direction: column;
     height: 100vh;
     justify-content: space-between;
-    padding: 4vw 0 2vw;
+    padding: 3vw 0;
     width: 100%;
   }
 
   .page4 .notice {
+    height: 40%;
     overflow-y: auto;
-    padding: 0 3vw;
-    width: 25%;
+    text-align: center;
+    width: 100%;
   }
 
   .page4 .notice h2 {
     font-size: 1.5em;
     font-weight: 600;
-    padding: 3vw 0 2vw;
+    padding: 10vw 0;
     position: relative;
   }
 
   .page4 .notice h2:before {
     background: #3a5485;
+    bottom: 5vw;
     content: '';
     height: 3px;
-    left: 0;
+    left: 50%;
     position: absolute;
-    top: 30px;
+    transform: translateX(-50%);
     width: 150px
   }
 
   .page4 .notice > p {
-    padding-bottom: 2vw;
+    padding-bottom: 5vw;
     white-space: pre-line;
   }
 
@@ -862,12 +824,8 @@ header .page-title.active{
   }
 
   #register .user-info {
-    padding-bottom: 2vw;
+    padding-bottom: 5vw;
     width: 100%;
-  }
-
-  #register .user-info caption {
-    text-align: left;
   }
 
   #register .user-info tbody th {
@@ -882,7 +840,7 @@ header .page-title.active{
   }
 
   #register .review-container {
-    padding-bottom: 2vw;
+    padding-bottom: 5vw;
   }
 
   #register .review-container textarea {
@@ -899,6 +857,7 @@ header .page-title.active{
   #register .review-container p {
     align-items: center;
     display: flex;
+    justify-content: center;
   }
 
   #register .review-container p input {
@@ -922,10 +881,11 @@ header .page-title.active{
   .page4 .comment-container {
     background: rgba(238, 238, 238, .4);
     border: 1px dotted #3a5485;
+    height: 60%;
     margin-top: 30px;
     overflow-y: auto;
     padding: 2vw;
-    width: 75%;
+    width: 100%;
   }
 
   .page4 .comment-container::-webkit-scrollbar {
