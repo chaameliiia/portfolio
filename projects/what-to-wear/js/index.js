@@ -204,7 +204,7 @@ xhr.addEventListener('load', function () { // When readystate changes
       for(var j = 0; j < data.prodLink[dNum][dIdx].prodName.length; j++) {
         prodName = data.prodLink[dNum][dIdx].prodName;
         prodUrl = data.prodLink[dNum][dIdx].prodUrl;
-        popSpan.innerHTML += `<a href="${prodUrl[j]}">${prodName[j]}</a>`;
+        popSpan.innerHTML += `<a href="${prodUrl[j]}" alt="blank">${prodName[j]}</a>`;
       }
     }
 
@@ -355,7 +355,7 @@ xhr.send(null);
 // functions ----------------------------------------------------------------- 
 function addTpoList(target, data, num) {  
   for(var i = 0; i < data.tpo[num].length; i++) {
-    target.innerHTML += `<a href="#" data-idx="${i}" alt="blank" class="list">
+    target.innerHTML += `<a href="#" data-idx="${i}" class="list">
                             <img src="${data.tpo[num][i].src}" alt="">
                             <figcaption data-idx="${i}" class="list">${data.tpo[num][i].caption}</figcaption>
                           </a>`;
