@@ -1,5 +1,6 @@
 var containerJs = document.querySelector('#container');
 var headerJs = document.querySelector('#container header');
+var wrapper = document.querySelector('#wrapper');
 var page1 = document.querySelector('.page1');
 var page2 = document.querySelector('.page2');
 var page3 = document.querySelector('.page3');
@@ -19,7 +20,7 @@ var wrapperStyle = window.getComputedStyle(wrapper);
 var scrollFixed;
 
 // body 높이 지정
-document.querySelector('body').style.height = wrapper.offsetHeight+'px'
+document.querySelector('body').style.height = wrapper.offsetHeight+'px';
 
 // scroll event ----------------------------------------------------------
 window.addEventListener('scroll', function() {
@@ -36,7 +37,7 @@ window.addEventListener('scroll', function() {
   scrolling(); // page0 타이틀박스 이동
 
   //wrapper - fixed or absolute
-  if(winHeight * 2 <= winScrollY) {
+  if(winHeight * 2 <= winScrollY) {    
     if(wrapperStyle.getPropertyValue('position') == 'fixed'){
       wrapper.style = `position: absolute; top: ${winScrollY}px`;
     }
