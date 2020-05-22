@@ -1,9 +1,12 @@
 // font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
-@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;600;900&display=swap);
+
+$hlColor: #efc050;
+$bgColor: #2f3435;
 
 * {
   box-sizing: border-box;
-  color: #efc050;
+  color: $hlColor;
   font: 16px/1.5 'Kanit', sans-serif;
   font-weight: 300;
   margin: 0;
@@ -24,27 +27,44 @@ a {
 }
 
 body {
-  background: #2f3435;
+  background: $bgColor;
 }
 
 button {
   background: none;
   border: none;
   cursor: pointer;
+  text-transform: uppercase;
+}
+
+figcaption {
+  color: transparent;
+  font-size: 9em;
+  font-weight: 600;
+  letter-spacing: 10px;
+  text-transform: uppercase;
+  -webkit-text-stroke: 1px rgba(239, 192, 80, .4);
 }
 
 input {
   background: none;
   border: none;
-  border-bottom: 1px solid #efc050;
+  border-bottom: 1px solid $hlColor;
+  outline-style: none;
 }
 
 textarea {
-  background: #2f3435;
-  border: 1px solid #efc050;
+  background: transparent;
+  border: 1px solid $hlColor;
   font-weight: normal;
+  outline-style: none;
 }
 
 textarea::-webkit-scrollbar {
   display: none;
+}
+
+::selection {
+  background: #f00;
+  color: #fff;
 }
