@@ -1,4 +1,136 @@
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;900&display=swap);
 * {
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  color: #efc050;
+  font: 16px/1.5 'Kanit', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0; }
+
+a,
+button,
+code,
+small,
+span,
+strong {
+  display: inline-block; }
+
+a {
+  text-decoration: none; }
+
+body {
+  background: #2f3435; }
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer; }
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #efc050; }
+
+textarea {
+  background: #2f3435;
+  border: 1px solid #efc050;
+  font-weight: normal; }
+
+textarea::-webkit-scrollbar {
+  display: none; }
+
+body {
+  border: 1px solid #f00;
+  height: 100vh;
+  padding: 3vw 0; }
+
+.header {
+  border: 1px solid #00f;
+  display: flex;
+  justify-content: space-between;
+  left: 5%;
+  padding-top: 2vw;
+  position: fixed;
+  top: 0;
+  width: 90%; }
+  .header__logo a {
+    font-size: 1.25em;
+    text-transform: uppercase;
+    white-space: pre-line; }
+    .header__logo a span {
+      font-size: 1.25rem;
+      letter-spacing: .9em; }
+  .header__btn {
+    text-transform: capitalize; }
+
+.main {
+  margin: 0 auto;
+  width: 80%;
+  border: 1px solid #ff0;
+  height: 90vh;
+  overflow-y: auto; }
+  .main__works {
+    height: 100%;
+    position: relative; }
+    .main__works .hidden {
+      visibility: hidden; }
+    .main__works_contents {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%; }
+      .main__works_contents a {
+        height: 400px;
+        position: relative;
+        width: 100%; }
+        .main__works_contents a figcaption {
+          font-size: 10em;
+          font-weight: 900;
+          mix-blend-mode: difference;
+          left: 0;
+          padding: 5vw 0;
+          top: 0;
+          position: absolute;
+          z-index: 10; }
+        .main__works_contents a img {
+          mix-blend-mode: luminosity;
+          position: absolute;
+          right: 15%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 400px; }
+    .main__works_contents:nth-of-type(2) {
+      top: 100%; }
+    .main__works_contents:nth-of-type(3) {
+      top: 0; }
+  .main__about {
+    display: none; }
+    .main__about.active {
+      display: block; }
+
+.aside {
+  bottom: 1.5vw;
+  right: 5%;
+  position: fixed;
+  text-align: right; }
+  .aside__modal {
+    display: none; }
+    .aside__modal.active {
+      display: block; }
+  .aside__btn {
+    background: url(../img/ic_message.png) no-repeat center;
+    height: 40px;
+    width: 40px; }
+
+footer {
+  margin: 0 auto;
+  width: 80%;
+  bottom: 0;
+  left: 5%;
+  position: fixed; }
+  footer p {
+    font-size: .8rem;
+    padding-bottom: .5rem; }
 
 /*# sourceMappingURL=style.css.map */

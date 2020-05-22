@@ -1,1 +1,135 @@
 @import "_common";
+
+@mixin setWidth {
+  margin: 0 auto;
+  width: 80%;
+}
+
+body {
+  border: 1px solid #f00;
+  height: 100vh;
+  padding: 3vw 0;
+}
+
+.header {
+  border: 1px solid #00f;
+  display: flex;
+  justify-content: space-between;
+  left: 5%;
+  padding-top: 2vw;
+  position: fixed;
+  top: 0;
+  width: 90%;
+  
+  &__logo {
+    a {
+      font-size:1.25em;
+      text-transform: uppercase;
+      white-space: pre-line;
+      span {
+        font-size:1.25rem;
+        letter-spacing: .9em;
+      }
+    }
+  }
+  
+  &__btn {
+    text-transform: capitalize;
+  }
+}
+
+.main {
+  @include setWidth;
+
+  border: 1px solid #ff0;
+  height: 90vh;
+  overflow-y: auto;
+
+  &__works {
+    height: 100%;
+    position: relative;
+    .hidden {
+      visibility: hidden;
+    }
+    &_contents {
+      left: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      a {
+        height: 400px;
+        position: relative;
+        width: 100%;
+        figcaption {
+          font-size: 10em;
+          font-weight: 900;
+          mix-blend-mode: difference;
+          left: 0;
+          padding: 5vw 0;
+          top: 0;
+          position: absolute;
+          z-index: 10;
+        }
+        img {
+          mix-blend-mode: luminosity;
+          position: absolute;
+          right: 15%;
+          top: 50%;
+          transform: translateY(-50%);
+          width: 400px;
+        }
+      }
+      p {
+        code {}
+      }
+    }
+    &_contents:nth-of-type(1) {
+    }
+    &_contents:nth-of-type(2) {
+      top: 100%;
+    }
+    &_contents:nth-of-type(3) {
+      top: 0;
+    }
+  }
+
+  &__about {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+
+}
+
+.aside {
+  bottom: 1.5vw;
+  right: 5%;
+  position: fixed;
+  text-align: right;
+  &__modal {
+    display: none;
+    &.active {
+      display: block;
+    }
+  }
+  &__btn {
+    background: url(../img/ic_message.png) no-repeat center;
+    height: 40px;
+    width: 40px;
+  }
+}
+
+footer {
+  @include setWidth;
+
+  bottom: 0;
+  left: 5%;
+  position: fixed;
+  p {
+    font-size: .8rem;
+    padding-bottom: .5rem;
+  }
+}

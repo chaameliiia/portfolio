@@ -1,162 +1,192 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>CHAEMI LEE</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-  <header>
-    <h1>
+  <header class="header">
+    <h1 class="header__logo">
       <a href="#">chaemi
-        lee</a>
+        <span>lee</span>
+      </a>
     </h1>
-    <a href="#" class="btn">about</a>
+    <button type="button" class="header__btn">about</button>
   </header>
-  <main>
-    <section class="works">
-      <figure>
+  <main class="main">
+    <section class="main__works">
+      <h2 class="hidden">works</h2>
+      <figure class="main__works_contents">
         <a href="#">
-          <img src="img/img_prj1.jpg" alt="">
           <figcaption>what to wear</figcaption>
+          <img src="img/img_prj1.jpg" alt="">
         </a>
-        <span>
+        <p>
           <code>1</code> / <code>3</code>
-        </span>
+        </p>
       </figure>
-      <figure>
+      <figure class="main__works_contents">
         <a href="#">
-          <img src="" alt="">
           <figcaption>project2</figcaption>
-        </a>
-        <span>
-          <code>2</code> / <code>3</code>
-        </span>
-      </figure>
-      <figure>
-        <a href="#">
           <img src="" alt="">
-          <figcaption>project3</figcaption>
         </a>
-        <span>
+        <p>
+          <code>2</code> / <code>3</code>
+        </p>
+      </figure>
+      <figure class="main__works_contents">
+        <a href="#">
+          <figcaption>project3</figcaption>
+          <img src="" alt="">
+        </a>
+        <p>
           <code>3</code> / <code>3</code>
-        </span>
+        </p>
       </figure>
     </section>
-    <section class="about">
-      <h2>about</h2>
-      <article class="personal">
+    <section class="main__about">
+      <h2 class="hidden">about</h2>
+      <article class="main__about_pofile">
         <h3>chaemi lee</h3>
         <span>future
           frontend
           developer</span>
         <img src="img/img_profile.jpg" alt="">
       </article>
-      <article class="contact">
-        <h3>contact</h3>
-        <div class="container">
-          <p class="contact">
-            <span>
-              <a href="#">chaemilee9012@gmail.com</a>
-            </span>
-            <span>
-              <a href="#">shorturl.at/dfkqQ</a>
-            </span>
-            <span>
-              <a href="#">LinkedIn</a>
-            </span>
-          </p>
-          <p class="intro">
+      <div class="main__about_contacts">
+        <article>
+          <h3>contact</h3>
+          <p>chaemilee9012@gmail.com</p>
+          <a href="#">shorturl.at/dfkqQ</a>
+          <a href="#">LinkedIn</a>
+        </article>
+        <article>
+          <h3 class="hidden">introduction</h3>
+          <p>
             소개소개소개
           </p>
-        </div>
-      </article>
-      <article class="education">
+        </article>
+      </div>
+      <article class="main__about_education">
         <h3>education</h3>
         <p>
           <strong>그린컴퓨터아카데미</strong>
           <span>디지털컨버전스(Frontend) 웹퍼블리셔/ 프론트엔드 취업과정</span>
-          <span>2019.12 - 2020.06</span>
+          <date>2019.12 - 2020.06</date>
         </p>
         <p>
           <strong>경북대학교</strong>
           <span>영어영문학 학사 / 신문방송학 학사</span>
-          <span>2009.03 - 2015.08</span>
+          <date>2009.03 - 2015.08</date>
         </p>
       </article>
-      <article class="skills">
+      <article class="main__about_skills">
         <h3>skills</h3>
-        <div class="container">
-          <p>
-            <strong>HTML&CSS</strong>
+        <div>
+          <strong>HTML&CSS</strong>
+          <div clas="main__about_skills_level">
             <span></span>
-            <text>
-              기본적이고 필수적인 태그의 기능과 속성을 정확히 알고 웹표준 및 웹접근성에 맞게 사용할 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <p>
+            기본적이고 필수적인 태그의 기능과 속성을 정확히 알고 웹표준 및 웹접근성에 맞게 사용할 수 있습니다.
           </p>
-          <p>
-            <strong>JavaScript</strong>
+        </div>
+        <div>
+          <strong>JavaScript</strong>
+          <div clas="main__about_skills_level">
             <span></span>
-            <text>
-              탭 메뉴, 슬라이드 배너, 모달 팝업창, 화면 이동 버튼 등 동적 페이지 제작을 위해 필요한 로직을 설계하고 이에 따라 페이지를 구현할 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span></span>
+          <p>
+            탭 메뉴, 슬라이드 배너, 모달 팝업창, 화면 이동 버튼 등 동적 페이지 제작을 위해 필요한 로직을 설계하고 이에 따라 페이지를 구현할 수 있습니다.
           </p>
-          <p>
-            <strong>jQuery</strong>
+        </div>
+        <div>
+          <strong>jQuery</strong>
+          <div clas="main__about_skills_level">
             <span></span>
-            <text>
-              jQuery 라이브러리를 사용하여 동적 화면을 구현할 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span></span>
+          <p>
+            jQuery 라이브러리를 사용하여 동적 화면을 구현할 수 있습니다.
           </p>
-          <p>
-            <strong>Photoshop</strong>
+        </div>
+        <div>
+          <strong>Photoshop</strong>
+          <div clas="main__about_skills_level">
             <span></span>
-            <text>
-              이미지를 규격에 맞게 편집하고, 색을 보정하는 등의 새 이미지 파일을 만들 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span></span>
+          <p>
+            이미지를 규격에 맞게 편집하고, 색을 보정하는 등의 새 이미지 파일을 만들 수 있습니다.
           </p>
-          <p>
-            <strong>Illust</strong>
+        </div>
+        <div>
+          <strong>Illust</strong>
+          <div clas="main__about_skills_level">
             <span></span>
-            <text>
-              패스파인더 및 각종 툴을 이용하여 로고 및 타이포그래피를 제작할 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span></span>
+          <p>
+            패스파인더 및 각종 툴을 이용하여 로고 및 타이포그래피를 제작할 수 있습니다.
           </p>
-          <p>
-            <strong>MS Office</strong>
+        </div>
+        <div clas="main__about_skills_level">
+          <strong>MS Office</strong>
+          <div>
             <span></span>
-            <text>
-              업무를 위해 필요한 서류를 작성하고 편집할 수 있습니다.
-            </text>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+          <span></span>
+          <p>
+            업무를 위해 필요한 서류를 작성하고 편집할 수 있습니다.
           </p>
         </div>
       </article>
-      <article class="persnality">
+      <article class="main__about_personality">
         <canvas></canvas>
       </article>
     </section>
   </main>
-  <aisde>
-    <button>
-      <img src="img/ic_message.png" alt="">
-    </button>
-    <article class="modal-msg">
-      <div class="to">
+  <aisde class="aside">
+    <article class="aside__modal">
+      <div class="aside__modal_to">
         <h3>get in touch</h3>
         <p>
           <strong>to.</strong>
-          <span>
-            <a href="#">chaemilee9012@gmail.com</a>
-          </span>
+          chaemilee9012@gmail.com
         </p>
       </div>
-      <div class="from">
+      <div class="aside__modal_from">
         <form action="#" type="post">
           <p>
-            <label for="name"></label>from</strong>
+            <label for="name">from</label>
             <input type="text" name="name">
           </p>
           <p>
@@ -171,9 +201,10 @@
         </form>
       </div>
     </article>
+    <button type="button" class="aside__btn"></button>
   </aisde>
   <footer>
-    <p>ⓒCopyright 2020</p>
+    <p>ⓒCopyright CHAEMILEE All Rights Reseved 2020</p>
   </footer>
 </body>
 </html>

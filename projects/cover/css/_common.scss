@@ -1,3 +1,50 @@
+// font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;900&display=swap);
+
 * {
   box-sizing: border-box;
+  color: #efc050;
+  font: 16px/1.5 'Kanit', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+button,
+code,
+small,
+span,
+strong {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: #2f3435;
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid #efc050;
+}
+
+textarea {
+  background: #2f3435;
+  border: 1px solid #efc050;
+  font-weight: normal;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
 }
