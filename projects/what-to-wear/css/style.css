@@ -26,7 +26,7 @@ body {
   margin: 0 auto;
   overflow: hidden;
   position: relative;
-  top: 40px;
+  top: 2.5vw;
   width: 1728px;
 }
 
@@ -68,7 +68,7 @@ body {
   letter-spacing: .2em;
   line-height: 1.5em;
   right: 0;
-  position: absolute; 
+  position: absolute;
   bottom: 0;
   white-space: pre;
 }
@@ -136,7 +136,7 @@ header .page-title {
 }
 
 header .page-title.active{
-  transform: translateY(0);  
+  transform: translateY(0);
 }
 
 /* ------------------------------ page1 -------------------------- */
@@ -250,7 +250,7 @@ header .page-title.active{
 .page1 .popup div .text {
   display: none;
   flex-direction: column;
-  justify-content: flex-end;  
+  justify-content: flex-end;
   width: 40%;
 }
 
@@ -271,7 +271,7 @@ header .page-title.active{
   left: 0;
   position: absolute;
   top: -40px;
-  width: 200px; 
+  width: 200px;
 }
 
 .page1 .popup div .text p {
@@ -360,7 +360,7 @@ header .page-title.active{
   position: absolute;
   right: 0;
   top: -40px;
-  width: 200px; 
+  width: 200px;
 }
 
 .page2 .text p {
@@ -563,7 +563,9 @@ header .page-title.active{
   top: 50%;
   transform: translate(-50%, -50%);
   transition: .5s;
-  white-space: pre-line;
+  /* white-space: pre-line; */
+  word-break: keep-all;
+  word-wrap: break-word;
 }
 
 .page2 .popup-gallery .contents .images a figcaption:after {
@@ -1059,7 +1061,7 @@ header .page-title.active{
     letter-spacing: .2em;
     line-height: 1.5em;
     right: 0;
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     white-space: pre;
   }
@@ -1127,7 +1129,7 @@ header .page-title.active{
   }
 
   header .page-title.active{
-    transform: translateY(0);  
+    transform: translateY(0);
   }
 
   /* ------------------------------ page1 -------------------------- */
@@ -1241,7 +1243,7 @@ header .page-title.active{
   .page1 .popup div .text {
     display: none;
     flex-direction: column;
-    justify-content: flex-end;  
+    justify-content: flex-end;
     width: 40%;
   }
 
@@ -1262,7 +1264,7 @@ header .page-title.active{
     left: 0;
     position: absolute;
     top: -40px;
-    width: 200px; 
+    width: 200px;
   }
 
   .page1 .popup div .text p {
@@ -1351,7 +1353,7 @@ header .page-title.active{
     position: absolute;
     right: 0;
     top: -40px;
-    width: 200px; 
+    width: 200px;
   }
 
   .page2 .text p {
@@ -1556,6 +1558,8 @@ header .page-title.active{
     transform: translate(-50%, -50%);
     transition: .5s;
     white-space: pre-line;
+    word-break: keep-all;
+    word-wrap: break-word;
   }
 
   .page2 .popup-gallery .contents .images a figcaption:after {
@@ -2041,7 +2045,7 @@ header .page-title.active{
     letter-spacing: .2em;
     line-height: 1.5em;
     right: 0;
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     white-space: pre;
   }
@@ -2109,7 +2113,7 @@ header .page-title.active{
   }
 
   header .page-title.active{
-    transform: translateY(0);  
+    transform: translateY(0);
   }
 
   /* ------------------------------ page1 -------------------------- */
@@ -2224,7 +2228,7 @@ header .page-title.active{
   .page1 .popup div .text {
     display: none;
     flex-direction: column;
-    justify-content: flex-end;  
+    justify-content: flex-end;
     width: 40%;
   }
 
@@ -2245,7 +2249,7 @@ header .page-title.active{
     left: 0;
     position: absolute;
     top: -30px;
-    width: 150px; 
+    width: 150px;
   }
 
   .page1 .popup div .text p {
@@ -2336,7 +2340,7 @@ header .page-title.active{
     position: absolute;
     right: 0;
     top: -40px;
-    width: 200px; 
+    width: 200px;
   }
 
   .page2 .text p {
@@ -3045,7 +3049,7 @@ header .page-title.active{
     letter-spacing: .2em;
     line-height: 1.5em;
     right: 0;
-    position: absolute; 
+    position: absolute;
     bottom: 0;
     white-space: pre;
   }
@@ -3113,7 +3117,7 @@ header .page-title.active{
   }
 
   header .page-title.active{
-    transform: translateY(0);  
+    transform: translateY(0);
   }
 
   /* ------------------------------ page1 -------------------------- */
@@ -3266,7 +3270,7 @@ header .page-title.active{
     display: none;
     flex-direction: column;
     height: 60%;
-    justify-content: flex-end;  
+    justify-content: flex-end;
     width: 100%;
   }
 
@@ -3289,7 +3293,7 @@ header .page-title.active{
     left: 0;
     position: absolute;
     top: -30px;
-    width: 150px; 
+    width: 150px;
   }
 
   .page1 .popup div .text p {
@@ -3391,7 +3395,7 @@ header .page-title.active{
     left: 50%;
     position: absolute;
     transform: translateX(-50%);
-    width: 150px; 
+    width: 150px;
   }
 
   .page2 .text p {
