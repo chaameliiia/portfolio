@@ -1,0 +1,84 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+/* main */
+main{
+    width:80%;
+    text-align:center;
+}
+main .contents{
+    width:100%;
+}
+/* .con_text */
+main .con_text{
+    display: flex; flex-direction: column;
+    align-items: center;
+}
+main .con_text dl{
+    padding: 50px 0 80px 0
+}
+main .con_text dl dt{
+    font-size:2em; font-weight: 600;
+    margin-bottom:35px;
+}
+main .con_text dl dd{
+    font-size: 1.25em;
+    line-height: 1.5em;
+    white-space: pre-line;
+}
+main .council {
+    display:flex;
+    justify-content:center;
+    width: 50%;
+    border:1px dotted #ccc;
+}
+main .council ul{
+    text-align:left;
+    line-height:35px;
+    margin:35px 50px 35px 35px;
+    position:relative;
+}
+main .council ul:after{
+    content:'';
+    background:#ccc;
+    width:1px;
+    height:250px;
+    display:inline-block;
+    position:absolute;
+    right:-35px;;
+    top:0;
+}
+main .council ul li{
+    font-size:15px;
+    font-weight:500;
+    display:block;
+}
+main .council ul li:nth-of-type(1){
+    font-size:30px;
+    font-weight:600;
+}
+main .council ul li:nth-of-type(2){
+    font-size:20px;
+    margin:35px 0;
+    font-weight:600;
+}
+main .council ul li:nth-of-type(3){
+    font-size:12px;
+}
+main .council ul li:nth-of-type(4){}
+main .council ul li:nth-of-type(5){}
+main .council figure{
+    text-align:center;
+    padding:35px 80px 35px 80px;
+}
+main .council figure img{
+    width:145px;
+    height:145px;
+    margin-bottom:35px;
+}
+main .con_text figure figcaption{}
+main .con_text figcaption p{}
+main .con_text figcaption p:nth-of-type(1){}
+main .con_text figcaption p:nth-of-type(2){}

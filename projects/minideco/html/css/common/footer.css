@@ -1,0 +1,50 @@
+/* ---------------------- 푸터 ----------------------------------------------------------------- */
+footer{
+    width: 100%; padding-top: 8vw;
+    text-align: center
+}
+footer .foot_nav{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+footer .foot_nav li{
+    width: 15%;
+    position: relative
+}
+footer .foot_nav li:after{
+    content: '';
+    width: 1px; height: 1rem;
+    background: #ccc;
+    position: absolute; right: 0; top: 50%;
+    transform: translateY(-50%)
+}
+footer .foot_nav li:last-of-type:after{
+    display: none
+}
+footer .foot_nav li a{
+    width: 95%;
+    padding: 15px
+}
+footer p{
+    width: 100%;
+    padding: 3vw 0;
+    font-size: .9rem;
+    white-space: pre-line; line-height: 1.5em
+}
+/* ---------------------- ps ------------------------------------------------------------------ */
+footer .postscript{
+    width: 100%;
+    margin-bottom: 3vw
+}
+footer .postscript li{
+    margin: 0 2vw;
+    display: inline-flex; align-items: center
+}
+footer .postscript li a{}
+footer .postscript li img{
+    height: 30px
+}
+footer .postscript li span{
+    padding-left: 15px
+}

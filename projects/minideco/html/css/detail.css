@@ -1,0 +1,144 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+/*section*/
+section{
+    width: 100%;
+    overflow: hidden;
+    margin-top: 35px;}
+section figure{float: left;}
+section figure img{
+    margin-right: 70px;
+    width: 500px; height: 500px;
+    border: 1px solid #ccc;
+}
+section .number{width: 10px;}
+
+section .listname{
+    width: 100%
+}
+
+section .listname span input{width: 50px;}
+
+section .listname strong{
+    margin-bottom: 25px;
+    font-size: 25px;}
+
+section .listname p:nth-of-type(1){margin-bottom: 25px;}
+
+section .listname p:nth-of-type(5){margin-top: 25px;}
+
+section .listname p{margin-bottom: 25px;}
+
+section .button a{margin-top: 100px;
+border: 1px solid #ccc;
+padding:20px 80px
+}
+
+section .button a:nth-of-type(1){
+    background: rgba(242, 154, 130, 0.7);
+}
+
+section .button a:nth-of-type(2){
+    margin: 0 23px;
+}
+
+section select option:nth-of-type(5){
+    color: pink;
+}
+
+.section2{
+    width: 100%;
+    margin-top: 75px;
+    margin-bottom: 250px;
+}
+.section2 .button2{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    vertical-align: middle;
+    width:100%;
+    padding:20px 0;}
+
+/*탭메뉴 css 구현하기*/
+ul{
+    width: 100%;
+    list-style:none;}
+
+.tabmenu{
+    width: 100%;
+    margin: 0 auto; 
+    position: relative;
+}
+.tabmenu ul{
+    width:100%;
+    display: flex; justify-content: center;
+}
+.tabmenu ul li{
+  display: inline-block;
+  width:33%;
+  text-align:center; 
+  background :white;
+  border: 1px solid #ccc
+}
+.tabmenu ul li:nth-of-type(1){
+    border-left: none;
+    border-right: none
+}
+.tabmenu ul li:nth-of-type(3){
+    border-left: none;
+    border-right: none
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:40px;
+  line-height:40px;
+  color: 333;
+}
+.tabmenu input{display:none;}
+.tabCon{
+  display:none; 
+  text-align:left; 
+  padding: 20px;
+  position:absolute; 
+  left:0; top:40px; 
+  box-sizing: border-box; 
+}
+.tabmenu input:checked ~ label{
+  background:rgba(150, 213, 193, 0.7)
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+/*---------------------------------------*/
+.tabmenu ul li .pre1,.pre2,.pre3{
+    margin-top: 50px;
+    text-align: center;
+    white-space: pre-line;
+}
+
+.tabmenu ul li .pre1{
+    margin-left: 30vw;
+}
+.tabmenu ul li .pre2{
+    margin-left: 23vw;
+}
+
+.tabmenu ul li .pre3{
+    margin-left: 24vw;
+}
+/*
+@media screen and (max-width: 767px){
+    body {background: red;}
+}
+@media screen and (min-width: 768px) and (max-width:959px){
+    body {background: green;}
+}
+
+@media screen and (min-width: 960px){
+    body {background: white;}
+}
+*/

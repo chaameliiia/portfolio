@@ -1,0 +1,150 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+/* ---------------------- 상품 목록 --------------------------------------------------------- */
+main .product_list{
+    width: 100%; margin-bottom: 35px;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid #f29a82;
+    border-bottom: 2px solid #f29a82
+}
+main .product_list caption{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left;
+    padding: 15px 0 15px 0
+}
+main .product_list thead{
+    border-bottom: 1px solid #ccc
+}
+main .product_list thead tr{}
+main .product_list thead tr th{
+    font-size: 1.25em; font-weight: 600; color: #666;
+    padding: 15px 0;
+    
+}
+main .product_list thead tr th:nth-of-type(1){
+    width: 3%
+}
+main .product_list thead tr th:nth-of-type(2){
+    width: 10%
+}
+main .product_list thead tr th:nth-of-type(4){
+    width: 10%
+}
+main .product_list thead tr th:nth-of-type(5){
+    width: 10%
+}
+main .product_list thead tr th:nth-of-type(6){
+    width: 10%
+}
+main .product_list thead tr th:nth-of-type(7){
+    width: 10%
+}
+main .product_list thead tr th:nth-of-type(8){
+    width: 10%
+}
+main .product_list tbody{}
+main .product_list tbody tr{
+    border-bottom: 1px dotted #ccc
+}
+main .product_list tbody tr:last-of-type{
+    border-bottom: none
+}
+main .product_list tbody tr td{
+    padding: 10px
+}
+main .product_list tbody tr td input{}
+main .product_list tbody tr td img{
+    width: 100px
+}
+/* ---------------------- 주문 금액 --------------------------------------------------------- */
+main .price{
+    width: 100%; margin-bottom: 35px;
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #96d5c1
+}
+main .price tbody{}
+main .price tbody tr{}
+main .price tbody tr th{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left; vertical-align: top;
+    padding: 15px
+}
+main .price tbody tr td{
+    padding: 15px 0; width: 15%;
+    font-size: 1.25rem
+}
+main .price tbody tr:nth-of-type(1){}
+main .price tbody tr:nth-of-type(2){
+    border-top: 1px dotted #ccc
+}
+main .price tbody tr:nth-of-type(3){
+    border-top: 1px solid #ccc
+}
+main .price tbody tr td:nth-of-type(2){
+    font-weight: 600
+}
+main .price tbody tr:nth-of-type(3) td:nth-of-type(1){
+    padding-right: 30px;
+    text-align: right;
+}
+main .price tbody tr:nth-of-type(3) td:nth-of-type(2){
+    color: #f29a82; font-size: 1.5rem
+
+}
+/* ---------------------- 버튼 --------------------------------------------------------- */
+main .button{
+    /* border: 1px solid #090; */
+    width: 100%; margin-bottom: 45px;
+    display: flex;
+    justify-content: space-between; align-items: center
+}
+main .button .bttn_manage{}
+main .button .bttn_manage li{}
+main .button .bttn_manage li a{
+    border: 1px solid #ccc;
+    padding: 5px 5px;
+    margin-right: 5px
+}
+
+main .button .bttn_order{}
+main .button .bttn_order li{
+    margin-left: 5px;
+    position: relative
+}
+main .button .bttn_order li a{
+    font-size: 1.2rem; font-weight: 600;
+    padding: 15px 60px
+}
+main .button .bttn_order li a:after{
+    content:'';
+    width: 95%; height: 85%;
+    border: 1px solid #fff;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%)
+}
+main .button .bttn_order li:nth-of-type(1) a{
+    background: rgba(242, 154, 130, 0.6)
+}
+main .button .bttn_order li:nth-of-type(2) a{
+    background: rgba(150, 213, 193, 0.6)
+}
+/* ---------------------- 이용 안내 --------------------------------------------------------- */
+main .notice{
+    width: 100%;
+    text-align: justify;
+    word-break: keep-all;
+    word-wrap: break-word
+}
+main .notice h2{
+    font-size: 1.25em; font-weight: 600;
+    padding-bottom: 15px
+}
+main .notice p{
+    font-size: .9em;
+    line-height: 2em; white-space: pre-line
+}

@@ -1,0 +1,322 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+/* ---------------------- 주문 목록 --------------------------------------------------------- */
+.prod_list{
+    width: 100%;
+    margin-bottom: 2vw;
+}
+.prod_list h3{}
+.prod_list table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid #f29a82;
+    border-bottom: 2px solid #f29a82
+}
+.prod_list table thead{
+    border-bottom: 1px solid #ccc
+}
+.prod_list table thead th{
+    font-size: 1.25em; font-weight: 600; color: #666;
+    padding: 1vw 0
+}
+.prod_list table thead th:nth-of-type(1){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(3){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(4){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(5){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(6){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(7){
+    width: 10%
+}
+.prod_list table tbody{}
+.prod_list table tbody tr{
+    border-bottom: 1px dotted #ccc
+}
+.prod_list table tbody tr:last-of-type{
+    border-bottom: none
+}
+.prod_list table tbody td img{
+    width: 70px
+}
+/* ---------------------- price --------------------------------------------------------- */
+.price{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.price h3{
+    display: none
+}
+.price table{
+    width: 100%; 
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #96d5c1
+}
+.price table tbody{}
+.price table tbody th{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left; vertical-align: top;
+    padding: 1vw
+}
+.price table tbody tr:nth-of-type(1){}
+.price table tbody tr:nth-of-type(2){
+    border-top: 1px dotted #ccc
+}
+.price table tbody tr:nth-of-type(3){
+    border-top: 1px solid #ccc
+}
+.price table tbody td{
+    padding: 1vw 0; width: 15%;
+    font-size: 1.25rem
+}
+.price table tbody td:nth-of-type(2){
+    font-weight: 600
+}
+.price table tbody tr:nth-of-type(3) td:nth-of-type(1){
+    padding-right: 4vw;
+    text-align: right
+}
+.price table tbody tr:nth-of-type(3) td:nth-of-type(2){
+    color: #f29a82; font-size: 1.5rem
+}
+/* ---------------------- 주문 고객 정보 --------------------------------------------------------- */
+.info_custmr{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.info_custmr h3{}
+.info_custmr form{
+    width: 100%
+}
+.info_custmr form table{
+    width: 100%;
+    border-top: 2px solid #f29a82;
+    border-collapse: collapse
+}
+.info_custmr form table tbody{
+    width: 100%
+}
+.info_custmr form table tbody tr{}
+.info_custmr form table tbody th{
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    padding: 0 2vh;
+    font-size: 1.1rem
+}
+.info_custmr form table tbody td{
+    padding: 1vh;
+    font-size: 1.1rem;
+}
+.info_custmr form table tbody .border_bt{
+    border-bottom: 1px solid #ccc
+}
+.info_custmr form table tbody td input{
+    padding: 5px;
+    border: 1px solid #ccc; outline-style: none;
+    font-size: 1.1rem
+}
+.info_custmr form table tbody tr:nth-of-type(4) td input{
+    width: 100%
+}
+.info_custmr form table tbody td select{
+    font-size: 1.1rem
+}
+.info_custmr form table tbody td select option{}
+/* ---------------------- 배송지 정보 --------------------------------------------------------- */
+.delivery{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.delivery header{
+    padding-bottom: 1vw
+}
+.delivery header h3{}
+.delivery header input{}
+.delivery form{
+    width: 100%
+}
+.delivery form table{
+    width: 100%;
+    border-top: 2px solid #96d5c1;
+    border-collapse: collapse
+}
+.delivery form table tbody{
+    width: 100%
+}
+.delivery form table tbody tr{}
+.delivery form table tbody th{
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    padding: 0 2vh;
+    font-size: 1.1rem
+}
+.delivery form table tbody td{
+    padding: 2vh;
+    font-size: 1.1rem
+}
+.delivery form table tbody .border_bt{
+    border-bottom: 1px solid #ccc
+}
+.delivery form table tbody td input{
+    padding: 5px;
+    border: 1px solid #ccc; outline-style: none;
+    font-size: 1.1rem
+}
+.delivery form table tbody tr:nth-of-type(3) input{
+    width: 95%
+}
+.delivery form table tbody td select{
+    font-size: 1.1rem;
+    padding: 5px
+}
+/* ---------------------- container ----------------------------------------------------------------- */
+.container{
+    width: 100%;
+    display: flex; justify-content: space-between
+}
+.container h3{}
+.container table{
+    width: 100%;
+    border-top: 2px solid #f29a82;
+    border-collapse: collapse
+}
+.container table tr{}
+.container table tr th{
+    border-bottom: 1px solid #ccc;
+    background: #eee;
+    font-size: 1.25rem; font-weight: 600
+}
+.container table tr td{
+    font-size: 1.25rem;
+    padding: 1vw;
+    text-align: right
+}
+/* ---------------------- discount ----------------------------------------------------------------- */
+.discount{
+    width: 45%
+}
+.discount h3{}
+.discount form{
+    width: 100%
+}
+.discount form table{}
+.discount form table tr{}
+.discount form table tr th{
+    width: 20%
+}
+.discount form table tr td{
+    border-bottom: 1px solid #ccc
+}
+.discount form table tr td:nth-of-type(1){
+    width: 50%;
+    border-right: 1px solid #ccc
+}
+.discount form table tr td:nth-of-type(2){
+    font-size: 1rem
+}
+.discount form table tr:last-of-type td{
+    text-align: center
+}
+.discount form span{
+    width: 100%;
+    padding-top: 1vh;
+    text-align: right
+}
+/* ---------------------- total --------------------------------------------------------------------- */
+.total{
+    width: 45%
+}
+.total h3{}
+.total table{}
+.total table tr{}
+.total table tr th{
+    width: 30%
+}
+.total table tr td{
+    border-bottom: 1px solid #ccc;
+    padding-right: 2vw
+}
+.total table tr:last-of-type td{
+    color: #f29a82;
+    font-size: 1.5rem; font-weight: 600
+}
+.total table tr td code{
+    font-size: 1.25rem
+}
+.total table tr:last-of-type td code{
+    color: #f29a82;
+    font-size: 1.5rem; font-weight: 600
+}
+/* ---------------------- checkout ----------------------------------------------------------------- */
+.checkout{
+    width: 100%
+}
+.checkout h3{
+    width: 100%
+}
+.checkout > div{
+    width: 100%;
+    display: flex; justify-content: space-between
+
+}
+.checkout .left_cont{
+    width: 45%
+}
+.checkout .left_cont ul{
+    width: 100%;
+    border-top: 2px solid #f29a82;
+    border-bottom: 1px dotted #ccc;
+    padding: 2vh 0;
+    display: flex; justify-content: space-evenly
+}
+.checkout .left_cont ul li{
+    border: 1px solid #ccc;
+    border-radius: 10px;
+}
+.checkout .left_cont ul li:nth-of-type(1){
+    border: 2px solid #96d5c1;
+}
+.checkout .left_cont ul li a{
+    padding: 1vw 2vw
+}
+.checkout .left_cont ul li:nth-of-type(2) a{
+    padding: 1vw 1vw
+}
+.checkout p{
+    width: 100%;
+    font-size: .9em;
+    white-space: pre-line; line-height: 1.5em;
+    word-break: keep-all;
+    word-wrap: break-word;
+    padding-top: 1vh
+}
+.checkout .btn{
+    width: 45%;
+    display: flex;
+    justify-content: center; align-items: center
+}
+.checkout .btn li a{
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 25px 0; margin-right: 3vw;
+    font-size: 1.5em;
+    text-align: center
+}
+.checkout .btn li:last-of-type a{
+    background: #96d5c1;
+    border: none
+}

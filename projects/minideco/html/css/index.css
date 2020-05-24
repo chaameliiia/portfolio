@@ -1,0 +1,291 @@
+﻿@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+
+/* ---------------------- 비주얼 -------------------------------------------------------------- */
+.visual{
+    width: 100%; height: 680px;
+    position: relative; top: 70px;
+    overflow: hidden
+}
+.visual figure{
+    width: 100%;
+    position: absolute; left: 0; top: 0;
+    animation: carousel 15s linear infinite
+}
+.visual figure:nth-of-type(1){
+    z-index: 40
+}
+.visual figure:nth-of-type(2){
+    z-index: 30;
+    left: 100%
+}
+.visual figure:nth-of-type(3){
+    z-index: 20;
+    left: 200%
+}
+.visual figure:nth-of-type(4){
+    z-index: 10;
+    left: 300%
+}
+.visual figure:nth-of-type(5){
+    left: 400%
+}
+.visual figure img{
+    width: 100%
+}
+/* -------------- figcaption ------------------------------------------------------------------ */
+.visual figure figcaption{
+    font-size: 3em; font-weight: 600;
+    white-space: pre-line; line-height: 1.5em;
+    position: absolute;
+    transform: translateY(-50%)
+}
+.visual figure:nth-of-type(n) figcaption{
+    text-align: right;
+    right: 235px; top: 50%
+}
+.visual figure:nth-of-type(2n) figcaption{
+    text-align: left;
+    left: 235px; top: 50%
+}
+.visual figcaption span{
+    font-size: 1.6rem; font-weight: normal
+}
+/* ------------ indicator ---------------------------------------------------------------------- */
+.visual div{
+    position: absolute; 
+    z-index: 50; left: 50%; bottom: 20px;
+    transform: translateX(-50%);
+    text-align: center
+}
+.visual div a{
+    margin-right: 10px; padding: 0 10px
+}
+.visual div a:nth-of-type(1){
+    animation: turn_page 3s linear forwards
+}
+.visual div a:nth-of-type(2){
+    animation: turn_page 4s 3s linear forwards
+}
+.visual div a:nth-of-type(3){
+    animation: turn_page 4s 7s linear forwards
+}
+.visual div a:nth-of-type(4){
+    animation: turn_page 4s 11s linear forwards;
+    margin-right: 0
+}
+/* ---------------------- 베스트 ---------------------------------------------------------------- */
+section{
+    width: 1920px; padding-top: 150px
+}
+section .best{
+    width: 1450px; margin: 0 auto;
+    position: relative;
+    text-align: center
+}
+section .best h2:before{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; left: -240px; top: 15px
+}
+section .best h2{}
+section .best h2 a{
+    font-size: 2.08em; font-weight: 600;
+    padding: 0 40px; margin-bottom: 85px
+}
+section .best h2:after{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; right: -240px; top: 15px
+}
+section .best .container{
+    display: flex; flex-wrap: wrap
+}
+section .best .container figure{
+    width: 340px; margin: 0 30px 35px 0;
+    position: relative
+}
+section .best .container figure:nth-of-type(4n){
+    margin-right: 0
+}
+section .best .container figure a{
+    width: 100%
+}
+section .best .container figure a img{
+    width: 100%;
+    border: 1px solid #ccc
+}
+section .best .container figure a:hover img{
+    transform: scale(1.1)
+}
+section .best .container figure figcaption{
+    width: 100%;
+    text-align: center; line-height: 2em
+}
+section .best .container figure figcaption a{
+    padding-top: 15px;
+    white-space: pre-line
+}
+section .best .container figure figcaption a strong{}
+section .best > a{
+    font-size: 1.25em; text-decoration: underline;
+    margin-bottom: 35px
+}
+/* ---------------------- 이벤트 ------------------------------------------------------- */
+section .event{
+    width: 1920px; height: 260px; background: rgba(150, 213, 193, 0.5);
+    margin-bottom: 150px;
+    display: flex; justify-content: center;
+    position: relative
+}
+section .event h2{
+    font-size: 2.08em; font-weight: 600;
+    position: absolute; top: 30%
+}
+section .event p{
+    font-size: 1.25rem;
+    position: absolute; top: 50%
+}
+section .event a{
+    text-decoration: underline;
+    position: absolute; top: 70%
+}
+section .event img{
+    width: 220px;
+    position: absolute; right: 235px; bottom: 0
+}
+/* ---------------------- 추천 상품 ----------------------------------------------------------- */
+section .recommend{
+    width: 1450px; margin: 0 auto;
+    position: relative;
+    text-align: center
+}
+section .recommend h2:before{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; left: -250px; top: 15px
+}
+section .recommend h2{}
+section .recommend h2:after{
+    content: '';
+    width: 910px; height: 1px; background:#ccc;
+    position: absolute; right: -250px; top: 15px
+}
+section .recommend h2 a{
+    font-size: 2.08em; font-weight: 600;
+    padding: 0 40px; margin-bottom: 85px
+}
+section .recommend .container{
+    width: 1450px; margin: 0 auto;
+    display: flex; flex-wrap: wrap;
+    position: relative
+}
+section .recommend .container figure{
+    width: 340px; height: 340px;
+    margin-right: 30px;
+    position: relative
+}
+section .recommend .container figure:last-of-type{
+    margin-right: 0
+}
+section .recommend .container figure img{
+    width: 100%;
+    border: 1px solid #ccc
+}
+/* ---------------------- hover ---------------------------------------------------------------- */
+section .recommend .container figure figcaption{
+    width: 100%; height: 100%;
+    position: absolute; left: 0; top: 0
+}
+section .recommend .container figure figcaption a{
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    font-size: 2.08em; color:#fff; line-height: 1.5em;
+    white-space: pre-line;
+    display: flex; flex-direction: column; justify-content: center;
+    opacity: 0; transition: .3s
+}
+section .recommend .container figure:hover figcaption a{
+    opacity: 1
+}
+section .recommend .container figure figcaption a span{
+    font-size: 1.25rem; color:#fff
+}
+/* ----------------------- indicator ----------------------------------------------------------- */
+section .recommend .container > a{
+    width: 38px; height: 38px;
+    background: url('../img/ic_arrow.png') no-repeat center;
+    position: absolute; top: 50%;
+    transform: translateY(-50%);
+    opacity: 0; transition: .3s .2s
+}
+section .recommend .container:hover > a{
+    opacity: 60%
+}
+section .recommend .container > a:first-of-type{
+    left: 10px;
+    background-position: 0
+}
+section .recommend .container > a:last-of-type{
+    right: 10px;
+    background-position: -39px
+}
+/* ----------------------- 하단 배너 ------------------------------------------------ */
+section .promo{
+    width: 1450px; margin: 0 auto;
+    padding-top: 100px
+}
+section .promo ul{
+    width: 100%;
+    display: flex; justify-content: space-between;
+}
+section .promo ul li{
+    position: relative
+}
+section .promo ul li a{
+    background: rgba(242, 154, 130, 0.6);
+    font-size: 2em;
+    padding: 60px 90px 60px 150px
+}
+section .promo ul li a:after{
+    content: '';
+    width: 97%; height: 90%;
+    border: 1px solid #fff;
+    position: absolute; left: 50%; top: 50%;
+    transform: translate(-50%, -50%)
+}
+section .promo ul li a img{
+    transform: scale(.8);
+    position: absolute; left: 60px; top: 50%;
+    transform: translateY(-50%)
+}
+/* ---------------------- animation ----------------------------------------------------------- */
+@keyframes carousel {
+    0%, 20%{
+        transform: translateX(0)
+    }
+    25%, 45%{
+        transform: translateX(-100%)
+    }
+    50%, 70%{
+        transform: translateX(-200%)
+    }
+    75%, 95%{
+        transform: translateX(-300%)
+    }
+    100%{
+        transform: translateX(-400%)
+    }
+}
+@keyframes turn_page{
+    0%{
+        transform: scale(1)
+    }
+    10%, 90%{
+        transform: scale(1.5)
+    }
+    100%{
+        transform:scale(1)
+    }
+}

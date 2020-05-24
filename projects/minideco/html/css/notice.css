@@ -1,0 +1,275 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/title.css');
+@import url('common/footer.css');
+
+
+/* main */
+main{
+    widows: 100%;
+    margin:0 auto;
+    text-align:center;
+    padding-top:170px;
+}
+main section{
+    width:100%;
+}
+section header{
+    padding: 50px 0 30px 0;
+    
+}
+section header h3{
+    font-size:2em; font-weight: 600;
+    text-align:center;
+    margin-bottom:35px;
+}
+section header span{
+    font-size: 1.25em;
+    line-height: 1.5em;
+    white-space: pre-line;
+}
+
+section .cont{
+    margin-top:35px;
+    border-bottom:2px solid #ccc;
+    padding-bottom:35px;
+}
+section .cont ul{
+    margin-bottom: 30px
+}
+section .cont ul li{
+    padding:20px 20px
+}
+section .cont ul li:hover{
+    background-color:rgba(242, 154, 130, 0.5);
+    transition:.5s;
+}
+section .cont ul li:hover a{
+    color:#fff;
+    transition:.5s;
+}
+
+/* ---------------------------- table ----------------------- */
+.cont .info{
+    width:100%;
+    border-collapse:collapse; 
+}
+
+.cont .info thead{
+    width:100%;
+    border-bottom:1px solid #ccc;
+    
+    /* background-color:rgba(242, 154, 130, 0.3); */
+}
+.cont .info thead th{
+    font-size:1.5em;
+    padding:2% 0;
+}
+.cont .info tbody{
+    padding:2% 0;
+    height:100vh;
+    
+}
+
+.cont .info tbody tr{
+    padding:2% 0;
+    
+}
+
+.cont .info tbody tr td{
+    font-size:1em;
+    padding:2% 0;
+    border-bottom:1px solid #ccc;
+}
+.cont .info tbody tr>td:nth-of-type(2){
+    text-align:left;
+}
+
+.bottom_nav nav ul{
+    margin-top:35px;
+    display:flex;
+    justify-content:center;
+}
+
+.tab_tit{
+    width:100%;
+    padding:35px 35px;
+    border-bottom:2px solid #333;
+    padding-bottom:35px;
+}
+
+.tab_tit ul{
+    display:flex;
+}
+
+.tab_tit ul li:nth-of-type(1){
+    margin-right:500px;
+}
+.tab_tit ul li:nth-of-type(2){
+    margin-right:500px;
+}
+.tab_tit ul li:nth-of-type(3){
+    margin-right:90px;
+}
+.tab_tit ul li:nth-of-type(4){
+    margin-right:90px;
+}
+.tab_tit ul li:nth-of-type(5){}
+
+.input_line{
+    margin:35px 0;
+}
+.input_line form input{
+    display:block;
+    width:100%;
+    margin-top:35px;
+    border:transparent;
+    border-bottom:1px solid #ccc;
+    padding-bottom:35px;
+    
+}
+
+.bottom_nav nav ul{
+    display:flex;
+    justify-content:center;
+}
+
+/* ------------------ media --------------------- */
+/* ------ media --------- */
+@media(max-width:1024px){
+    header{
+        width:100vw;
+    }
+    .header_left{
+        margin:0 auto;
+    }
+    nav, .header_right{
+        display:none;
+    }
+    .burger_menu{
+        position:absolute;
+        right:10%;
+    }
+    .burger_menu span{
+        display:block;
+    }
+
+/* container */
+   
+/* footer */
+    .footer_tit{
+        padding:0 11% ;}
+
+    .tit_wrap{
+        width:100%;
+    }
+    .sitemap{
+        margin-right:0 !important;
+    }
+    .footer_cont{
+        width:80%;
+        margin:2% 10%;
+    }
+}
+
+@media(max-width:768px){
+    /* header */
+    header{
+        width:100vw;
+    }
+    nav, .header_right{
+        display:none;
+    }
+    .burger_menu{
+        position:absolute;
+        right:10%;
+    }
+    .burger_menu span{
+        display:block;
+    }
+
+   
+    /* footer */
+    .footer_tit{
+        padding:0 11% ;}
+
+    .tit_wrap{
+        width:100%;
+    }
+    .sitemap{
+        margin-right:0 !important;
+    }
+    .footer_cont{
+        width:80%;
+        margin:2% 10%;
+    }
+
+    .foot_con_wrap{
+        display:block;
+    }
+
+    .foot_con_wrap .foot_logo{
+        text-align:center;
+        margin-bottom:3%;
+    }
+    .foot_left, .foot_info{
+        display:block;
+        float:left;
+    }
+    .foot_left{
+        margin-left:5%;
+        margin-bottom:5%;
+    }
+    .foot_center{
+        float:right;
+        display:block;
+        margin-right:5%;
+    }
+    .foot_contacts, .foot_bank{
+        display:block;
+    }
+    .foot_quick{
+        display:none;
+    }
+}
+@media(max-width:480px){
+    /* header */
+    header{
+        width:100vw;
+    }
+    nav, .header_right{
+        display:none;
+    }
+    .burger_menu{
+        position:absolute;
+        right:10%;
+    }
+    .burger_menu span{
+        display:block;
+    }
+
+    /* footer */
+    .footer_tit{
+        padding: 0 5%;
+        background-color:#fff;
+    }
+    .footer_tit .sitemap{
+        display:none;
+    }
+    .tit_wrap ul{
+        margin:0 auto;
+    }
+    .tit_wrap ul li a{
+        font-size:1vw;
+    }
+    .foot_con_wrap{
+        display:flex;
+        justify-content:center;
+    }
+    .foot_logo{
+        margin:0 auto;
+    }
+    .foot_left, .foot_center, .foot_quick{
+        display:none;
+    }
+}

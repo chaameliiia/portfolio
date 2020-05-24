@@ -1,0 +1,215 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/title.css');
+@import url('common/footer.css');
+
+/* ---------------------- 주문 완료 --------------------------------------------------------- */
+.complete{
+    width: 100%;
+    text-align: center;
+    padding: 3vw 0
+}
+.complete h3{
+    font-size: 2rem;
+    text-align: center;
+    padding-bottom: 2vw
+}
+.complete span{
+    padding: 15px 180px;
+    margin-bottom: 2vw;
+    border-top: 2px dotted #96d5c1;
+    border-bottom: 2px dotted #96d5c1;
+    font-size: 1.25rem
+}
+.complete p{
+    white-space: pre-line;
+    line-height: 1.5rem;
+}
+.complete p strong{
+    color: #f29a82
+}
+/* ---------------------- 결제정보 확인 --------------------------------------------------------- */
+.info_check{
+    width: 100%;
+    margin-bottom: 2vw;
+}
+.info_check h3{}
+.info_check table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid #96d5c1
+}
+.info_check table tbody{
+    width: 100%
+}
+.info_check table tbody tr{
+    border-bottom: 1px solid #ccc
+}
+.info_check table tbody th{
+    background: #eee;
+    font-size: 1.1rem
+}
+.info_check table tbody td{
+    padding: 2vh;
+    font-size: 1.1rem;
+    text-align: left
+}
+.info_check table tbody tr:nth-of-type(1) td{
+    width: 40%
+}
+/* ---------------------- 주문 목록 --------------------------------------------------------- */
+.prod_list{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.prod_list h3{}
+.prod_list table{
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+    border-top: 2px solid #f29a82;
+    border-bottom: 2px solid #f29a82
+}
+.prod_list table thead{
+    border-bottom: 1px solid #ccc
+}
+.prod_list table thead th{
+    font-size: 1.25em; font-weight: 600; color: #666;
+    padding: 1vw 0
+}
+.prod_list table thead th:nth-of-type(1){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(3){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(4){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(5){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(6){
+    width: 10%
+}
+.prod_list table thead th:nth-of-type(7){
+    width: 10%
+}
+.prod_list table tbody{}
+.prod_list table tbody tr{
+    border-bottom: 1px dotted #ccc
+}
+.prod_list table tbody tr:last-of-type{
+    border-bottom: none
+}
+.prod_list table tbody td img{
+    width: 70px
+}
+/* ---------------------- price --------------------------------------------------------- */
+.price{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.price h3{
+    display: none
+}
+.price table{
+    width: 100%; 
+    text-align: center;
+    border-collapse: collapse;
+    border: 2px solid #96d5c1
+}
+.price table tbody{}
+.price table tbody th{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left; vertical-align: top;
+    padding: 1vw
+}
+.price table tbody tr:nth-of-type(1){}
+.price table tbody tr:nth-of-type(2){
+    border-top: 1px dotted #ccc
+}
+.price table tbody tr:nth-of-type(3){
+    border-top: 1px solid #ccc
+}
+.price table tbody td{
+    padding: 1vw 0; width: 15%
+}
+.price table tbody tr:nth-of-type(3) td:nth-of-type(1){
+    padding-right: 4vw;
+    text-align: right
+}
+/* ---------------------- 주문 고객 정보 --------------------------------------------------------- */
+.info_custmr{
+    width: 100%;
+    margin-bottom: 2vw
+}
+.info_custmr h3{}
+.info_custmr table{
+    width: 100%;
+    border-top: 2px solid #f29a82;
+    border-collapse: collapse
+}
+.info_custmr table tbody{
+    width: 100%
+}
+.info_custmr table tbody tr{
+    border-bottom: 1px solid #ccc
+}
+.info_custmr table tbody th{
+    width: 10%;
+    padding: 20px 0;
+    background: #eee
+}
+.info_custmr table tbody td{
+    width: 40%;
+    padding: 0 20px
+}
+/* ---------------------- 배송지 정보 --------------------------------------------------------- */
+.delivery{
+    width: 100%;
+    margin-bottom: 4vw
+}
+.delivery h3{}
+.delivery table{
+    width: 100%;
+    border-top: 2px solid #96d5c1;
+    border-collapse: collapse
+}
+.delivery table tbody{
+    width: 100%
+}
+.delivery table tbody tr{
+    border-bottom: 1px solid #ccc
+}
+.delivery table tbody th{
+    width: 10%;
+    padding: 20px 0;
+    background: #eee
+}
+.delivery table tbody td{
+    width: 40%;
+    padding: 0 20px
+}
+/* ---------------------- link_btn ----------------------------------------------------------------- */
+.link_btn{
+    width: 100%;
+    display: flex;
+    justify-content: center; align-items: center
+}
+.link_btn li a{
+    width: 200px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    padding: 20px 0; margin-right: 3vw;
+    font-size: 1.25em;
+    text-align: center
+}
+.link_btn li:nth-of-type(1) a{
+    background: none
+}
+.link_btn li:last-of-type a{
+    background: #f29a82;
+    border: none
+}

@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>장바구니</title>
+    <link rel="stylesheet" href="css/order_lev1.css">
+</head>
+<body>
+    <header>
+        <div class="fixed">
+            <div>
+                <h1>
+                    <a href="index.html"><strong>M</strong>ini <strong>D</strong>eco</a>
+                </h1>
+                <nav>
+                    <ul class="nav_title">
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">신상품</a></li>
+                        <li><a href="product.html">룸박스</a></li>
+                        <li><a href="#">소품</a></li>
+                        <li><a href="#">부자재</a></li>
+                        <li><a href="#">세트상품</a></li>
+                    </ul>
+                    <ul class="nav_list">
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">신상품</a></li>
+                        <li>
+                            <ul>
+                                <li><a href="#">원목</a></li>
+                                <li><a href="#">가공 목재</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">생활 가구</a></li>
+                                <li><a href="#">주방 용품</a></li>
+                                <li><a href="#">사무용 가구</a></li>
+                                <li><a href="#">조명</a></li>
+                                <li><a href="#">벽지</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">원단</a></li>
+                                <li><a href="#">끈</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">세트상품</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ic_menu">
+                <div>
+                    <input name="prdt_search" type="search">
+                    <a href="search.html"><img src="img/ic_search.png" alt=""></a>
+                </div>
+                <a href="mypage.html"><img src="img/ic_account.png" alt=""></a>
+                <a href="customer.html"><img src="img/ic_cs.png" alt=""></a>
+                <a href="order_lev1.html"><img src="img/ic_cart.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+    <main><!-- 장바구니 ------------------------------------------------>
+        <header> <!-- 타이틀 ------------------------------------------------------------->
+            <h2>장바구니</h2>
+            <a href="index.html">홈</a>><a href="#">장바구니</a>
+        </header>
+        <table class="product_list" > <!-- 상품 목록 --------------------------------------------------->
+            <caption>상품 목록</caption>
+            <thead>
+                <tr>
+                    <th>선택</th>
+                    <th>이미지</th>
+                    <th>상품정보</th>
+                    <th>상품옵션</th>
+                    <th>판매가격</th>
+                    <th>수량</th>
+                    <th>주문금액</th>
+                    <th>적립금</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="#" alt=""><img src="img/main/photo_11.jpg" alt=""></td>
+                    <td>DIY 마네킨(나무)</td>
+                    <td>-</td>
+                    <td>7,500원</td>
+                    <td>2</td>
+                    <td>15,000원</td>
+                    <td>450원</td>
+                </tr>
+                <tr>
+                    <td><input type="checkbox"></td>
+                    <td><img src="#" alt=""><img src="img/main/recmm_02.jpg" alt=""></td>
+                    <td>DIY 흔들의자</td>
+                    <td>XL</td>
+                    <td>13,000원</td>
+                    <td>1</td>
+                    <td>13,000원</td>
+                    <td>390원</td>
+                </tr>
+            </tbody>
+        </table>
+        <table class="price"> <!-- 총 주문 금액 ---------------------------------------------------------->
+            <tbody>
+                <tr>
+                    <th rowspan="2">총 주문 금액</th>
+                    <td>상품 합계 금액</td>
+                    <td>28,000원</td>
+                </tr>
+                <tr>
+                    <td>배송비</td>
+                    <td>2,500원</td>
+                </tr>
+                <tr>
+                    <td colspan="2">결제 예정 금액</td>
+                    <td>30,500원</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="button">
+            <ul class="bttn_manage"> <!-- 버튼 -------------------------------------------------------->
+                <li><a href="#">선택상품 위시 담기</a></li>
+                <li><a href="#">선택상품 삭제</a></li>
+                <li><a href="#">장바구니 비우기</a></li>
+            </ul>
+            <ul class="bttn_order">            
+                <li><a href="#">선택상품 주문</a></li>
+                <li><a href="order_lev2.html">전체상품 주문</a></li>
+            </ul>
+        </div>
+        <article class="notice"> <!-- 이용 안내 -------------------------------------------------------->
+            <h2>장바구니 이용 안내</h2>
+            <p>＊무이자할부 상품 주문의 경우, 무이자할부 혜택을 받으시려면 '장바구니 - 무이자할부 상품' 아래의 [주문하기] 버튼을 눌러 주문/결제 하시면 됩니다.
+            ＊[전체 상품 주문] 버튼을 누르시면 장바구니의 구분없이선택된 모든 상품에 대한 주문/결제가 이루어집니다. 단, 전체 상품을 주문/결제하실 경우, 상품별 무이자할부 혜택을 받으실 수 없습니다.
+            ＊선택하신 상품의 수량을 변경하시려면 수량변경 후 [수정] 버튼을 누르시면 됩니다. [쇼핑 계속] 버튼을 누르시면 쇼핑을 계속 하실 수 있습니다.
+            ＊장바구니에 담긴 상품은 3일 동안 보관됩니다. 보관된 상품은 3일 이후에 삭제되오니 장바구니에서 삭제된 경우 다시 장바구니에 담으시기 바랍니다.
+            ＊장바구니와 관심상품을 이용하여 원하시는 상품만 주문하거나 관심상품으로 등록하실 수 있습니다.
+            </p>
+        </article>
+    </main>
+    <footer> <!-- 푸터 ------------------------------------------------------------>
+        <ul class="foot_nav">
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="term.html">이용약관</a></li>
+            <li><a href="personalInfo.html">개인정보취급방침</a></li>
+        </ul>
+        <p>회사명 : 네오팝 / 대표 : 최종오 / 사업자번호 : 130-23-44405
+        소재지 : 경기도 부천시 원미구 옥산로 184번길39(도당동)4층 / 개인정보보호책임자 : 최종오
+        지원실 : 010-6211-2216 / E-mail : jongottan@naver.com
+        Hosting by 심플렉스인터넷(주)</p>
+        <ul class="postscript">
+            <li><img src="img/ic_fairtrade.png" alt="공정거래위원회"></li>
+            <li>
+                <img src="img/ic_lock.png" alt="주민번호+비밀번호 안심쇼핑몰">
+                <span>주민번호+비밀번호 안심쇼핑몰</span>
+            </li>
+            <li>
+                <a href="https://iniweb.inicis.com/popup/common/popup_escrow_notice.jsp?mid=ECAjokm8e9"><img src="img/ic_inipay.png" alt="이니페이안심쇼핑몰"></a>
+                <span>이니페이안심쇼핑몰</span>
+            </li>
+        </ul>
+    </footer>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript" src="js/tawk_api.js"></script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

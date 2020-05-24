@@ -1,0 +1,53 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+
+/*section*/
+section{
+    width: 100%
+}
+section ul{
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between; align-items: center
+}
+section ul li{
+    margin-bottom: 50px;
+}
+section ul li figure figcaption{
+    padding-top: 15px;
+    text-align: center;
+}
+section ul li figure figcaption a{
+    white-space: pre-line;
+    line-height: 1.5em;
+}
+section ul li figure img{width:340px;
+height: 340px;
+border: 1px solid #ccc;}
+
+section ul li figure:hover img{
+    transform: scale(1.1);
+    transition: .3s;
+}
+/*하단*/
+.next {
+    width: 100%;
+    text-align: center;
+    padding-top: 40px
+}
+/*
+--------------------------미디어쿼리
+@media screen and (max-width: 767px){
+    body {background: red;}
+}
+@media screen and (min-width: 768px) and (max-width:959px){
+    body {background: green;}
+}
+
+@media screen and (min-width: 960px){
+    body {background: white;}
+}
+*/
+

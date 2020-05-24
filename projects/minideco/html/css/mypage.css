@@ -1,0 +1,228 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/footer.css');
+@import url('common/title.css');
+
+/* ---------------------- .contents ----------------------------------------------------------------- */
+main .contents{
+    width: 100%; 
+    padding-top: 35px;
+    display: flex
+}
+main .contents .shallow_box{
+    border: 1px solid #ccc;
+    width: 20%;
+    margin-right: 20px;
+    padding: 10px;
+    display: flex; flex-direction: column;
+    justify-content: space-between
+}
+main .contents .broad_box{
+    border: 1px solid #ccc;
+    width: 80%;
+    padding: 10px;
+    position: relative;
+    display: flex; flex-direction: column
+}
+main .contents h3{
+    font-size: 1.5em; font-weight: 600;
+    text-align: left;
+    padding-bottom: 15px
+}
+/* ---------------------- 프로필 ----------------------------------------------------------------- */
+main .contents .profile{
+    border: 1px solid #ccc;
+    width: 100%;
+    padding: 10px 0;
+    margin-bottom: 10px;
+    display: flex; flex-direction: column;
+    justify-content: center; align-items: center
+}
+main .contents .profile h3{
+    width: 100%;
+    text-align: center;
+    white-space: pre-line
+}
+main .contents .profile figure{
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    width: 80%; margin: 0 auto; padding: 10px
+}
+main .contents .profile figure img{
+    width: 100%
+}
+main .contents .profile a{
+    width: 100%;
+    padding-top: 10px;
+    font-size: 0.9rem; text-align: center;
+    position: relative
+}
+main .contents .profile a:hover:after{
+    content: '';
+    width: 15%; height: 1px;
+    background: #333;
+    position: absolute; left: 50%; bottom: 0;
+    transform: translateX(-50%)
+}
+/* ---------------------- 퀵 메뉴 ----------------------------------------------------------------- */
+main .contents .q_menu{
+    border: 1px solid #ccc;
+    width: 100%;
+    text-align: center
+}
+main .contents .q_menu h3{
+    padding: 10px 0;
+    background: rgba(150, 213, 193, 0.7);
+    text-align: center
+}
+main .contents .q_menu ul{
+    display: flex; flex-direction: column
+}
+main .contents .q_menu ul li{}
+main .contents .q_menu ul li a{
+    width: 100%;
+    padding: 10px;
+    background: rgba(150, 213, 193, 0.2);
+    border-top: 1px dotted #ccc;
+    position: relative
+}
+main .contents .q_menu ul li:hover a:after{
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(150, 213, 193, 0.4);
+    position: absolute; left: 50%; top: 50%; z-index: -10;
+    transform: translate(-50%, -50%)
+}
+main .contents .q_menu ul li:first-of-type a{
+    border-top: 1px solid #ccc
+}
+/* ---------------------- 주문 내역 ----------------------------------------------------------------- */
+main .contents .od_history{
+    width: 100%; height: 50%;
+    margin-bottom: 35px
+}
+main .contents .od_history header{
+    all: unset;
+    display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 10px
+}
+main .contents .od_history header h3{
+    padding: 10px 0
+}
+main .contents .od_history header a{}
+main .contents .od_history table{
+    border-collapse: collapse;
+    width: 100%
+}
+main .contents .od_history table thead{}
+main .contents .od_history table thead tr{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+main .contents .od_history table thead tr th{
+    background: rgba(150, 213, 193, 0.5);
+    padding: 10px 0;
+    font-size: 1.2em; font-weight: 600
+}
+main .contents .od_history table thead tr th:nth-of-type(2){
+    border: 1px solid #ccc;
+
+}
+main .contents .od_history table thead tr th:nth-of-type(1){
+    width: 20%
+}
+main .contents .od_history table thead tr th:nth-of-type(3){
+    width: 20%
+}
+main .contents .od_history table tbody{
+    text-align: center;
+}
+main .contents .od_history table tbody tr{
+    border-bottom: 1px solid #ccc
+
+}
+main .contents .od_history table tbody tr td{
+    /* border: 1px solid #ccc; */
+    border-right: 1px solid #ccc;
+    padding: 10px 0
+}
+main .contents .od_history table tbody tr td:nth-of-type(2){
+    width: 15%;
+    padding: 10px
+}
+main .contents .od_history table tbody tr td:last-of-type{
+    border-right: none
+}
+main .contents .od_history table tbody tr:last-of-type td:last-of-type{
+    padding: 0
+}
+main .contents .od_history table tbody tr td:nth-of-type(2){
+    width: 100px
+}
+main .contents .od_history table tbody tr td figure{
+    width: 100%
+}
+main .contents .od_history table tbody tr td figure img{
+    width: 100%
+}
+main .contents .od_history table tbody tr td a{
+    width: 95%; padding: 6px 0;
+    background: rgba(150, 213, 193, 0.3);
+    position: relative
+}
+main .contents .od_history table tbody tr td a:hover:after{
+    content: '';
+    width: 100%; height: 100%;
+    background: rgba(150, 213, 193, 0.5);
+    position: absolute; left: 50%; top: 50%; z-index: -10;
+    transform: translate(-50%, -50%)
+}
+main .contents .od_history table tbody tr td a strong{}
+/* ---------------------- 관심 상품 ----------------------------------------------------------------- */
+main .contents .w_list{
+    width: 100%
+}
+main .contents .w_list header{
+    all: unset;
+    display: flex;
+    justify-content: space-between; align-items: center;
+    margin-bottom: 10px
+}
+main .contents .w_list header h3{
+    padding: 10px 0
+}
+main .contents .w_list header a{}
+main .contents .w_list ul{
+    display: flex;
+    justify-content: space-between
+}
+main .contents .w_list ul li{
+    width: 24%;
+    font-size: 0
+}
+main .contents .w_list ul li a{
+    width: 100%;
+    position: relative
+}
+main .contents .w_list ul li a:nth-of-type(1){
+    font-size: 0;
+    padding-bottom: 10px
+}
+main .contents .w_list ul li a:nth-of-type(2){
+    background: rgba(242, 154, 130, 0.3);
+    padding: 10px 0;
+    text-align: center;
+}
+main .contents .w_list ul li:hover a:nth-of-type(2):after{
+    content: '';
+    font-size: 0;
+    width: 100%; height: 100%;
+    background: rgba(242, 154, 130, 0.5);
+    position: absolute; left: 50%; top: 50%; z-index: -10;
+    transform: translate(-50%, -50%)
+}
+main .contents .w_list ul li a img{
+    border: 1px solid #ccc;
+    width: 100%
+}

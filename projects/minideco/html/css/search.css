@@ -1,0 +1,192 @@
+@import url('common/common.css');
+@import url('common/header.css');
+@import url('common/title.css');
+@import url('common/footer.css');
+
+/* main ------------------------------------------------------------- */
+main{
+    width: 80%; margin: 0 auto;
+    padding-top: 5vw
+}
+main h3{
+    font-size: 1.5rem; font-weight: 600;
+    text-align: left;
+    padding: 1vw 0
+}
+/* .filter ------------------------------------------------------------- */
+.filter{
+    width: 100%;
+    display: flex; flex-direction: column;
+    align-items: center;
+    padding-bottom: 3vw
+}
+.filter h3{
+    padding-top: 4vw;
+    padding-bottom: 2vw;
+    text-align: center
+}
+.filter h3 span{
+    font-size: 1.2em; font-weight: 600
+}
+.filter h3 code{
+    font-size: 1.2em; font-weight: 600
+}
+.filter div{
+    border: 1px dotted #ccc;
+    width: 60%;
+    display: flex;
+    justify-content: space-between; align-items: center
+}
+.filter form{
+    width: 70%
+}
+.filter form table{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin: 2vw 0;
+    padding: 30px 0;
+    border-collapse: collapse;
+}
+.filter form table tbody{
+    width: 100%
+}
+.filter form table tbody tr{}
+.filter form table tbody th{
+    width: 35%;
+    font-size: 1.1rem; font-weight: 600;
+}
+.filter form table tbody td{
+    padding: 10px 5px
+}
+.filter form table tbody td input{
+    border: 1px solid #ccc;
+    width: 100%;
+    font-size: 1.5rem
+}
+.filter a{
+    margin-right: 50px;
+    padding: 15px 60px;
+    background: rgba(242, 154, 130, 0.7);
+    font-size: 1.25rem
+}
+/* .product ------------------------------------------------------------- */
+.product{
+    width: 100%
+}
+.product header{
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 2vw;
+    /* border-top: 1px dotted #ccc; */
+    border-bottom: 1px dotted #ccc
+}
+.product header h3{
+    font-weight: normal;
+    color: #999
+}
+.product header h3 span{
+    font-size: 1.5rem; font-weight: 600
+}
+.product header h3 code{
+    font-size: 1.5rem; font-weight: 600
+}
+.product header .r_container{
+    /* border: 1px solid #f00; */
+    display: flex;
+    align-items: center
+}
+.product header .r_container select{
+    margin-right: 20px;
+    padding: 5px 10px;
+    outline-style: none;
+}
+.product header .r_container select option{
+    padding: 5px 15px
+}
+.product header a{
+    padding: 5px 15px;
+    background: #ccc;
+    color: #333
+}
+.product header .sortby{
+}
+.product header .sortby li{}
+.product header .sortby li a{}
+/* .prd_list ------------------------------------------------------------- */
+.product .prd_list{
+    display: flex; flex-wrap: wrap;
+    justify-content: space-between; align-items: center
+}
+.product .prd_list li{margin-bottom: 70px;
+}
+
+.product .prd_list li figure figcaption p{
+    font-size: 12px;
+    color: black;
+    text-align: center;
+}
+.product .prd_list li figure img{width:340px;
+height: 340px;
+border: 1px solid #ccc;}
+
+.product .prd_list li figure:hover img{
+    transform: scale(1.1);
+    transition: .3s;
+}
+/*하단*/
+.next p{text-align: center;
+color: black;
+    margin-bottom: 30px;
+}
+/* ---------------------- 푸터 ----------------------------------------------------------------- */
+footer{
+    width: 100%; padding-top: 8vw;
+    text-align: center
+}
+footer .foot_nav{
+    width: 100%;
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc
+}
+footer .foot_nav li{
+    width: 15%;
+    position: relative
+}
+footer .foot_nav li:after{
+    content: '';
+    width: 1px; height: 1rem;
+    background: #ccc;
+    position: absolute; right: 0; top: 50%;
+    transform: translateY(-50%)
+}
+footer .foot_nav li:last-of-type:after{
+    display: none
+}
+footer .foot_nav li a{
+    width: 95%;
+    padding: 15px
+}
+footer p{
+    width: 100%;
+    padding: 3vw 0;
+    font-size: .9rem;
+    white-space: pre-line; line-height: 1.5em
+}
+/* ---------------------- ps ------------------------------------------------------------------ */
+footer .postscript{
+    width: 100%;
+    margin-bottom: 3vw
+}
+footer .postscript li{
+    margin: 0 2vw;
+    display: inline-flex; align-items: center
+}
+footer .postscript li a{}
+footer .postscript li img{
+    height: 30px
+}
+footer .postscript li span{
+    padding-left: 15px
+}

@@ -1,0 +1,391 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+
+
+/**css-----------------------------------------------------------------------*/
+
+
+.total{margin:0 235px;}
+
+/*--------------header입니다-------------*/
+
+header {
+    width: 100%;
+    background: #121212;
+    padding: 15px 0;
+    position: fixed;
+    top:0;
+    z-index: 30;
+    }
+
+
+header .allheader {
+    display: flex;
+    background: #121212;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 235px;
+    
+    
+}
+
+header .leftmenu {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+
+}
+
+header .leftmenu h1 {
+    font-size: 30px;
+    color: white;
+    margin-right: 70px;
+
+}
+
+
+header .leftmenu h1 p{text-align: center;
+color: white;
+font-size: 12px}
+header .leftmenu nav {}
+
+header .leftmenu nav ul {
+    display: flex;
+}
+
+header .leftmenu nav ul li {}
+header .leftmenu nav ul li a{}
+header .leftmenu nav ul li div{position: relative;
+}
+header .leftmenu nav ul li div a{display: none;}
+header .leftmenu nav ul li div a{
+    display: none;
+    top:0; left:0;
+    width:100%;
+    margin-top: 15px;
+}
+header .leftmenu nav ul li a:hover{
+    text-decoration: underline;
+}
+header .leftmenu nav ul li:hover div a{
+   display: block;
+    margin-bottom: 10px;
+    
+}
+
+header .leftmenu nav ul li a {
+    margin-right: 50px;
+    color: white;
+}
+
+header .submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .submenu .search {}
+
+header .submenu .search input {
+    outline: inherit;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-bottom: 2px solid white;
+    background: none;
+    color: white;
+    text-align: left;
+    
+}
+header .submenu .search button{
+    background: none;
+    border: none;
+}
+header .submenu .search button img{
+    margin-top: 5px;
+        width:30%;
+    height: 30%;
+}
+
+header .submenu .member {}
+
+header .submenu .member a {}
+
+header .submenu .member a img {
+    width: 20%;
+    height: 20%;
+    margin-left: 40px;
+}
+
+
+/*룸박스*/
+
+/*헤더와 문제가 있을시 마진top 값을 조정해주세요^^*/
+.roombox{
+    border-bottom: 1px solid #ccc;
+    margin-top: 115px;
+}
+.roombox h2{
+    font-size: 2.08em;
+    color: #333;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-weight: lighter;
+}
+
+.roombox p a{color: black;
+margin-bottom: 35px;
+}
+
+
+/*section*/
+section{overflow: hidden;
+margin-top: 35px;}
+section figure{float: left;}
+section figure img{
+    margin-right: 70px;
+    width: 500px; height: 500px;
+    border: 1px solid #ccc;
+}
+section figure sss
+
+section .number{width: 10px;}
+
+section .listname{}
+
+section .listname span input{width: 50px;}
+
+section .listname strong{margin-bottom: 25px;
+font-size: 25px;
+color: black;}
+
+section .listname p:nth-of-type(1){margin-bottom: 25px;}
+
+section .listname p:nth-of-type(5){margin-top: 25px;}
+
+section .listname p{margin-bottom: 25px;}
+
+section .button a{margin-top: 100px;
+border: 1px solid #ccc;
+padding:20px 80px;
+color: black;
+}
+
+section .button a:nth-of-type(1){
+    color: white;
+    background: #313135;
+}
+
+section .button a:nth-of-type(2){
+
+    margin: 0 23px;
+}
+
+section select option:nth-of-type(5){
+    color: pink;
+}
+
+.section2{margin-top: 75px;
+ margin-bottom: 300px;
+}
+
+.section2 .button2{display: flex;
+justify-content: space-between;
+align-items: center;
+    vertical-align: middle;
+width:100%;
+padding:20px 0;}
+
+
+/*
+.section2 a{
+    border:1px solid white;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    width: 490px;
+    height: 50px;
+    padding-top: 12px;
+    background: #f29a82;
+          
+}
+*/
+/*.section2 a:nth-of-type(1){color: white;}*/
+
+/*
+.section2 a:hover{
+    text-decoration: underline;
+}
+*/
+
+/*탭메뉴 css 구현하기*/
+ul{list-style:none;}
+
+.tabmenu{ 
+  margin: 0 auto; 
+  position:relative; 
+border-bottom: 1px solid black;
+    padding-bottom: 30px;
+}
+
+.tabmenu ul{
+    margin: 0 100px;
+width:100%;
+}
+.tabmenu ul li{
+  display:  inline-block;
+  width:400px; 
+  float:left;  
+  text-align:center; 
+  background :white;
+    border: 1px solid black;
+/*
+    
+        border:1px solid white;
+    font-size: 18px;
+    text-align: center;
+    color: black;
+    width: 490px;
+    height: 50px;
+    padding-top: 12px;
+    background: #f29a82;
+*/
+}
+.tabmenu label{
+  display:block;
+  width:100%; 
+  height:40px;
+  line-height:40px;
+    color: black;
+}
+.tabmenu input{display:none;}
+.tabCon{
+  display:none; 
+  text-align:left; 
+  padding: 20px;
+  position:absolute; 
+  left:0; top:40px; 
+  box-sizing: border-box; 
+}
+.tabmenu input:checked ~ label{
+  background:#313135;
+    color: white;
+}
+.tabmenu input:checked ~ .tabCon{
+  display:block;
+}
+/*---------------------------------------*/
+
+
+.tabmenu ul li .pre1,.pre2,.pre3{
+        margin-top: 50px;
+text-align: center;
+}
+
+.tabmenu ul li .pre1{
+    margin-left: 30vw;
+}
+.tabmenu ul li .pre2{
+    margin-left: 23vw;
+}
+
+.tabmenu ul li .pre3{
+    margin-left: 24vw;
+
+}
+
+/*하단*/
+
+.next{margin-top: 70px;}
+.next p{text-align: center;
+color: black;
+}
+
+/*
+ 1:1 채팅 
+.feedback{
+    width: 50px; height: 50px;
+    background: #fff url('../img/sub_detail/kk.png') no-repeat center;
+    background-size: 100%;
+    border: 2px solid #333;
+    position: fixed; z-index: 100;
+    right: 100px; bottom: 60px
+}
+.feedback img{
+    width: 100%;
+
+}
+*/
+
+/* -------------------------------------------footer */
+footer{
+    width:1920px; 
+    margin:0 auto;
+    text-align:center;
+    background:#414141;
+   
+    
+}
+
+/* .footer_menu */
+footer .footer_menu{
+    width:100%;
+    background:#ccc;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    
+}
+
+footer .footer_menu li{}
+footer .footer_menu li a{
+    padding: 10px 0; margin: 0 30px;
+        color: black;
+}
+
+/* .footer_text */
+footer .footer_text{
+    margin:35px 0;
+    white-space: pre-line;
+    color: white;
+}
+
+/* .link_icon */
+footer .link_icon{
+    width: 100%;
+    margin-bottom: 35px
+}
+footer .link_icon{}
+footer .link_icon li{
+    margin: 0 30px;
+    display: inline-flex; align-items: center
+}
+footer .link_icon li a{
+    color: white;
+}
+footer .link_icon li img{
+    height: 30px
+}
+footer .link_icon li span{
+    padding-left: 5px;
+        color:white;
+}
+/*-----------------반응형*/
+
+
+
+/*
+
+
+@media screen and (max-width: 767px){
+    body {background: red;}
+}
+@media screen and (min-width: 768px) and (max-width:959px){
+    body {background: green;}
+}
+
+@media screen and (min-width: 960px){
+    body {background: white;}
+}
+*/

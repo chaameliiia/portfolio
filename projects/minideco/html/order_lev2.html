@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <title>장바구니 > 주문결제</title>
+    <link rel="stylesheet" href="css/order_lev2.css">
+</head>
+<body>
+    <header>
+        <div class="fixed">
+            <div>
+                <h1>
+                    <a href="index.html"><strong>M</strong>ini <strong>D</strong>eco</a>
+                </h1>
+                <nav>
+                    <ul class="nav_title">
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">신상품</a></li>
+                        <li><a href="product.html">룸박스</a></li>
+                        <li><a href="#">소품</a></li>
+                        <li><a href="#">부자재</a></li>
+                        <li><a href="#">세트상품</a></li>
+                    </ul>
+                    <ul class="nav_list">
+                        <li><a href="#">베스트</a></li>
+                        <li><a href="#">신상품</a></li>
+                        <li>
+                            <ul>
+                                <li><a href="#">원목</a></li>
+                                <li><a href="#">가공 목재</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">생활 가구</a></li>
+                                <li><a href="#">주방 용품</a></li>
+                                <li><a href="#">사무용 가구</a></li>
+                                <li><a href="#">조명</a></li>
+                                <li><a href="#">벽지</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <ul>
+                                <li><a href="#">원단</a></li>
+                                <li><a href="#">끈</a></li>
+                                <li><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#">세트상품</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="ic_menu">
+                <div>
+                    <input name="prdt_search" type="search">
+                    <a href="search.html"><img src="img/ic_search.png" alt=""></a>
+                </div>
+                <a href="mypage.html"><img src="img/ic_account.png" alt=""></a>
+                <a href="customer.html"><img src="img/ic_cs.png" alt=""></a>
+                <a href="order_lev1.html"><img src="img/ic_cart.png" alt=""></a>
+            </div>
+        </div>
+    </header>
+    <main> <!-- 장바구니 ------------------------------------------------------------->
+        <header>
+            <h2>장바구니</h2>
+            <a href="index.html">홈</a>><a href="order_lev1.html">장바구니</a>><a href="#">주문결제</a>
+        </header>
+        <article class="prod_list"> <!-- 주문 목록 --------------------------------------------------->
+            <h3>주문 목록 확인</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>이미지</th>
+                        <th>상품정보</th>
+                        <th>상품옵션</th>
+                        <th>판매가격</th>
+                        <th>수량</th>
+                        <th>주문금액</th>
+                        <th>적립금</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><img src="#" alt=""><img src="img/main/photo_11.jpg" alt=""></td>
+                        <td>DIY 마네킨(나무)</td>
+                        <td>-</td>
+                        <td>7,500원</td>
+                        <td>2</td>
+                        <td>15,000원</td>
+                        <td>450원</td>
+                    </tr>
+                    <tr>
+                        <td><img src="#" alt=""><img src="img/main/recmm_02.jpg" alt=""></td>
+                        <td>DIY 흔들의자</td>
+                        <td>XL</td>
+                        <td>13,000원</td>
+                        <td>1</td>
+                        <td>13,000원</td>
+                        <td>390원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </article> <!-- 주문 목록 끝 --------------------------------------------------->
+        <section class="price"> <!-- 총 주문 금액 ---------------------------------------------------------->
+            <h3>총 주문 금액</h3>
+            <table> 
+                <tbody>
+                    <tr>
+                        <th rowspan="2">총 주문 금액</th>
+                        <td>상품 합계 금액</td>
+                        <td>28,000원</td>
+                    </tr>
+                    <tr>
+                        <td>배송비</td>
+                        <td>2,500원</td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">결제 예정 금액</td>
+                        <td>30,500원</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section> <!-- 총 주문 금액 끝 ---------------------------------------------------------->
+        <section class="info_custmr"> <!-- 주문고객 정보 ---------------------------------------------------------->
+            <h3>주문고객 정보</h3>
+            <form action="#">
+                <table>
+                    <tbody>
+                        <tr>
+                            <th rowspan="2">보내시는 분</th>
+                            <td rowspan="2" colspan="3" class="border_bt">
+                                <input type="text" id="name" placeholder="이원더" required>
+                            </td>
+                            <th rowspan="2">이메일</th>
+                            <td colspan="3">
+                                <input type="text" placeholder="wonderwoman" required>
+                                @
+                                <select name="domain" id="domain">
+                                    <option value="">naver.com</option>
+                                    <option value="">gmail.com</option>
+                                    <option value="">daum.net</option>
+                                    <option value="">hanmail.net</option>
+                                    <option value="">nate.com</option>
+                                    <option value="">직접 입력</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="border_bt">※ 주문 정보를 이메일로 보내드립니다.</td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">주소</th>
+                            <td colspan="3">
+                                <input type="text" value="우편번호" readonly>
+                                <input type="button" value="우편번호찾기" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="border_bt">
+                                <input type="text" placeholder="주소" readonly>
+                            </td>
+                            <td colspan="3" class="border_bt">
+                                <input type="text" placeholder="상세 주소">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">휴대전화</th>
+                            <td colspan="3">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
+                            <th rowspan="2">전화번호</th>
+                            <td rowspan="2" colspan="3" class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="border_bt">※ 주문 정보를 sms로 보내드립니다.</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </section> <!-- 주문고객 정보 끝 ---------------------------------------------------------->
+        <section class="delivery"> <!-- 배송지 정보 ---------------------------------------------------------->
+            <header>
+                <h3>배송지 정보</h3>
+                <input type="radio" id="custmr_address" name="address" checked>
+                <label for="custmr_address">주문고객 정보와 동일</label>
+                <input type="radio" id="recent_address" name="address">
+                <label for="recent_address">최근 배송지</label>
+                <input type="radio" id="new_address" name="address">
+                <label for="new_address">새로운 주소</label>
+            </header>
+            <form action="#">
+                <table> 
+                    <tbody>
+                        <tr>
+                            <th>받으시는 분</th>
+                            <td colspan="3" class="border_bt"><input type="text" placeholder="이원더" required></td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">주소</th>
+                            <td>
+                                <input type="text" value="우편번호" readonly>
+                                <input type="button" value="우편번호찾기" required>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="border_bt"><input type="text" value="주소"" readonly></td>
+                            <td colspan="2" class="border_bt"><input type="text" value="상세 주소"></td>
+                        </tr>
+                        <tr>
+                            <th>휴대전화</th>
+                            <td class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
+                            <th>전화번호</th>
+                            <td class="border_bt">
+                                <input type="text" maxlength="4" size="10" placeholder="010">-<input type="text" maxlength="4" size="10" placeholder="1234">-<input type="text" maxlength="4" size="10" placeholder="5678">
+                            </td>
+                        </tr>
+                        <tr>
+                            <th rowspan="2">배송 요청사항</th>
+                            <td colspan="3">
+                                <select name="request" id="request">
+                                    <option value="">배송 요청사항 없음</option>
+                                    <option value="">배송 전 연락바랍니다.</option>
+                                    <option value="">부재 시 휴대폰으로 연락바랍니다.</option>
+                                    <option value="">직접 입력</option>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="3" class="border_bt"><input type="text" size="30"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </form>
+        </section> <!-- 배송지 정보 끝 ---------------------------------------------------------->
+        <div class="container">
+            <section class="discount"> <!-- 할인 정보 -------------------------------------------------------->
+                <h3>할인 정보</h3>
+                <form action="">
+                    <table>
+                        <tr>
+                            <th rowspan="2">적립금</th>
+                            <td>
+                                <input type="text">원
+                            </td>
+                            <td>▶ 보유 적립금: 120원</td>
+                        </tr>
+                    </table>
+                    <span>*상품 금액 30,000원 이상 구매 시 사용 가능</span>
+                </form>
+            </section> <!-- 할인 정보 끝 -------------------------------------------------------->
+            <section class="total"> <!-- 결제 금액 -------------------------------------------------------->
+                <h3>결제 금액</h3>
+                <table>
+                    <tr>
+                        <th>총 주문 금액</th>
+                        <td><code>28,000</code>원</td>
+                    </tr>
+                    <tr>
+                        <th>배송비</th>
+                        <td><code>2,500</code>원</td>
+                    </tr>
+                    <tr>
+                        <th>구매 확정 금액</th>
+                        <td><code>30,500</code>원</td>
+                    </tr>
+                    <tr>
+                        <th>적립금 사용</th>
+                        <td><code>0</code>원</td>
+                    </tr>
+                    <tr>
+                        <th>최종 결제 금액</th>
+                        <td><code>30,500</code>원</td>
+                    </tr>
+                </table>
+            </section>
+        </div>
+        <section class="checkout">
+            <h3>결제 수단</h3>
+            <div>
+                <div class="left_cont">
+                    <ul>
+                        <li><a href="#">신용카드</a></li>
+                        <li><a href="#">실시간 계좌이체</a></li>
+                        <li><a href="#">무통장 입금</a></li>
+                    </ul>
+                    <p>＊신용카드 결제 시 화면 아래 '결제하기'버튼을 클릭하시면 신용카드 결제 창이 나타납니다.
+                    ＊신용카드 결제 창을 통해 입력되는 고객님의 카드 정보는 128bit로 안전하게 암호화되어 전송되며, 승인 처리 후 카드 정보는 승인 성공 / 실패 여부에 상관없이 자동으로 폐기되므로, 안전합니다.
+                    ＊신용카드 결제 신청 시 승인 진행에 다소 시간이 소요될 수 있으므로 '중지', '새로고침'을 누르지 마시고 결과 화면이 나타 날때까지 기다려 주십시오.
+                    </p>
+                </div>
+                <ul class="btn">            
+                    <li><a href="order_lev1.html">이전 페이지</a></li>
+                    <li><a href="#">결제하기</a></li>
+                </ul>
+            </div>
+        </section>
+    </main> <!-- 장바구니 끝 ------------------------------------------------------------->
+    <footer> <!-- 푸터 ------------------------------------------------------------>
+        <ul class="foot_nav">
+            <li><a href="notice.html">공지사항</a></li>
+            <li><a href="term.html">이용약관</a></li>
+            <li><a href="personalInfo.html">개인정보취급방침</a></li>
+        </ul>
+        <p>회사명 : 네오팝 / 대표 : 최종오 / 사업자번호 : 130-23-44405
+        소재지 : 경기도 부천시 원미구 옥산로 184번길39(도당동)4층 / 개인정보보호책임자 : 최종오
+        지원실 : 010-6211-2216 / E-mail : jongottan@naver.com
+        Hosting by 심플렉스인터넷(주)</p>
+        <ul class="postscript">
+            <li><img src="img/ic_fairtrade.png" alt="공정거래위원회"></li>
+            <li>
+                <img src="img/ic_lock.png" alt="주민번호+비밀번호 안심쇼핑몰">
+                <span>주민번호+비밀번호 안심쇼핑몰</span>
+            </li>
+            <li>
+                <a href="https://iniweb.inicis.com/popup/common/popup_escrow_notice.jsp?mid=ECAjokm8e9"><img src="img/ic_inipay.png" alt="이니페이안심쇼핑몰"></a>
+                <span>이니페이안심쇼핑몰</span>
+            </li>
+        </ul>
+    </footer>
+    <!--Start of Tawk.to Script-->
+    <script type="text/javascript" src="js/tawk_api.js"></script>
+    <!--End of Tawk.to Script-->
+</body>
+</html>

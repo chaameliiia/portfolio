@@ -1,0 +1,256 @@
+@import url('common.css');
+@import url('https://fonts.googleapis.com/css?family=Baloo&display=swap');
+
+.total{margin:0 235px;}
+
+/**css-----------------------------------------------------------------------*/
+body{width:1920px;margin: 0 auto;}
+
+/*--------------header입니다-------------*/
+header {
+    width: 100%;
+    background: #121212;
+    padding: 15px 0;
+    position: fixed;
+    top:0;
+    z-index: 30;
+    }
+
+
+header .allheader {
+    display: flex;
+    background: #121212;
+    justify-content: space-between;
+    width: 100%;
+    padding: 0 235px;
+    
+    
+}
+
+header .leftmenu {
+    display: flex;
+    justify-content: center;
+     align-items: center;
+
+}
+
+header .leftmenu h1 {
+    font-size: 30px;
+    color: white;
+    margin-right: 70px;
+
+}
+
+
+header .leftmenu h1 p{text-align: center;
+color: white;
+font-size: 12px}
+header .leftmenu nav {}
+
+header .leftmenu nav ul {
+    display: flex;
+}
+
+header .leftmenu nav ul li {}
+header .leftmenu nav ul li a{}
+header .leftmenu nav ul li div{position: relative;
+}
+header .leftmenu nav ul li div a{display: none;}
+header .leftmenu nav ul li div a{
+    display: none;
+    top:0; left:0;
+    width:100%;
+    margin-top: 15px;
+}
+header .leftmenu nav ul li a:hover{
+    text-decoration: underline;
+}
+header .leftmenu nav ul li:hover div a{
+   display: block;
+    margin-bottom: 10px;
+    
+}
+
+header .leftmenu nav ul li a {
+    margin-right: 50px;
+    color: white;
+}
+
+header .submenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header .submenu .search {}
+
+header .submenu .search input {
+    outline: inherit;
+    border-right: none;
+    border-top: none;
+    border-left: none;
+    border-bottom: 2px solid white;
+    background: none;
+    color: white;
+    text-align: left;
+    
+}
+header .submenu .search button{
+    background: none;
+    border: none;
+}
+header .submenu .search button img{
+    margin-top: 5px;
+        width:20px;
+    height: 20px;
+}
+
+header .submenu .member {}
+
+header .submenu .member a {}
+
+header .submenu .member a img {
+    width: 20px;
+    height: 20px;
+    margin-left: 40px;
+}
+
+/*룸박스*/
+/*헤더와 문제가 있을시 마진top 값을 조정해주세요^^*/
+.roombox{
+    border-bottom: 1px solid #ccc;
+    margin-top: 115px;
+}
+.roombox h2{
+    font-size: 2.08em;
+    color: #333;
+    margin-top: 35px;
+    margin-bottom: 25px;
+    font-weight: lighter;
+}
+
+.roombox p a{color: black;
+margin-bottom: 35px;
+}
+
+
+/*section*/
+section{
+    margin-top: 35px;
+
+}
+section ul{display: flex;
+justify-content: space-between;
+    align-items: center;
+flex-wrap: wrap;
+}
+section ul li{margin-bottom: 70px;
+}
+
+section ul li figure figcaption p{
+    font-size: 12px;
+    color: black;
+    text-align: center;
+}
+section ul li figure img{width:340px;
+height: 340px;
+border: 1px solid #ccc;}
+
+section ul li figure:hover img{
+    transform: scale(1.1);
+    transition: .3s;
+}
+/*하단*/
+.next p{text-align: center;
+color: black;
+    margin-bottom: 30px;
+}
+
+/* 1:1 채팅 */
+.feedback{
+    width: 50px; height: 50px;
+/*    background:url('../img/sub_product/kk.png') no-repeat center;*/
+    background-size: 100%;
+    border: 2px solid #333;
+    position: fixed; z-index: 100;
+    right: 100px; bottom: 60px;
+    animation:kakao 0.8s;
+}
+.feedback img{
+    width: 100%;
+
+}
+
+@keyframes kakao{
+    0%{transform: scale(0);}
+    100%{transform: scale(1);}
+}
+
+/* ----------------------------------------footer */
+footer{
+    width:1920px; 
+    margin:0 auto;
+    text-align:center;
+    background:#414141;
+    
+}
+
+/* .footer_menu */
+footer .footer_menu{
+    width:100%;
+    background:#ccc;
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    
+}
+
+footer .footer_menu li{}
+footer .footer_menu li a{
+    padding: 10px 0; margin: 0 30px;
+        color: black;
+}
+
+/* .footer_text */
+footer .footer_text{
+    margin:35px 0;
+    white-space: pre-line;
+    color: white;
+}
+
+/* .link_icon */
+footer .link_icon{
+    width: 100%;
+    margin-bottom: 35px
+}
+footer .link_icon{}
+footer .link_icon li{
+    margin: 0 30px;
+    display: inline-flex; align-items: center
+}
+footer .link_icon li a{
+    color: white;
+}
+footer .link_icon li img{
+    height: 30px
+}
+footer .link_icon li span{
+    padding-left: 5px;
+        color:white;
+}
+
+
+/*
+--------------------------미디어쿼리
+@media screen and (max-width: 767px){
+    body {background: red;}
+}
+@media screen and (min-width: 768px) and (max-width:959px){
+    body {background: green;}
+}
+
+@media screen and (min-width: 960px){
+    body {background: white;}
+}
+*/
+
