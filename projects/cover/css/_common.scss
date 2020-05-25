@@ -1,5 +1,14 @@
 // font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
-@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;600;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;900&display=swap);
+
+@font-face { 
+  font-family: 'sCoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: u+ac00-u+d7a3;
+}
 
 $hlColor: #efc050;
 $bgColor: #2f3435;
@@ -7,7 +16,7 @@ $bgColor: #2f3435;
 * {
   box-sizing: border-box;
   color: $hlColor;
-  font: 16px/1.5 'Kanit', sans-serif;
+  font: 16px/1.5 'Kanit', 'sCoreDream', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0;
@@ -34,6 +43,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  outline-style: none;
   text-transform: uppercase;
 }
 
@@ -44,6 +54,17 @@ figcaption {
   letter-spacing: 10px;
   text-transform: uppercase;
   -webkit-text-stroke: 1px rgba(239, 192, 80, .4);
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 2vw;
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
 }
 
 input {

@@ -1,8 +1,15 @@
-@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;600;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;900&display=swap);
+@font-face {
+  font-family: 'sCoreDream';
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: u+ac00 -ud7a3; }
 * {
   box-sizing: border-box;
   color: #efc050;
-  font: 16px/1.5 'Kanit', sans-serif;
+  font: 16px/1.5 'Kanit', 'sCoreDream', sans-serif;
   font-weight: 300;
   margin: 0;
   padding: 0; }
@@ -25,6 +32,7 @@ button {
   background: none;
   border: none;
   cursor: pointer;
+  outline-style: none;
   text-transform: uppercase; }
 
 figcaption {
@@ -34,6 +42,15 @@ figcaption {
   letter-spacing: 10px;
   text-transform: uppercase;
   -webkit-text-stroke: 1px rgba(239, 192, 80, 0.4); }
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 2vw;
+  text-transform: uppercase; }
+
+.hidden {
+  display: none; }
 
 input {
   background: none;
@@ -107,9 +124,9 @@ textarea::-webkit-scrollbar {
           top: 0;
           transition: .5s;
           width: 600px; }
-      .main__works_contents a:hover figcaption {
+      .main__works_contents.selected a:hover figcaption {
         transform: translateY(-50%) scale(1.1); }
-      .main__works_contents a:hover img {
+      .main__works_contents.selected a:hover img {
         filter: grayscale(0);
         opacity: 1;
         transform: scale(1.3); }
@@ -120,21 +137,96 @@ textarea::-webkit-scrollbar {
           padding-right: 30px; }
         .main__works_contents p code:last-of-type {
           padding-left: 30px; }
-      .main__works_contents.selected figcaption {
+      .main__works_contents.selected a figcaption {
         color: #efc050;
         mix-blend-mode: difference;
         z-index: 10;
         -webkit-text-stroke: unset; }
-      .main__works_contents.selected img {
+      .main__works_contents.selected a img {
         filter: grayscale(1); }
     .main__works_contents:nth-of-type(2) {
       top: 100%; }
     .main__works_contents:nth-of-type(3) {
       top: 0; }
   .main__about {
-    display: none; }
+    border: 1px solid #efc050;
+    display: none;
+    width: 100%; }
     .main__about.active {
       display: block; }
+    .main__about .container {
+      border: 1px solid #f00;
+      padding-bottom: 6vw; }
+    .main__about_profile {
+      height: 400px;
+      margin-bottom: 5vw;
+      position: relative;
+      width: 100%; }
+      .main__about_profile h3 {
+        font-size: 3.4em;
+        font-weight: 600;
+        letter-spacing: .3em;
+        mix-blend-mode: difference;
+        text-align: center;
+        text-transform: uppercase;
+        z-index: 10;
+        left: 25%;
+        position: absolute;
+        top: 30%;
+        transform: translate(0, 0); }
+      .main__about_profile span {
+        font-size: 1.5em;
+        mix-blend-mode: difference;
+        text-transform: capitalize;
+        white-space: pre-line;
+        z-index: 10;
+        left: 75%;
+        position: absolute;
+        top: 60%;
+        transform: translate(0, 0); }
+      .main__about_profile img {
+        left: 50%;
+        position: absolute;
+        top: 10%;
+        transform: translate(0, 0); }
+    .main__about_contacts {
+      display: flex;
+      justify-content: space-between;
+      width: 100%; }
+      .main__about_contacts article:nth-of-type(1) {
+        border: 1px solid #fff;
+        width: 250px; }
+        .main__about_contacts article:nth-of-type(1) a {
+          display: block;
+          padding: 5px 0 0 50px; }
+        .main__about_contacts article:nth-of-type(1) a:nth-of-type(1) {
+          background: url(../img/ic_email.png) no-repeat left; }
+        .main__about_contacts article:nth-of-type(1) a:nth-of-type(2) {
+          background: url(../img/ic_linkedin.png) no-repeat left; }
+        .main__about_contacts article:nth-of-type(1) a:nth-of-type(3) {
+          background: url(../img/ic_github.png) no-repeat left; }
+      .main__about_contacts article:nth-of-type(2) {
+        border: 1px solid #fff;
+        text-align: right;
+        width: 54%; }
+    .main__about_education p {
+      align-items: flex-end;
+      display: flex;
+      padding: 1vw 0; }
+      .main__about_education p strong {
+        font-size: 1.1rem;
+        padding-right: 1.5vw; }
+      .main__about_education p span {
+        padding-right: 1.5vw; }
+    .main__about_skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      width: 100%; }
+      .main__about_skills h3 {
+        width: 100%; }
+      .main__about_skills > div {
+        width: 49%; }
 
 .aside {
   bottom: 1.5vw;
