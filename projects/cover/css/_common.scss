@@ -1,5 +1,5 @@
 // font-style font-variant font-weight font-size/line-height font-family|caption|icon|menu|message-box|small-caption|status-bar|initial|inherit;
-@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;900&display=swap);
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;900&display=swap);
 
 @font-face { 
   font-family: 'sCoreDream';
@@ -72,6 +72,11 @@ input {
   border: none;
   border-bottom: 1px solid $hlColor;
   outline-style: none;
+}
+
+text {
+  font-size: 7.5rem;
+  font-weight: 700;
 }
 
 textarea {

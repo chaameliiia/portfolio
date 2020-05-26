@@ -11,8 +11,56 @@
   background: url($dir) no-repeat $pos;
 }
 
-body {}
+$hlBorder: 1px solid $hlColor;
 
+
+/*----------------------- load.html -----------------------*/
+// .load {
+//   align-items: center;
+//   display: flex;
+//   height: 100vh;
+//   justify-content: center;
+//   width: 100%;
+
+//   p,
+//   p span {
+//     color: transparent;
+//     font-size: 7.5rem;
+//     font-weight: 700;
+//     line-height: 1em;
+//     text-transform: uppercase;
+//     -webkit-text-stroke: 1px rgba(239, 192, 80, .4);
+//     white-space: pre-line;
+
+//     span {
+//       letter-spacing: 1em;
+//     }
+//   }
+// }
+
+.load {
+  align-items: center;
+  display: flex;
+  height: 100vh;
+  justify-content: center;
+  width: 100%;
+
+  svg {
+    > text {
+      font-size: 7.5rem;
+      font-weight: 700;
+    }  
+    mask {
+      
+    }
+
+    rect {
+      transform: translateY(20%);
+    }
+  }
+}
+
+/*----------------------- header -----------------------*/
 .header {
   display: flex;
   justify-content: space-between;
@@ -26,11 +74,12 @@ body {}
 
     a {
       font-size:1.25em;
+      line-height: 1em;
       text-transform: uppercase;
       white-space: pre-line;
 
       span {
-        font-size:1.25rem;
+        font-size: inherit;
         letter-spacing: .9em;
       }
     }
@@ -39,6 +88,7 @@ body {}
   &__btn {}
 }
 
+/*----------------------- index.html -----------------------*/
 .main {
   height: 100vh;
   overflow-y: auto;
@@ -50,7 +100,7 @@ body {}
 
   &__works {
     // display: none;
-    height: 100%;
+    height: 100vh;
     position: relative;
     width: 100%;
 
@@ -106,12 +156,13 @@ body {}
         }
 
         code:last-of-type {
-            padding-left: 30px;
-          }
+          padding-left: 30px;
+        }
       }
 
       &.selected a figcaption {
         color: $hlColor;
+        font-weight: 600;
         mix-blend-mode: difference;
         z-index: 10;
         -webkit-text-stroke: unset;
@@ -140,8 +191,7 @@ body {}
       display: block;
     }
 
-    & .container {
-      border: 1px solid #f00;
+    .container {
       padding-bottom: 6vw;
     }
 
@@ -151,7 +201,8 @@ body {}
       position: relative;
       width: 100%;
 
-      & h3 {
+      h3 {
+        @include setPosition(25%, 30%, 0, 0);
         font-size: 3.4em;
         font-weight: 600;
         letter-spacing: .3em;
@@ -159,21 +210,18 @@ body {}
         text-align: center;
         text-transform: uppercase;
         z-index: 10;
-
-        @include setPosition(25%, 30%, 0, 0);
       }
 
-      & span {
+      span {
+        @include setPosition(75%, 60%, 0, 0);
         font-size: 1.5em;
         mix-blend-mode: difference;
         text-transform: capitalize;
         white-space: pre-line;
         z-index: 10;
-
-        @include setPosition(75%, 60%, 0, 0);
       }
 
-      & img {
+      img {
         @include setPosition(50%, 10%, 0 , 0);
       }
     }
@@ -183,25 +231,24 @@ body {}
       justify-content: space-between;
       width: 100%;
 
-      & article:nth-of-type(1) {
+      article:nth-of-type(1) {
         border: 1px solid #fff;
         width: 250px;
 
-        & a {
+        a {
           display: block;
           padding: 5px 0 0 50px;
         }
 
         $url: (1:'../img/ic_email.png', 2:'../img/ic_linkedin.png', 3:'../img/ic_github.png');
-
         @each $i, $v in $url {
-          & a:nth-of-type(#{$i}) {
+          a:nth-of-type(#{$i}) {
             @include setBackImg(#{$v}, left);
           }
         }
       }
 
-      & article:nth-of-type(2) {
+      article:nth-of-type(2) {
         border: 1px solid #fff;
         text-align: right;
         width: 54%;
@@ -209,17 +256,17 @@ body {}
     }
 
     &_education {
-      & p {
+      p {
         align-items: flex-end;
         display: flex;
         padding: 1vw 0;
         
-        & strong {
+        strong {
           font-size: 1.1rem;
           padding-right: 1.5vw;
         }
 
-        & span {
+        span {
           padding-right: 1.5vw;
         }
       }
@@ -231,38 +278,287 @@ body {}
       justify-content: space-between;
       width: 100%;
 
-      & h3 {
+      h3 {
         width: 100%;
       }
 
-      & > div {
+      > div {
         width: 49%;
       }
     }
   }
-
 }
 
-.aside {
-  bottom: 1.5vw;
-  right: 5%;
-  position: fixed;
-  text-align: right;
+/*----------------------- detail.html -----------------------*/
+.detail {
+  height: 100vh;
+  width: 100%;
 
+  &__visual {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      @include setPosition(0, 0, 0, 0);
+      background: $bgColor url(../img/detail/img_back.jpg) no-repeat top;
+      background-blend-mode: exclusion;
+      content: '';
+      height: 100%;
+      opacity: .3;
+      width: 100%;
+      z-index: -10;
+    }
+
+    h3 {
+      font-size: 2em;
+      padding: 8vw 15% 2vw;
+      text-transform: unset;
+
+      small {
+        padding-left: 30px;
+      }
+    }
+
+    span {
+      background: rgba(239, 192, 80, .3);
+      display: flex;
+      justify-content: center;
+      padding: 4vw 0;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    padding: 7vw 0;
+    text-align: center;
+    width: 100%;
+
+    h4 {
+      font-size: 2em;
+      font-weight: 400;
+      padding-bottom: 4vw;
+      text-transform: uppercase;
+    }
+
+    span {
+      padding-bottom: 4vw;
+    }
+
+    p {
+      padding-bottom: 4vw;
+      white-space: pre-line;
+    }
+
+    a {
+      position: relative;
+
+      &:before {
+        @include setPosition(50%, 50%, 0, 0);
+        border-left: $hlBorder;
+        border-right: $hlBorder;
+        content: '';
+        height: 70%;
+        transform: skewX(-10deg) translate(-52%, -50%);
+        transition: .5s;
+        width: 100%;
+      }
+
+      span {
+        font-size: 1.25em;
+        padding: 1.5vw 4vw;
+        transition: .5s;
+      }
+    }
+
+    a:hover {
+      &:before {
+        background: $hlColor;
+      }
+
+      span {
+        mix-blend-mode: exclusion;
+      }
+    }
+  }
+
+  &__preview {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    img {}
+
+    &_btn {
+      display: flex;
+      justify-content: space-between;
+      margin: 7vw 5vw;
+      padding: 0 15%;
+      position: relative;
+      text-align: center;
+      width: 100%;
+
+      a {
+        text-transform: uppercase;
+      }
+
+      a,
+      button {
+        font-size: 1.25rem;
+        padding: 1vw 0;
+        transition: .5s;
+        width: 30%;
+
+        &:hover {
+          letter-spacing: .3em;;
+        }
+      }
+    }
+
+    &_btn:before {
+      @include setPosition(50%, 50%, 0, 0);
+      border-left: $hlBorder;
+      border-right: $hlBorder;
+      content: '';
+      height: 70%;
+      transform: skew(-10deg) translate(-50%, -50%);
+      width: 20%;
+      z-index: -10;
+    }
+  }
+}
+
+/*----------------------- aside -----------------------*/
+.aside {
   &__modal {
     display: none;
+    background: $bgColor;
+    border: 1px solid $hlColor;
+    border-radius: 10px;
+    bottom: 4vw;
+    position: absolute;
+    right: 7%;
+
     &.active {
-      display: block;
+      display: flex;
+    }
+
+    &_to {
+      border-right: 1px solid $hlColor;
+      overflow: hidden;
+      padding: 3vw 2vw 3vw 3vw;
+      position: relative;
+
+      h3 {
+        bottom: 30px;
+        font-size: 3rem;
+        line-height: 1;
+        mix-blend-mode: exclusion;
+        position: absolute;
+        right: 2vw;
+        text-align: right;
+        text-transform: uppercase;
+        white-space: pre-line;
+      }
+
+      &:before {
+          background: $hlColor;
+          bottom: 100px;
+          content: '';
+          height: 150px;
+          left: -100px;
+          position: absolute;
+          transform: rotate(-15deg);
+          width: 200%;
+        }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        font-size: .9em;
+      
+        strong {
+          font-size: 1.25rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &_from {
+      padding: 3vw 5vw;
+
+      form {}
+
+      p {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1vw;
+
+        label {
+          font-size: 1.25rem;
+          text-transform: uppercase;        
+        }
+
+        input {}          
+        textarea {
+          margin: .5vw 0 2vw;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+
+      p:last-of-type {
+        padding-bottom: 0;
+        position: relative;
+        text-align: center;
+
+        input {
+          border: none;
+          cursor: pointer;
+          font-size: 1.25rem;
+          padding: 5px 0;
+          position: relative;
+          text-transform: uppercase;
+          transition: .5s;
+        }
+      }
+
+      p:last-of-type:before {
+        @include setPosition(50%, 50%, 0, 0);
+        border-left: $hlBorder;
+        border-right: $hlBorder;
+        content: '';
+        height: 100%;
+        transform: skewX(-10deg) translate(-52%, -50%);
+        transition: .5s;
+        width: 70%;
+      }
+
+      p:last-of-type:hover {
+        input {
+          mix-blend-mode: exclusion;
+        }
+        
+        &:before {
+          background: $hlColor;
+        }
+      }
     }
   }
 
   &__btn {
     background: url(../img/ic_message.png) no-repeat center;
+    bottom: 1.5vw;
     height: 40px;
+    right: 5%;
+    position: fixed;
     width: 40px;
   }
 }
 
+/*----------------------- footer -----------------------*/
 footer {
   bottom: 1.5vw;
   left: 5%;
@@ -278,3 +574,15 @@ footer {
     }
   }
 }
+
+
+
+
+
+
+
+/*-----------------------------------------------------*/
+/*----------------------- media -----------------------*/
+/*-----------------------------------------------------*/
+@media (max-width: 1024px) {}
+@media (max-width: 420px) {}
