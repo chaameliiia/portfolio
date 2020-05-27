@@ -16,7 +16,7 @@ $hlBorder: 1px solid $hlColor;
 /*----------------------- load -----------------------*/
 .typo {
   @include setPosition(0, 0, 0, 0);
-  animation: load-fin 1s 4.5s forwards;
+  animation: load-fin 1s 4.3s forwards;
   align-items: center;
   background: $bgColor;
   display: flex;
