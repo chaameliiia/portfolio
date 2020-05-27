@@ -92,10 +92,27 @@ textarea::-webkit-scrollbar {
   .typo svg {
     animation: scale-up 2s 2s forwards; }
     .typo svg rect {
-      animation: rect-down 1.5s .5s ease-in-out linear;
+      animation: rect-down 1.5s .5s linear forwards;
       x: 0;
-      y: 0; }
+      y: -100%; }
 
+@keyframes rect-down {
+  0% {
+    x: 0;
+    y: -100%; }
+  100% {
+    x: 0;
+    y: 0; } }
+@keyframes scale-up {
+  0% {
+    transform: scale(1); }
+  100% {
+    transform: scale(1.4); } }
+@keyframes load-fin {
+  0% {
+    transform: translate(0, 0); }
+  100% {
+    transform: translate(0, -100%); } }
 /*----------------------- header -----------------------*/
 .header {
   display: flex;
@@ -466,23 +483,6 @@ footer {
 /*-----------------------------------------------------*/
 /*----------------------- animation -----------------------*/
 /*-----------------------------------------------------*/
-@keyframes rect-down {
-  0% {
-    x: 0;
-    y: -100%; }
-  100% {
-    x: 0;
-    y: 0; } }
-@keyframes scale-up {
-  0% {
-    transform: scale(1); }
-  100% {
-    transform: scale(1.4); } }
-@keyframes load-fin {
-  0% {
-    transform: translate(0, 0); }
-  100% {
-    transform: translate(0, -100%); } }
 /*-----------------------------------------------------*/
 /*----------------------- media -----------------------*/
 /*-----------------------------------------------------*/
