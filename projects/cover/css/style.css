@@ -83,6 +83,7 @@ textarea::-webkit-scrollbar {
   transform: translate(0, 0);
   animation: load-fin 1s 4.5s forwards;
   align-items: center;
+  background: #2f3435;
   display: flex;
   height: 100vh;
   justify-content: center;
