@@ -38,6 +38,9 @@ a {
 
 body {
   background: $bgColor;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 button {
@@ -46,15 +49,6 @@ button {
   cursor: pointer;
   outline-style: none;
   text-transform: uppercase;
-}
-
-figcaption {
-  color: transparent;
-  font-size: 9em;
-  font-weight: 600;
-  letter-spacing: 10px;
-  text-transform: uppercase;
-  -webkit-text-stroke: 1px rgba(239, 192, 80, .4);
 }
 
 h3 {
@@ -73,6 +67,10 @@ input {
   border: none;
   border-bottom: 1px solid $hlColor;
   outline-style: none;
+}
+
+.main {
+  width: 100%;
 }
 
 text {
@@ -105,6 +103,7 @@ textarea::-webkit-scrollbar {
   position: fixed;
   top: 0;
   width: 90%;
+  z-index: 20;
   
   &__logo {
 
@@ -121,16 +120,26 @@ textarea::-webkit-scrollbar {
     }
   }
   
-  &__btn {}
+  &__btn {
+    text-transform: uppercase;
+  }
 }
 
 /*----------------------- about -----------------------*/
 .main__about {
-  display: none;
+  @include setPosition(0, 0, 0, 0);
+
+  background: $bgColor;
+  height: auto;
+  margin: 0 auto;
+  padding: 7vw 15% 0;
+  transform: translate(100%, 0);
+  transition: 1s;
   width: 100%;
+  z-index: 10;
 
   &.active {
-    display: block;
+    transform: translate(0, 0);
   }
 
   .container {
@@ -260,7 +269,7 @@ textarea::-webkit-scrollbar {
   }
 }
 
-  /*----------------------- aside -----------------------*/
+/*----------------------- aside -----------------------*/
 .aside {
   &__modal {
     display: none;
@@ -387,6 +396,7 @@ textarea::-webkit-scrollbar {
     right: 5%;
     position: fixed;
     width: 40px;
+    z-index: 20;
   }
 }
 
@@ -395,6 +405,7 @@ footer {
   bottom: 1.5vw;
   left: 5%;
   position: fixed;
+  z-index: 10;
 
   p {
     font-size: .6rem;

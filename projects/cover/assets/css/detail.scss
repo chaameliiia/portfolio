@@ -1,16 +1,23 @@
 @import "_common";
 
 /*----------------------- detail.html -----------------------*/
-.main {
-  height: 100vh;
+.main__detail {
+  animation: detail-in 1s 1s backwards;
+  padding-top: 0;
+  transition: 1s;
   width: 100%;
 
-  &__visual {
+  &.deactive {
+    padding-top: 100vh;
+  }
+
+  &_visual {
     position: relative;
     width: 100%;
 
     &:before {
       @include setPosition(0, 0, 0, 0);
+      
       background: $bgColor url(../img/detail/img_back.jpg) no-repeat top;
       background-blend-mode: exclusion;
       content: '';
@@ -39,7 +46,7 @@
     }
   }
 
-  &__description {
+  &_description {
     padding: 7vw 0;
     text-align: center;
     width: 100%;
@@ -92,49 +99,51 @@
     }
   }
 
-  &__preview {
+  &_preview {
     align-items: center;
     display: flex;
     flex-direction: column;
+    padding-bottom: 7vw;
     width: 100%;
 
     img {}
+  }
 
-    &_btn {
-      display: flex;
-      justify-content: space-between;
-      margin: 7vw 5vw;
-      padding: 0 15%;
-      position: relative;
-      text-align: center;
-      width: 100%;
+  &_btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 7vw;
+    padding: 0 15%;
+    position: relative;
+    text-align: center;
+    width: 100%;
 
-      a {
-        text-transform: uppercase;
-      }
-
-      a,
-      button {
-        font-size: 1.25rem;
-        padding: 1vw 0;
-        transition: .5s;
-        width: 30%;
-
-        &:hover {
-          letter-spacing: .3em;;
-        }
-      }
+    a {
+      text-transform: uppercase;
     }
 
-    &_btn:before {
-      @include setPosition(50%, 50%, 0, 0);
-      border-left: $hlBorder;
-      border-right: $hlBorder;
-      content: '';
-      height: 70%;
-      transform: skew(-10deg) translate(-50%, -50%);
-      width: 20%;
-      z-index: -10;
+    a,
+    button {
+      font-size: 1.25em;
+      padding: 1vw 0;
+      transition: .5s;
+      width: 30%;
+
+      &:hover {
+        font-size: 1.5rem;
+        letter-spacing: .3em;;
+      }
     }
+  }
+
+  &_btn:before {
+    @include setPosition(50%, 50%, 0, 0);
+    border-left: $hlBorder;
+    border-right: $hlBorder;
+    content: '';
+    height: 70%;
+    transform: skew(-10deg) translate(-50%, -50%);
+    width: 20%;
+    z-index: -10;
   }
 }

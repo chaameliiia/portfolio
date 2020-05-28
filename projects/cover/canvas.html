@@ -61,13 +61,13 @@
         requestAnimationFrame(drawLine);
       }
     }
-    // drawLine();
+    drawLine();
 
     function drawRhomb() {
       x++;
 
+
       ctx.beginPath();
-      ctx.globalAlpha = .5;
       ctx.moveTo(halfWdth, halfHgt - x);
       ctx.lineTo(halfWdth - (x + 30), halfHgt);
       ctx.lineTo(halfWdth, halfHgt + x);
@@ -81,7 +81,21 @@
         // y = 0;
       }
 
-      // ctx.scale(1.5, 1.5);
+
+    }
+    // drawRhomb();
+
+    ctx.globalAlpha = .5;
+
+    ctx.beginPath();
+    ctx.moveTo(halfWdth, halfHgt - 55);
+    ctx.lineTo(halfWdth - 85, halfHgt);
+    ctx.lineTo(halfWdth, halfHgt + 55);
+    ctx.lineTo(halfWdth + 85, halfHgt);
+    ctx.lineTo(halfWdth, halfHgt - 55);
+    ctx.fill();
+
+    // ctx.scale(1.5, 1.5);
       // ctx.beginPath();
       // ctx.moveTo(halfWdth, halfHgt - 55 * 2);
       // ctx.lineTo(halfWdth - 85 * 2, halfHgt);
@@ -97,8 +111,6 @@
       // ctx.lineTo(halfWdth + 85 * 1.75 * 1.75, halfHgt);
       // ctx.lineTo(halfWdth, halfHgt - 55 * 1.75 * 1.75);
       // ctx.fill();
-    }
-    drawRhomb();
 
   </script>
 </body>
