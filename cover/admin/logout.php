@@ -1,7 +1,6 @@
 <!-- 세션 삭제 -->
-
 <?
-    include_once $_SERVER['DOCUMENT_ROOT']."/admin/head.php";
+    include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/assets/inc/head.php";
 
   // session 삭제
   session_destroy();
