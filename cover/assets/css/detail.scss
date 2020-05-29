@@ -1,0 +1,150 @@
+@import "_common";
+
+/*----------------------- detail.html -----------------------*/
+.main__detail {
+  animation: detail-in 1s 1s forwards;
+  opacity: 1;
+  transition: .5s;
+  transform: translate(0, 100%);
+  width: 100%;
+
+  &.deactive {
+    opacity: 0;
+  }
+
+  &_visual {
+    position: relative;
+    width: 100%;
+
+    &:before {
+      @include setPosition(0, 0, 0, 0);
+      
+      background: $bgColor url(../img/detail/img_back.jpg) no-repeat top;
+      background-blend-mode: exclusion;
+      content: '';
+      height: 100%;
+      opacity: .3;
+      width: 100%;
+      z-index: -10;
+    }
+
+    h3 {
+      font-size: 2em;
+      padding: 8vw 15% 2vw;
+      text-transform: unset;
+
+      small {
+        padding-left: 30px;
+      }
+    }
+
+    span {
+      background: rgba(239, 192, 80, .3);
+      display: flex;
+      justify-content: center;
+      padding: 4vw 0;
+      width: 100%;
+    }
+  }
+
+  &_description {
+    padding: 7vw 0;
+    text-align: center;
+    width: 100%;
+
+    h4 {
+      font-size: 2em;
+      font-weight: 400;
+      padding-bottom: 4vw;
+      text-transform: uppercase;
+    }
+
+    span {
+      padding-bottom: 4vw;
+    }
+
+    p {
+      padding-bottom: 4vw;
+      white-space: pre-line;
+    }
+
+    a {
+      position: relative;
+
+      &:before {
+        @include setPosition(50%, 50%, 0, 0);
+        border-left: $hlBorder;
+        border-right: $hlBorder;
+        content: '';
+        height: 70%;
+        transform: skewX(-10deg) translate(-52%, -50%);
+        transition: .5s;
+        width: 100%;
+      }
+
+      span {
+        font-size: 1.25em;
+        padding: 1.5vw 4vw;
+        transition: .5s;
+      }
+    }
+
+    a:hover {
+      &:before {
+        background: $hlColor;
+      }
+
+      span {
+        mix-blend-mode: exclusion;
+      }
+    }
+  }
+
+  &_preview {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 7vw;
+    width: 100%;
+
+    img {}
+  }
+
+  &_btn {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 7vw;
+    padding: 0 15%;
+    position: relative;
+    text-align: center;
+    width: 100%;
+
+    a {
+      text-transform: uppercase;
+    }
+
+    a,
+    button {
+      font-size: 1.25em;
+      padding: 1vw 0;
+      transition: .5s;
+      width: 30%;
+
+      &:hover {
+        font-size: 1.5rem;
+        letter-spacing: .3em;;
+      }
+    }
+  }
+
+  &_btn:before {
+    @include setPosition(50%, 50%, 0, 0);
+    border-left: $hlBorder;
+    border-right: $hlBorder;
+    content: '';
+    height: 70%;
+    transform: skew(-10deg) translate(-50%, -50%);
+    width: 20%;
+    z-index: -10;
+  }
+}

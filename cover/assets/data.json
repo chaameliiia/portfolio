@@ -1,0 +1,13 @@
+{
+  "works": [
+    {"title": "what to wear",
+    "imgSrc": "assets/img/img_prj1.jpg"
+    },
+    {"title": "project2",
+    "imgSrc": "assets/img/img_prj2.jpg"
+    },
+    {"title": "project3",
+    "imgSrc": "assets/img/img_prj3.jpg"
+    }
+  ]
+}

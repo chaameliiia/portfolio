@@ -1,0 +1,421 @@
+@import "_at-rules";
+@import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;900&display=swap);
+
+@font-face { 
+  font-family: 'sCoreDream';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff') format('woff');
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  unicode-range: u+ac00-u+d7a3;
+}
+
+$hlColor: #efc050;
+$bgColor: #2f3435;
+$hlBorder: 1px solid $hlColor;
+
+* {
+  box-sizing: border-box;
+  color: $hlColor;
+  font: 16px/1.5 'Kanit', 'sCoreDream', sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+}
+
+a,
+button,
+code,
+small,
+span,
+strong {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  background: $bgColor;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  outline-style: none;
+  text-transform: uppercase;
+}
+
+h3 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  padding-bottom: 2vw;
+  text-transform: uppercase;
+}
+
+.hidden {
+  display: none;
+}
+
+input {
+  background: none;
+  border: none;
+  border-bottom: 1px solid $hlColor;
+  outline-style: none;
+}
+
+.main {
+  width: 100%;
+}
+
+text {
+  font-size: 7.5rem;
+  font-weight: 700;
+}
+
+textarea {
+  background: transparent;
+  border: 1px solid $hlColor;
+  font-weight: normal;
+  outline-style: none;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+
+::selection {
+  background: #f00;
+  color: #fff;
+}
+
+/*----------------------- header -----------------------*/
+.header {
+  display: flex;
+  justify-content: space-between;
+  left: 5%;
+  padding-top: 2vw;
+  position: fixed;
+  top: 0;
+  width: 90%;
+  z-index: 20;
+  
+  &__logo {
+
+    a {
+      font-size:1.25em;
+      line-height: 1em;
+      text-transform: uppercase;
+      white-space: pre-line;
+
+      span {
+        font-size: inherit;
+        letter-spacing: .9em;
+      }
+    }
+  }
+  
+  &__btn {
+    text-transform: uppercase;
+  }
+}
+
+/*----------------------- about -----------------------*/
+.main__about {
+  @include setPosition(0, 0, 0, 0);
+
+  background: $bgColor;
+  height: auto;
+  margin: 0 auto;
+  padding: 7vw 15% 0;
+  transform: translate(100%, 0);
+  transition: 1s;
+  width: 100%;
+  z-index: 10;
+
+  &.active {
+    transform: translate(0, 0);
+  }
+
+  .container {
+    padding-bottom: 6vw;
+  }
+
+  &_profile {
+    height: 400px;
+    margin-bottom: 5vw;
+    position: relative;
+    width: 100%;
+
+    h3 {
+      @include setPosition(25%, 30%, 0, 0);
+      font-size: 3.4em;
+      font-weight: 600;
+      letter-spacing: .3em;
+      mix-blend-mode: difference;
+      text-align: center;
+      text-transform: uppercase;
+      z-index: 10;
+    }
+
+    span {
+      @include setPosition(75%, 60%, 0, 0);
+      font-size: 1.5em;
+      mix-blend-mode: difference;
+      text-transform: capitalize;
+      white-space: pre-line;
+      z-index: 10;
+    }
+
+    img {
+      @include setPosition(50%, 10%, 0 , 0);
+    }
+  }
+
+  &_contacts {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+
+    article:nth-of-type(1) {
+      width: 250px;
+
+      a {
+        display: block;
+        padding: 5px 0 0 50px;
+      }
+
+      $url: (1:'../img/ic_email.png', 2:'../img/ic_linkedin.png', 3:'../img/ic_github.png');
+      @each $idx, $val in $url {
+        a:nth-of-type(#{$idx}) {
+          @include setBackImg(#{$val}, left);
+        }
+      }
+    }
+
+    article:nth-of-type(2) {
+      text-align: right;
+      width: 54%;
+    }
+  }
+
+  &_education {
+    p {
+      align-items: flex-end;
+      display: flex;
+      padding: 1vw 0;
+      
+      strong {
+        font-size: 1.1em;
+        padding-right: 1.5vw;
+      }
+
+      span {
+        padding-right: 1.5vw;
+      }
+    }
+  }
+
+  &_skills {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 100%;
+
+    h3 {
+      width: 100%;
+    }
+
+    > div {
+      padding-bottom: 2vw;
+      width: 49%;
+
+      strong {
+        font-size: 1.25em;
+        padding-bottom: .5vw;
+      }
+
+      img {
+        padding-left: 1vw;
+      }
+
+      p {
+        word-break: keep-all;
+        word-wrap: break-word;
+      }
+    }
+  }
+
+  &_personality {
+
+    > div {
+      border: 1px solid #f00;
+      height: 400px;
+      width: 100%;
+      position: relative;
+
+      canvas {
+        @include setPosition(50%, 50%, -50%, -50%);
+
+        height: 400px;
+        width: 600px;
+      }
+    }
+  }
+}
+
+/*----------------------- aside -----------------------*/
+.aside {
+  &__modal {
+    display: none;
+    background: $bgColor;
+    border: 1px solid $hlColor;
+    border-radius: 10px;
+    bottom: 4vw;
+    position: fixed;
+    transition: .5s;
+    right: 7%;
+
+    &.active {
+      display: flex;
+    }
+
+    &_to {
+      border-right: 1px solid $hlColor;
+      overflow: hidden;
+      padding: 3vw 2vw 3vw 3vw;
+      position: relative;
+
+      h3 {
+        bottom: 30px;
+        font-size: 3rem;
+        line-height: 1;
+        mix-blend-mode: exclusion;
+        position: absolute;
+        right: 2vw;
+        text-align: right;
+        text-transform: uppercase;
+        white-space: pre-line;
+      }
+
+      &:before {
+          background: $hlColor;
+          bottom: 100px;
+          content: '';
+          height: 150px;
+          left: -100px;
+          position: absolute;
+          transform: rotate(-15deg);
+          width: 200%;
+        }
+
+      p {
+        display: flex;
+        flex-direction: column;
+        font-size: .9em;
+      
+        strong {
+          font-size: 1.25rem;
+          text-transform: uppercase;
+        }
+      }
+    }
+
+    &_from {
+      padding: 3vw 5vw;
+
+      form {}
+
+      p {
+        display: flex;
+        flex-direction: column;
+        padding-bottom: 1vw;
+
+        label {
+          font-size: 1.25rem;
+          text-transform: uppercase;        
+        }
+
+        input {}          
+        textarea {
+          margin: .5vw 0 2vw;
+
+          &::-webkit-scrollbar {
+            display: none;
+          }
+        }
+      }
+
+      p:last-of-type {
+        padding-bottom: 0;
+        position: relative;
+        text-align: center;
+
+        input {
+          border: none;
+          cursor: pointer;
+          font-size: 1.25rem;
+          padding: 5px 0;
+          position: relative;
+          text-transform: uppercase;
+          transition: .5s;
+        }
+      }
+
+      p:last-of-type:before {
+        @include setPosition(50%, 50%, 0, 0);
+        border-left: $hlBorder;
+        border-right: $hlBorder;
+        content: '';
+        height: 100%;
+        transform: skewX(-10deg) translate(-52%, -50%);
+        transition: .5s;
+        width: 70%;
+      }
+
+      p:last-of-type:hover {
+        input {
+          mix-blend-mode: exclusion;
+        }
+        
+        &:before {
+          background: $hlColor;
+        }
+      }
+    }
+  }
+
+  &__btn {
+    background: url(../img/ic_message.png) no-repeat center;
+    bottom: 1.5vw;
+    height: 40px;
+    right: 5%;
+    position: fixed;
+    transition: .5s;
+    width: 40px;
+    z-index: 20;
+  }
+}
+
+/*----------------------- footer -----------------------*/
+footer {
+  bottom: 1.5vw;
+  left: 5%;
+  position: fixed;
+  z-index: 10;
+
+  p {
+    font-size: .6rem;
+    white-space: pre-line;
+
+    span {
+      font-size: .6rem;
+      letter-spacing: .3em;
+    }
+  }
+}
