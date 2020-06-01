@@ -1,11 +1,14 @@
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/cover/assets/inc/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/assets/inc/head.php";
+  $query = "select * from cover where num=1";
+  $result = mq($query);
+  $row = mysqli_fetch_array($result);
 ?>
     <section class="main__detail">
       <article class="main__detail_visual">
         <h3>
-          What to Wear
-          <small>Individual Project/ Promotional Page</small>
+          <?=$row['title']?>
+          <small><?=$row['d_type']?></small>
         </h3>
         <span>
           <img src="assets/img/detail/img_mockup.png" alt="">
@@ -14,14 +17,10 @@
       <article class="main__detail_description">
         <h4>overall</h4>
         <span>
-          2020. 4. 1 ~ 4. 28/ 기획, 디자인, 구현/ HTML, CSS, JavaScript, Json, php
+          <?=$row['period']?>/ <?=$row['d_brief']?>
         </span>
-        <p>개별 평가를 위해 진행한 프로젝트입니다.
-          2020년 봄/여름에 유행할 패션을 주제로 하여 정보 전달을 목적으로 기획했습니다.
-          페이지 이동에 따른 혼란을 줄이기 위해 원페이지 웹사이트 형태로 제작하였으며
-          웹사이트 홍보 효과를 얻기 위해 댓글 이벤트를 기획했습니다.
-          댓글 등록 및 조회 기능은 MariaDB 데이터 서버를 이용해 구현했습니다.</p>
-        <a href="#">
+        <p><?=$row['d_description']?></p>
+        <a href="<?=$row['url']?>">
           <span>바로가기</span>
         </a>
       </article>
@@ -38,8 +37,8 @@
       </div>
     </section>
     <?
-      include_once $_SERVER['DOCUMENT_ROOT']."/cover/assets/inc/about.php";
+      include_once $_SERVER['DOCUMENT_ROOT']."/assets/inc/about.php";
     ?>
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/cover/assets/inc/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/assets/inc/foot.php";
 ?>

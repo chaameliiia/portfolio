@@ -1,34 +1,12 @@
-$(function() {
-  $.ajax({
-    url: 'assets/data.json',
-    type: 'GET',
-    dataType: 'json',
-    success: function(data) {
-      console.log(data.works.length);
-      // for(var i = 0; i < data.works.length; i++) {
-      //   // $('.main__works_contents h3').eq(i).text(`${data.works[i].title}`);
-      //   $('.main__works_contents').eq(i).append(`
-      //     <a href="detail.php?num=#">
-      //       <h3>what to wear</h3>
-      //       <img src="assets/img/img_prj1.jpg" alt="">
-      //       <p>
-      //         <code>1</code>/<code>3</code>
-      //       </p>
-      //     </a>`);
-      // }
-    }
-  })
-  
-  let bln = true;
+$(function () {
+  var bln = true;
   
   $(document).on('click', function (e) {
     e.preventDefault();
     let className = $('section').eq(0).attr('class').split(' ')[0];
     let targetElmt;
 
-    // ------------------------ common -------------------------------
-
-    if($(e.target).hasClass('header__btn')) { // about 클릭
+    if ($(e.target).hasClass('header__btn')) { // about 클릭
       switch (className) {
         case 'main__works': // index 페이지일 때
           targetElmt = '.main__works';
@@ -51,19 +29,14 @@ $(function() {
       }
     }
 
-    // ------------------------ index.php -------------------------------
-    // console.log($(e.target));
-    
-
-    // ------------------------ detail.php -------------------------------
     let imgUrl;
 
-    if($(e.target).hasClass('aside__btn')) { // aside 클릭
+    if ($(e.target).hasClass('aside__btn')) { // aside 클릭
       if (bln) {
-        imgUrl = 'assets/img/ic_message2.png'; // on
+        imgUrl = '/assets/img/ic_message2.png'; // on
         bln = false;
       } else {
-        imgUrl = 'assets/img/ic_message.png'; // off
+        imgUrl = '/assets/img/ic_message.png'; // off
         bln = true;
       }
 
@@ -71,12 +44,5 @@ $(function() {
       $(e.target).css('background', `url(${imgUrl}) no-repeat center`);
       $('.aside__modal').toggleClass('active');
     }
-
-    if($(e.target).hasClass('top-btn')) { // top 버튼 클릭
-      $('html').animate({
-        scrollTop: 0
-      });
-    }
   });
-
 });

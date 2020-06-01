@@ -1,0 +1,32 @@
+function mainSlide() { //메인 슬라이드 함수
+    window.addEventListener("click", function () { //메인 슬라이드 클릭
+      liIndex++;
+
+      if (liIndex == liLength) {
+        liIndex = 0;
+      }
+
+      a();
+
+      if (liIndex == liLength - 1) {
+        liCss(0, "100%");
+      }
+    });
+
+    function a() { //메인 슬라이드 top값 변경 함수
+      li.css({
+        top: "150%"
+      })
+      liCss(liIndex, "50%");
+      liCss(liIndex + 1, "100%");
+      liCss(liIndex - 1, "0");
+    }
+    a();
+
+    function liCss(index, top) { //메인 슬라이드 index값에 따른 top값 변경 함수
+      li.eq(index).css({
+        top: top
+      });
+    }
+  }
+  mainSlide();

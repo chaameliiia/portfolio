@@ -89,6 +89,11 @@ textarea::-webkit-scrollbar {
   display: none;
 }
 
+ul,
+li {
+  list-style: none;
+}
+
 ::selection {
   background: #f00;
   color: #fff;
@@ -130,8 +135,9 @@ textarea::-webkit-scrollbar {
   @include setPosition(0, 0, 0, 0);
 
   background: $bgColor;
-  height: auto;
+  height: 100vh;
   margin: 0 auto;
+  overflow: hidden;
   padding: 7vw 15% 0;
   transform: translate(100%, 0);
   transition: 1s;
@@ -139,6 +145,8 @@ textarea::-webkit-scrollbar {
   z-index: 10;
 
   &.active {
+    height: auto;
+    overflow: unset;
     transform: translate(0, 0);
   }
 

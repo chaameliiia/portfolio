@@ -1,11 +1,11 @@
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/assets/inc/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/0_ref/admin_tcha/admin/head.php";
 ?>
 
   <section>
-    <a href="/cover/admin/login.php">관리자페이지</a>
+    <a href="/0_ref/admin_tcha/admin/login.php">관리자페이지</a>
   </section>
 
 <?
-  include_once $_SERVER['DOCUMENT_ROOT']."/cover/admin/assets/inc/foot.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/0_ref/admin_tcha/admin/foot.php";
 ?>

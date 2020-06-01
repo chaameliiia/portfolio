@@ -97,6 +97,10 @@ textarea {
 textarea::-webkit-scrollbar {
   display: none; }
 
+ul,
+li {
+  list-style: none; }
+
 ::selection {
   background: #f00;
   color: #fff; }
@@ -129,14 +133,17 @@ textarea::-webkit-scrollbar {
   top: 0;
   transform: translate(0, 0);
   background: #2f3435;
-  height: auto;
+  height: 100vh;
   margin: 0 auto;
+  overflow: hidden;
   padding: 7vw 15% 0;
   transform: translate(100%, 0);
   transition: 1s;
   width: 100%;
   z-index: 10; }
   .main__about.active {
+    height: auto;
+    overflow: unset;
     transform: translate(0, 0); }
   .main__about .container {
     padding-bottom: 6vw; }
