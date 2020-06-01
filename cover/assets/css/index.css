@@ -368,6 +368,7 @@ footer {
 /*----------------------- index.html -----------------------*/
 .main__works {
   height: 100vh;
+  overflow: hidden;
   position: relative;
   transition: 1s;
   width: 100%; }

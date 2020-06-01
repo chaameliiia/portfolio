@@ -5,8 +5,9 @@ $(function () {
 
   bln = true;
   function mainSlide() { //메인 슬라이드 함수
-    $(window).on('scroll', function() {
-      if(bln) {
+    $(window).on('wheel', function () {
+      if (bln) {
+        console.log('o');
         bln = false;
         liIndex++;
 
