@@ -69,7 +69,7 @@ button {
 h3 {
   font-size: 1.75rem;
   font-weight: 600;
-  padding-bottom: 2vw;
+  padding: 2vw;
   text-transform: uppercase; }
 
 .hidden {
@@ -345,11 +345,12 @@ footer {
       letter-spacing: .3em; }
 
 /*----------------------- load -----------------------*/
-.intro {
+.main__intro {
   left: 0;
   position: absolute;
   top: 0;
   transform: translate(0, 0);
+  animation: intro 1s 4s forwards;
   align-items: center;
   background: #2f3435;
   display: flex;
@@ -358,24 +359,28 @@ footer {
   transform: translate(0, 0);
   width: 100%;
   z-index: 50; }
-  .intro svg {
+  .main__intro svg {
     animation: scale-up 1.5s 2s forwards; }
-    .intro svg rect {
+    .main__intro svg rect {
       animation: rect-down 1.5s .5s linear forwards;
       x: 0;
       y: -100%; }
+  .main__intro.deactive {
+    display: none; }
 
 /*----------------------- index.html -----------------------*/
 .main__works {
   height: 100vh;
   overflow: hidden;
   position: relative;
+  transform: translate(0, 0);
   transition: 1s;
   width: 100%; }
+  .main__works.active {
+    animation: works-in 1s 4.5s backwards; }
   .main__works.deactive {
     transform: translate(-100%, 0); }
   .main__works_contents {
-    border: 1px solid #efc050;
     height: 100vh;
     overflow: hidden;
     width: 100%; }
@@ -384,7 +389,7 @@ footer {
       position: absolute;
       top: 50%;
       transform: translate(0, -50%);
-      padding: 0 15%;
+      padding: 3vw 15%;
       width: 100%; }
       .main__works_contents li h3 {
         color: transparent;
@@ -395,13 +400,16 @@ footer {
         padding: 0;
         text-transform: uppercase;
         -webkit-text-stroke: 1px rgba(239, 192, 80, 0.4); }
-    .main__works_contents li:nth-of-type(1) a {
+      .main__works_contents li img {
+        opacity: 0; }
+    .main__works_contents li:first-of-type a {
       display: flex;
       align-items: flex-end;
       height: 300px;
       position: relative;
+      transition: .5s;
       width: 100%; }
-      .main__works_contents li:nth-of-type(1) a h3 {
+      .main__works_contents li:first-of-type a h3 {
         left: 0;
         position: absolute;
         top: 50%;
@@ -409,28 +417,29 @@ footer {
         color: #efc050;
         mix-blend-mode: difference;
         transition: .5s; }
-      .main__works_contents li:nth-of-type(1) a img {
+      .main__works_contents li:first-of-type a img {
         left: 50%;
         position: absolute;
         top: 0;
         transform: translate(0, 0);
-        width: 50%;
         filter: grayscale(1);
+        opacity: 1;
         transition: .5s;
+        width: 50%;
         z-index: -10; }
-    .main__works_contents li:nth-of-type(1) a:hover h3 {
+    .main__works_contents li:first-of-type a:hover h3 {
       transform: scale(1.2) translate(0, -50%); }
-    .main__works_contents li:nth-of-type(1) a:hover img {
+    .main__works_contents li:first-of-type a:hover img {
       filter: grayscale(0);
       transform: scale(1.2); }
-    .main__works_contents li:nth-of-type(1) p {
+    .main__works_contents li:first-of-type p {
       font-size: 2rem; }
-      .main__works_contents li:nth-of-type(1) p code {
+      .main__works_contents li:first-of-type p code {
         font-size: inherit;
         font-weight: 300; }
-      .main__works_contents li:nth-of-type(1) p code:nth-of-type(1) {
+      .main__works_contents li:first-of-type p code:nth-of-type(1) {
         padding-right: 1vw; }
-      .main__works_contents li:nth-of-type(1) p code:nth-of-type(2) {
+      .main__works_contents li:first-of-type p code:nth-of-type(2) {
         padding-left: 1vw; }
     .main__works_contents li:nth-of-type(2) a img {
       display: none; }
@@ -439,6 +448,10 @@ footer {
     .main__works_contents li:nth-of-type(3) a img {
       display: none; }
     .main__works_contents li:nth-of-type(3) p {
+      display: none; }
+    .main__works_contents li:nth-of-type(4) a img {
+      display: none; }
+    .main__works_contents li:nth-of-type(4) p {
       display: none; }
     .main__works_contents li:last-of-type a img {
       display: none; }

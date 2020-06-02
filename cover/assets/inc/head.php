@@ -23,7 +23,7 @@
 <body>
   <header class="header">
     <h1 class="header__logo">
-      <a href="#">chaemi
+      <a href="index.php">chaemi
         <span>lee</span>
       </a>
     </h1>

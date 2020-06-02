@@ -1,65 +1,71 @@
 $(function () {
-  let li = $('.main__works_contents li');
+  var li = $('.main__works_contents li');
   let liLength = $('.main__works_contents li').length;
-  let liIndex = 0;
-
+  let liIdx = 0;
   bln = true;
+
+  setLiTop(); // 초기 li top값
+
+  if(!$('.main__works').hasClass('deactive')) {
+    mainSlide();
+  }
+
   function mainSlide() { //메인 슬라이드 함수
-    $(window).on('wheel', function () {
+    $(window).on('wheel', function (e) {
       if (bln) {
-        console.log('o');
         bln = false;
-        liIndex++;
 
-        if (liIndex == liLength) {
-          liIndex = 0;
+        if (e.originalEvent.wheelDelta < 0) { // 휠 아래로
+          liIdx--;
+          console.log(liIdx);
+          $('.main__works_contents').prepend(li.last());
+        } else { // 휠 위로
+          liIdx++;
+          console.log(liIdx);
+          $('.main__works_contents').append(li.first());
         }
 
-        a();
-
-        if (liIndex == liLength - 1) {
-          liCss(0, "100%");
+        if (liIdx >= liLength) {
+          liIdx = 0;
+        } else if (liIdx <= -liLength) {
+          liIdx = liLength;
         }
+
+        setLiTop();
+
+        setTimeout(function () { // 휠 이벤트 횟수 제한
+          bln = true;
+        }, 1000);
       }
     });
+  }
 
-    function a() { //메인 슬라이드 top값 변경 함수
-      li.css({
-        top: "150%"
-      })
-      liCss(liIndex, "50%");
-      liCss(liIndex + 1, "100%");
-      liCss(liIndex - 1, "0");
-    }
-    a();
+  function setLiTop() { // li top값 조정
+    li = $('.main__works_contents li');
+    
+    li.first().css({
+      top: '50%'
+    }).addClass('selected').siblings().removeClass('selected');
 
-    function liCss(index, top) { //메인 슬라이드 index값에 따른 top값 변경 함수
-      li.eq(index).css({
-        top: top
+    li.last().css({
+      top: '1%'
+    });
+
+    for (var i = 1; i < liLength - 1; i++) {
+      li.eq(i).css({
+        top: (i + 1) * 49 + '%'
       });
     }
   }
-  mainSlide();
 
-
-
-  $(document).on('click', function (e) {
+  $('.main__works_contents').on('click', function (e) {
+    let dNum;
     e.preventDefault();
+    dNum = $(this).find('.selected a').data('num');
 
-    console.log($(e.target));
-
-    if ($(e.target).attr('href') || $(e.target).parent().attr('href')) {
-      // var linkTxt = $(e.target).parent().attr('href').split('?')[0];
-      // console.log('o');
-
-      // $('.main__works').toggleClass('deactive');
-
-      // setTimeout(function () {
-      //   location.href = 'detail.php';
-      // }, 1000);
-    } else {
-      return;
-    }
+    $('.main__works').addClass('deactive');
+    setTimeout(function() {
+      $(location).attr('href', `detail.php?num=${dNum}`);
+    }, 500);
   });
-
 });

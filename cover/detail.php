@@ -1,6 +1,10 @@
 <?
   include_once $_SERVER['DOCUMENT_ROOT']."/assets/inc/head.php";
-  $query = "select * from cover where num=1";
+
+  $linkOrigin = $_SERVER['REQUEST_URI']; // uri 주소
+  $linkNum = substr($linkOrigin, -1); // num 값
+
+  $query = "select * from cover where num=".$linkNum;
   $result = mq($query);
   $row = mysqli_fetch_array($result);
 ?>
@@ -11,7 +15,7 @@
           <small><?=$row['d_type']?></small>
         </h3>
         <span>
-          <img src="assets/img/detail/img_mockup.png" alt="">
+          <img src="<?=$row['d_mockup']?>" alt="">
         </span>
       </article>
       <article class="main__detail_description">
@@ -31,9 +35,9 @@
         page4 php 연결 후 캡쳐한 화면
       </article>
       <div class="main__detail_btn">
-        <a href="#">prev</a>
+        <a href="detail.php?num=<?$row['num'] - 1?>">prev</a>
         <button type="button" class="top-btn">top</button>
-        <a href="#">next</a>
+        <a href="detail.php?num=<?$row['num'] + 1?>">next</a>
       </div>
     </section>
     <?

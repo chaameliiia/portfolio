@@ -1,9 +1,9 @@
 @import "_common";
 
 /*----------------------- load -----------------------*/
-.intro {
+.main__intro {
   @include setPosition(0, 0, 0, 0);
-  // animation: intro 1s 4s forwards;
+  animation: intro 1s 4s forwards;
   align-items: center;
   background: $bgColor;
   display: flex;
@@ -22,34 +22,38 @@
       y: -100%;
     }
   }
+
+  &.deactive {
+    display: none;
+  }
 }
 
 /*----------------------- index.html -----------------------*/
 .main__works {
-  // animation: works-in 1s 4.5s backwards;
   height: 100vh;
   overflow: hidden;
   position: relative;
-  // transform: translate(0, 0);
+  transform: translate(0, 0);
   transition: 1s;
   width: 100%;
+
+  &.active{
+    animation: works-in 1s 4.5s backwards;
+  }
 
   &.deactive {
     transform: translate(-100%, 0);
   }
 
   &_contents {
-    // @include setPosition(0, 50%, 0, -50%);
-
-    border: $hlBorder;
     height: 100vh;
     overflow: hidden;
     width: 100%;
 
     li {
       @include setPosition(0, 50%, 0, -50%);
-      
-      padding: 0 15%;
+
+      padding: 3vw 15%;
       width: 100%;
 
       h3 {
@@ -62,14 +66,23 @@
         text-transform: uppercase;
         -webkit-text-stroke: 1px rgba(239, 192, 80, .4);
       }
+
+      img {
+        opacity: 0;
+        // transition: .5s;
+      }
     }
 
-    li:nth-of-type(1) {
-      a {
+    li:first-of-type {
+      // top: 50%;
+
+      a {  
+        // border: $hlBorder;
         display: flex;
         align-items: flex-end;
         height: 300px;
         position: relative;
+        transition: .5s;
         width: 100%;
 
         h3 {
@@ -82,9 +95,10 @@
 
         img {
           @include setPosition(50%, 0, 0, 0);
-          width:50%;
           filter: grayscale(1);
+          opacity: 1;
           transition: .5s;
+          width:50%;
           z-index: -10;
         }
       }
@@ -120,8 +134,7 @@
     }
 
     li:nth-of-type(2) {
-      // top: 100vh;
-      
+      // top: 99%;
       a {
         img {
           display: none;
@@ -134,7 +147,22 @@
     }
 
     li:nth-of-type(3) {
-      // top: 150vh;
+      // top: 150%;
+      
+      a {
+        img {
+          display: none;
+        }
+      }
+
+      p {
+        display: none;
+      }
+    }
+
+    li:nth-of-type(4) {
+      // top: 200%;
+
       a {
         img {
           display: none;
@@ -147,7 +175,7 @@
     }
 
     li:last-of-type {
-      // top: 0vh;
+      // top: 1%;
       a {
         img {
           display: none;

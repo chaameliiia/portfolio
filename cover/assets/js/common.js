@@ -1,8 +1,39 @@
 $(function () {
   var bln = true;
+  let destination;
+
+  if($.cookie('intro')) {
+    loadIntro();
+  }
+
+  setTimeout(function() {
+    $.cookie('intro', 'off', {expires: 1});
+  }, 5000);
+
+  function loadIntro() {
+    $('.main__intro').addClass('deactive');
+    $('.main__works').removeClass('active');
+  }
   
   $(document).on('click', function (e) {
     e.preventDefault();
+
+    if($(e.target).parent().hasClass('header__logo')) {
+      destination = $(e.target).attr('href');
+      clickLogo(destination);
+    } else if($(e.target).parent().parent().hasClass('header__logo')) {
+      destination = $(e.target).parent().attr('href');
+      clickLogo(destination);
+    }
+    
+    function clickLogo(link) {
+      $('.main__works').addClass('deactive');
+      setTimeout(function() {
+        $(location).attr('href', link);
+      }, 500);
+    }
+
+
     let className = $('section').eq(0).attr('class').split(' ')[0];
     let targetElmt;
 
