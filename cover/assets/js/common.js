@@ -1,61 +1,73 @@
 $(function () {
   var bln = true;
-  let destination;
+  let url;
 
-  if($.cookie('intro')) {
+  if ($.cookie('intro')) { // 쿠키 있을 경우 인트로 재생 정지
     loadIntro();
   }
 
-  setTimeout(function() {
-    $.cookie('intro', 'off', {expires: 1});
+  setTimeout(function () { // 페이지 최초 로딩 시 쿠키 입력
+    $.cookie('intro', 'off', { expires: 1 });
   }, 5000);
 
-  function loadIntro() {
+  function loadIntro() { // 인트로 재생 안할 때 화면 출력 효과 지정
     $('.main__intro').addClass('deactive');
-    $('.main__works').removeClass('active');
+    $('.main__works').removeClass('post_intro');
   }
-  
+
   $(document).on('click', function (e) {
     e.preventDefault();
 
-    if($(e.target).parent().hasClass('header__logo')) {
-      destination = $(e.target).attr('href');
-      clickLogo(destination);
-    } else if($(e.target).parent().parent().hasClass('header__logo')) {
-      destination = $(e.target).parent().attr('href');
-      clickLogo(destination);
-    }
-    
-    function clickLogo(link) {
-      $('.main__works').addClass('deactive');
-      setTimeout(function() {
-        $(location).attr('href', link);
-      }, 500);
+    if ($(e.target).parents().hasClass('header__logo')) {
+      clickLogo();
     }
 
+    function clickLogo() { // 로고 클릭
+      if ($(e.target).attr('href')) { // 클릭 대상에 따른 이동 페이지 주소 지정
+        url = $(e.target).attr('href');
+      } else {
+        url = $(e.target).parent().attr('href');
+      }
 
-    let className = $('section').eq(0).attr('class').split(' ')[0];
-    let targetElmt;
+      if(!$('.main__about').hasClass('deactive')) { // 화면 전환 적용 대상 지정
+        targetElmt = $('.main__about');
+      } else {
+        switchSect();
+      }
 
-    if ($(e.target).hasClass('header__btn')) { // about 클릭
-      switch (className) {
-        case 'main__works': // index 페이지일 때
-          targetElmt = '.main__works';
+      targetElmt.addClass('deactive'); // 화면 전환 적용
+
+      setTimeout(function () { // 페이지 이동
+        $(location).attr('href', url);
+      }, 1000);
+    }
+
+    function switchSect() {
+      switch($('.main').find('.main__works').length) {
+        case 0:
+          targetElmt = $('.main__detail');
           break;
-
-        case 'main__detail': // detail 페이지일 때
-          targetElmt = '.main__detail';
+        
+        case 1:
+          targetElmt = $('.main__works');
           break;
       }
-      clickAbout(); // about 클래스 조정
+      return targetElmt;
+    }
+
+    var targetElmt;
+
+    if ($(e.target).hasClass('header__btn')) { // about 클릭
+      switchSect();
+      setTimeout(clickAbout, 10); // about 클래스 조정
     }
 
     function clickAbout() { // about 클래스 조정
       $(targetElmt).toggleClass('deactive');
-      $('.main__about').toggleClass('active');
+      $('.main__about').toggleClass('deactive');
       $('.header__btn').text('close');
 
-      if (!$('.main__about').hasClass('active')) {
+      if ($('.main__about').hasClass('deactive')) {
         $('.header__btn').text('about');
       }
     }

@@ -1,29 +1,29 @@
 /*----------------------- mixin -----------------------*/
 /*----------------------- animation -----------------------*/
 @import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;900&display=swap);
-@keyframes detail-in {
+@keyframes detail_in {
   0% {
-    transform: translate(0, 100%); }
+    padding-top: 100vh; }
   100% {
-    transform: translate(0, 0); } }
+    padding-top: 0; } }
 @keyframes intro {
   0% {
     transform: translate(0, 0); }
   100% {
     transform: translate(0, -100%); } }
-@keyframes works-in {
+@keyframes post_intro {
   0% {
     transform: translate(-100%, 0); }
   100% {
     transform: translate(0, 0); } }
-@keyframes rect-down {
+@keyframes rect_down {
   0% {
     x: 0;
     y: -100%; }
   100% {
     x: 0;
     y: 0; } }
-@keyframes scale-up {
+@keyframes scale_up {
   0% {
     transform: scale(1); }
   100% {
@@ -133,18 +133,20 @@ li {
   top: 0;
   transform: translate(0, 0);
   background: #2f3435;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
   padding: 7vw 15% 0;
-  transform: translate(100%, 0);
+  transform: translate(0, 0);
   transition: 1s;
   width: 100%;
   z-index: 10; }
-  .main__about.active {
-    height: auto;
-    overflow: unset;
-    transform: translate(0, 0); }
+  .main__about.deactive {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(100%, 0); }
   .main__about .container {
     padding-bottom: 6vw; }
   .main__about_profile {
@@ -246,7 +248,8 @@ li {
   bottom: 4vw;
   position: fixed;
   transition: .5s;
-  right: 7%; }
+  right: 7%;
+  z-index: 20; }
   .aside__modal.active {
     display: flex; }
   .aside__modal_to {
@@ -360,9 +363,9 @@ footer {
   width: 100%;
   z-index: 50; }
   .main__intro svg {
-    animation: scale-up 1.5s 2s forwards; }
+    animation: scale_up 1.5s 2s forwards; }
     .main__intro svg rect {
-      animation: rect-down 1.5s .5s linear forwards;
+      animation: rect_down 1.5s .5s linear forwards;
       x: 0;
       y: -100%; }
   .main__intro.deactive {
@@ -370,14 +373,15 @@ footer {
 
 /*----------------------- index.html -----------------------*/
 .main__works {
+  animation: post_intro 1s backwards;
   height: 100vh;
   overflow: hidden;
   position: relative;
   transform: translate(0, 0);
   transition: 1s;
   width: 100%; }
-  .main__works.active {
-    animation: works-in 1s 4.5s backwards; }
+  .main__works.post_intro {
+    animation: post_intro 1s 4.5s backwards; }
   .main__works.deactive {
     transform: translate(-100%, 0); }
   .main__works_contents {
@@ -402,45 +406,56 @@ footer {
         -webkit-text-stroke: 1px rgba(239, 192, 80, 0.4); }
       .main__works_contents li img {
         opacity: 0; }
-    .main__works_contents li:first-of-type a {
-      display: flex;
-      align-items: flex-end;
-      height: 300px;
-      position: relative;
-      transition: .5s;
-      width: 100%; }
-      .main__works_contents li:first-of-type a h3 {
-        left: 0;
-        position: absolute;
-        top: 50%;
-        transform: translate(0, -50%);
-        color: #efc050;
-        mix-blend-mode: difference;
-        transition: .5s; }
-      .main__works_contents li:first-of-type a img {
-        left: 50%;
-        position: absolute;
-        top: 0;
-        transform: translate(0, 0);
-        filter: grayscale(1);
-        opacity: 1;
+    .main__works_contents li:first-of-type {
+      opacity: 0; }
+      .main__works_contents li:first-of-type.selected {
+        opacity: 1; }
+        .main__works_contents li:first-of-type.selected h3 {
+          opacity: 1;
+          top: 60%; }
+        .main__works_contents li:first-of-type.selected img {
+          left: 50%;
+          opacity: 1; }
+      .main__works_contents li:first-of-type a {
+        display: flex;
+        align-items: flex-end;
+        height: 300px;
+        position: relative;
         transition: .5s;
-        width: 50%;
-        z-index: -10; }
-    .main__works_contents li:first-of-type a:hover h3 {
-      transform: scale(1.2) translate(0, -50%); }
-    .main__works_contents li:first-of-type a:hover img {
-      filter: grayscale(0);
-      transform: scale(1.2); }
-    .main__works_contents li:first-of-type p {
-      font-size: 2rem; }
-      .main__works_contents li:first-of-type p code {
-        font-size: inherit;
-        font-weight: 300; }
-      .main__works_contents li:first-of-type p code:nth-of-type(1) {
-        padding-right: 1vw; }
-      .main__works_contents li:first-of-type p code:nth-of-type(2) {
-        padding-left: 1vw; }
+        width: 100%; }
+        .main__works_contents li:first-of-type a h3 {
+          left: 0;
+          position: absolute;
+          top: 50%;
+          transform: translate(0, -50%);
+          color: #efc050;
+          mix-blend-mode: difference;
+          opacity: 0;
+          transition: .5s; }
+        .main__works_contents li:first-of-type a img {
+          left: 100%;
+          position: absolute;
+          top: 0;
+          transform: translate(0, 0);
+          filter: grayscale(1);
+          opacity: 0;
+          transition: .5s;
+          width: 50%;
+          z-index: -10; }
+      .main__works_contents li:first-of-type a:hover h3 {
+        transform: scale(1.2) translate(0, -50%); }
+      .main__works_contents li:first-of-type a:hover img {
+        filter: grayscale(0);
+        transform: scale(1.2); }
+      .main__works_contents li:first-of-type p {
+        font-size: 2rem; }
+        .main__works_contents li:first-of-type p code {
+          font-size: inherit;
+          font-weight: 300; }
+        .main__works_contents li:first-of-type p code:nth-of-type(1) {
+          padding-right: 1vw; }
+        .main__works_contents li:first-of-type p code:nth-of-type(2) {
+          padding-left: 1vw; }
     .main__works_contents li:nth-of-type(2) a img {
       display: none; }
     .main__works_contents li:nth-of-type(2) p {

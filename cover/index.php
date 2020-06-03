@@ -16,7 +16,7 @@
         <rect fill="#E6BA52" width="100%" height="100%" mask="url(#Layer_1)" />
       </svg>
     </div>
-    <section class="main__works active">
+    <section class="main__works post_intro">
       <h2 class="hidden">works</h2>
       <ul class="main__works_contents">
         <?

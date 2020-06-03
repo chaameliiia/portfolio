@@ -6,16 +6,12 @@ $(function () {
 
   setLiTop(); // 초기 li top값
 
-  if(!$('.main__works').hasClass('deactive')) {
-    mainSlide();
-  }
-
   function mainSlide() { //메인 슬라이드 함수
-    $(window).on('wheel', function (e) {
+    $('.main__works').on('wheel', function (e) {
       if (bln) {
         bln = false;
 
-        if (e.originalEvent.wheelDelta < 0) { // 휠 아래로
+        if (e.originalEvent.wheelDelta > 0) { // 휠 아래로
           liIdx--;
           console.log(liIdx);
           $('.main__works_contents').prepend(li.last());
@@ -31,7 +27,7 @@ $(function () {
           liIdx = liLength;
         }
 
-        setLiTop();
+        setTimeout(setLiTop, 10);
 
         setTimeout(function () { // 휠 이벤트 횟수 제한
           bln = true;
@@ -39,10 +35,11 @@ $(function () {
       }
     });
   }
+  mainSlide();
 
   function setLiTop() { // li top값 조정
     li = $('.main__works_contents li');
-    
+
     li.first().css({
       top: '50%'
     }).addClass('selected').siblings().removeClass('selected');
@@ -64,8 +61,8 @@ $(function () {
     dNum = $(this).find('.selected a').data('num');
 
     $('.main__works').addClass('deactive');
-    setTimeout(function() {
+    setTimeout(function () {
       $(location).attr('href', `detail.php?num=${dNum}`);
-    }, 500);
+    }, 1000);
   });
 });

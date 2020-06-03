@@ -14,10 +14,10 @@
   z-index: 50;
 
   svg {
-    animation: scale-up 1.5s 2s forwards;
+    animation: scale_up 1.5s 2s forwards;
 
     rect {
-      animation: rect-down 1.5s .5s linear forwards;
+      animation: rect_down 1.5s .5s linear forwards;
       x: 0;
       y: -100%;
     }
@@ -30,6 +30,7 @@
 
 /*----------------------- index.html -----------------------*/
 .main__works {
+  animation: post_intro 1s backwards;
   height: 100vh;
   overflow: hidden;
   position: relative;
@@ -37,8 +38,8 @@
   transition: 1s;
   width: 100%;
 
-  &.active{
-    animation: works-in 1s 4.5s backwards;
+  &.post_intro {
+    animation: post_intro 1s 4.5s backwards;
   }
 
   &.deactive {
@@ -75,7 +76,21 @@
 
     li:first-of-type {
       // top: 50%;
+      opacity: 0;
 
+      &.selected{
+        opacity: 1;
+
+        h3{
+          opacity: 1;
+          top:60%;
+        }
+
+        img {
+          left: 50%;
+          opacity: 1;
+        }
+      }
       a {  
         // border: $hlBorder;
         display: flex;
@@ -90,13 +105,14 @@
 
           color: $hlColor;
           mix-blend-mode: difference;
+          opacity: 0;
           transition: .5s;
         }
 
         img {
-          @include setPosition(50%, 0, 0, 0);
+          @include setPosition(100%, 0, 0, 0);
           filter: grayscale(1);
-          opacity: 1;
+          opacity: 0;
           transition: .5s;
           width:50%;
           z-index: -10;

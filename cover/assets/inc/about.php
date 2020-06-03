@@ -1,4 +1,4 @@
-    <section class="main__about">
+    <section class="main__about deactive">
       <h2 class="hidden">about</h2>
       <article class="main__about_profile container">
         <h3>chaemi lee</h3>

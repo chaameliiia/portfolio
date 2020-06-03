@@ -2,14 +2,16 @@
 
 /*----------------------- detail.html -----------------------*/
 .main__detail {
-  animation: detail-in 1s 1s forwards;
+  animation: detail_in 1s 1s backwards;
   opacity: 1;
+  padding-top: 0;
   transition: .5s;
-  transform: translate(0, 100%);
+  // transform: translate(0, 100%);
   width: 100%;
 
   &.deactive {
     opacity: 0;
+    padding-top: 100vh;
   }
 
   &_visual {

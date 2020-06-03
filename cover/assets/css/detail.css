@@ -1,29 +1,29 @@
 /*----------------------- mixin -----------------------*/
 /*----------------------- animation -----------------------*/
 @import url(https://fonts.googleapis.com/css2?family=Kanit:wght@300;400;500;600;700;900&display=swap);
-@keyframes detail-in {
+@keyframes detail_in {
   0% {
-    transform: translate(0, 100%); }
+    padding-top: 100vh; }
   100% {
-    transform: translate(0, 0); } }
+    padding-top: 0; } }
 @keyframes intro {
   0% {
     transform: translate(0, 0); }
   100% {
     transform: translate(0, -100%); } }
-@keyframes works-in {
+@keyframes post_intro {
   0% {
     transform: translate(-100%, 0); }
   100% {
     transform: translate(0, 0); } }
-@keyframes rect-down {
+@keyframes rect_down {
   0% {
     x: 0;
     y: -100%; }
   100% {
     x: 0;
     y: 0; } }
-@keyframes scale-up {
+@keyframes scale_up {
   0% {
     transform: scale(1); }
   100% {
@@ -133,18 +133,20 @@ li {
   top: 0;
   transform: translate(0, 0);
   background: #2f3435;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
   padding: 7vw 15% 0;
-  transform: translate(100%, 0);
+  transform: translate(0, 0);
   transition: 1s;
   width: 100%;
   z-index: 10; }
-  .main__about.active {
-    height: auto;
-    overflow: unset;
-    transform: translate(0, 0); }
+  .main__about.deactive {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(100%, 0); }
   .main__about .container {
     padding-bottom: 6vw; }
   .main__about_profile {
@@ -246,7 +248,8 @@ li {
   bottom: 4vw;
   position: fixed;
   transition: .5s;
-  right: 7%; }
+  right: 7%;
+  z-index: 20; }
   .aside__modal.active {
     display: flex; }
   .aside__modal_to {
@@ -346,13 +349,14 @@ footer {
 
 /*----------------------- detail.html -----------------------*/
 .main__detail {
-  animation: detail-in 1s 1s forwards;
+  animation: detail_in 1s 1s backwards;
   opacity: 1;
+  padding-top: 0;
   transition: .5s;
-  transform: translate(0, 100%);
   width: 100%; }
   .main__detail.deactive {
-    opacity: 0; }
+    opacity: 0;
+    padding-top: 100vh; }
   .main__detail_visual {
     position: relative;
     width: 100%; }

@@ -49,7 +49,7 @@ function reqEditor() {
   nhn.husky.EZCreator.createInIFrame({
     oAppRef: oEditors,
     elPlaceHolder: "ir1",
-    sSkinURI: "/cover/admin/assets/editor/SmartEditor2Skin.html",
+    sSkinURI: "/admin/assets/editor/SmartEditor2Skin.html",
     htParams: {
       bUseToolbar: true,
       fOnBeforeUnload: function () {

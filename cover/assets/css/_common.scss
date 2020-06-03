@@ -135,19 +135,21 @@ li {
   @include setPosition(0, 0, 0, 0);
 
   background: $bgColor;
-  height: 100vh;
+  height: 100%;
   margin: 0 auto;
-  overflow: hidden;
   padding: 7vw 15% 0;
-  transform: translate(100%, 0);
+  transform: translate(0, 0);
   transition: 1s;
   width: 100%;
   z-index: 10;
 
-  &.active {
-    height: auto;
-    overflow: unset;
-    transform: translate(0, 0);
+  &.deactive {
+    height: 100vh;
+    overflow: hidden;
+    position: fixed;
+    left: 0;
+    top: 0;
+    transform: translate(100%, 0);
   }
 
   .container {
@@ -288,6 +290,7 @@ li {
     position: fixed;
     transition: .5s;
     right: 7%;
+    z-index: 20;
 
     &.active {
       display: flex;
