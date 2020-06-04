@@ -42,7 +42,6 @@
     </div>
     <a href="register.php" class="btn">Register Portfolio</a>
   </article>
-  <div class="popup"></div>
 <?
   callFunc('prjList()');
   include_once $_SERVER['DOCUMENT_ROOT']."/admin/assets/inc/foot.php";

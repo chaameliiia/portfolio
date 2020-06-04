@@ -12,11 +12,13 @@ $(function () {
 
   function loadIntro() { // 인트로 재생 안할 때 화면 출력 효과 지정
     $('.main__intro').addClass('deactive');
-    $('.main__works').removeClass('post_intro');
+    $('.main__works').removeClass('animate');
   }
 
   $(document).on('click', function (e) {
-    e.preventDefault();
+    if(!$(e.target).attr('type') == 'submit') {
+      e.preventDefault();
+    } 
 
     if ($(e.target).parents().hasClass('header__logo')) {
       clickLogo();
@@ -29,7 +31,7 @@ $(function () {
         url = $(e.target).parent().attr('href');
       }
 
-      if(!$('.main__about').hasClass('deactive')) { // 화면 전환 적용 대상 지정
+      if (!$('.main__about').hasClass('deactive')) { // 화면 전환 적용 대상 지정
         targetElmt = $('.main__about');
       } else {
         switchSect();
@@ -43,11 +45,11 @@ $(function () {
     }
 
     function switchSect() {
-      switch($('.main').find('.main__works').length) {
+      switch ($('.main').find('.main__works').length) {
         case 0:
           targetElmt = $('.main__detail');
           break;
-        
+
         case 1:
           targetElmt = $('.main__works');
           break;
@@ -60,6 +62,7 @@ $(function () {
     if ($(e.target).hasClass('header__btn')) { // about 클릭
       switchSect();
       setTimeout(clickAbout, 10); // about 클래스 조정
+      $(window).scrollTop(0);
     }
 
     function clickAbout() { // about 클래스 조정
@@ -85,7 +88,18 @@ $(function () {
 
       // aside 이미지 교체
       $(e.target).css('background', `url(${imgUrl}) no-repeat center`);
+      // console.log($(window).scrollTop());
+
       $('.aside__modal').toggleClass('active');
+      $('.aside').toggleClass('active');
+      $('.aside').css({
+        top: $(window).scrollTop()
+      });
+
+      if ($('.aside').hasClass('active')) {
+        $('#contact')[0].reset();
+      }
+
     }
   });
 });

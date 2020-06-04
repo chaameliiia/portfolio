@@ -20,6 +20,6 @@
 
     <nav>
       <a href="/admin/work/list.php">Portfolio</a>
-      <a href="/admin/contact/request.php">Contact</a>
+      <a href="/admin/contact/list.php">Contact</a>
     </nav>
   </header>

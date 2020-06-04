@@ -144,7 +144,7 @@ li {
   z-index: 10;
 
   &.deactive {
-    height: 100vh;
+    height: 0;
     overflow: hidden;
     position: fixed;
     left: 0;
@@ -281,6 +281,13 @@ li {
 
 /*----------------------- aside -----------------------*/
 .aside {
+  &.active {
+    @include setPosition(0, 0, 0, 0);
+    background: transparent;
+    height: 100vh;
+    width: 100%;
+  }
+  
   &__modal {
     display: none;
     background: $bgColor;

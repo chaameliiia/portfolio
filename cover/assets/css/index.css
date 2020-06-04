@@ -141,7 +141,7 @@ li {
   width: 100%;
   z-index: 10; }
   .main__about.deactive {
-    height: 100vh;
+    height: 0;
     overflow: hidden;
     position: fixed;
     left: 0;
@@ -240,6 +240,14 @@ li {
       width: 600px; }
 
 /*----------------------- aside -----------------------*/
+.aside.active {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translate(0, 0);
+  background: transparent;
+  height: 100vh;
+  width: 100%; }
 .aside__modal {
   display: none;
   background: #2f3435;
@@ -380,7 +388,7 @@ footer {
   transform: translate(0, 0);
   transition: 1s;
   width: 100%; }
-  .main__works.post_intro {
+  .main__works.animate {
     animation: post_intro 1s 4.5s backwards; }
   .main__works.deactive {
     transform: translate(-100%, 0); }

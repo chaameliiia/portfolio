@@ -17,6 +17,7 @@
         <span>
           <img src="<?=$row['d_mockup']?>" alt="">
         </span>
+        <div class="back_img"></div>
       </article>
       <article class="main__detail_description">
         <h4>overall</h4>

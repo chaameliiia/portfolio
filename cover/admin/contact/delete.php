@@ -1,7 +1,7 @@
 <!-- 입력된 내용 삭제 -->
 <?
   // db 접근
-  include_once $_SERVER['DOCUMENT_ROOT']."/admin/head.php";
+  include_once $_SERVER['DOCUMENT_ROOT']."/admin/assets/inc/head.php";
 
   // list.php에서 선택한 항목 num값 받아서 변수에 저장
   $num = $_GET['num'];

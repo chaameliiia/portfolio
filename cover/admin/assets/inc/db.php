@@ -1,3 +1,4 @@
+<meta charset="UTF-8">
 <? // db 접근
   session_start();
 
@@ -33,3 +34,4 @@
       <script>{$name}</script>";
   }
 ?>
+

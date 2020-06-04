@@ -3,6 +3,8 @@ $(function () {
   let liLength = $('.main__works_contents li').length;
   let liIdx = 0;
   bln = true;
+  
+  sessionStorage.removeItem("check");
 
   setLiTop(); // 초기 li top값
 
@@ -13,11 +15,9 @@ $(function () {
 
         if (e.originalEvent.wheelDelta > 0) { // 휠 아래로
           liIdx--;
-          console.log(liIdx);
           $('.main__works_contents').prepend(li.last());
         } else { // 휠 위로
           liIdx++;
-          console.log(liIdx);
           $('.main__works_contents').append(li.first());
         }
 

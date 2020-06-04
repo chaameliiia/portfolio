@@ -141,7 +141,7 @@ li {
   width: 100%;
   z-index: 10; }
   .main__about.deactive {
-    height: 100vh;
+    height: 0;
     overflow: hidden;
     position: fixed;
     left: 0;
@@ -240,6 +240,14 @@ li {
       width: 600px; }
 
 /*----------------------- aside -----------------------*/
+.aside.active {
+  left: 0;
+  position: absolute;
+  top: 0;
+  transform: translate(0, 0);
+  background: transparent;
+  height: 100vh;
+  width: 100%; }
 .aside__modal {
   display: none;
   background: #2f3435;
@@ -349,7 +357,6 @@ footer {
 
 /*----------------------- detail.html -----------------------*/
 .main__detail {
-  animation: detail_in 1s 1s backwards;
   opacity: 1;
   padding-top: 0;
   transition: .5s;
@@ -357,21 +364,17 @@ footer {
   .main__detail.deactive {
     opacity: 0;
     padding-top: 100vh; }
+  .main__detail.animate {
+    animation: detail_in 1s 1s backwards; }
+  .main__detail.stop_scroll {
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0; }
   .main__detail_visual {
     position: relative;
     width: 100%; }
-    .main__detail_visual:before {
-      left: 0;
-      position: absolute;
-      top: 0;
-      transform: translate(0, 0);
-      background: #2f3435 url(../img/detail/img_back.jpg) no-repeat top;
-      background-blend-mode: exclusion;
-      content: '';
-      height: 100%;
-      opacity: .3;
-      width: 100%;
-      z-index: -10; }
     .main__detail_visual h3 {
       font-size: 2em;
       padding: 8vw 15% 2vw;
@@ -384,6 +387,17 @@ footer {
       justify-content: center;
       padding: 4vw 0;
       width: 100%; }
+    .main__detail_visual .back_img {
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: translate(0, 0);
+      background: #2f3435 url(../img/detail/back/img_back.jpg) no-repeat top;
+      background-blend-mode: exclusion;
+      height: 100%;
+      opacity: .3;
+      width: 100%;
+      z-index: -10; }
   .main__detail_description {
     padding: 7vw 0;
     text-align: center;

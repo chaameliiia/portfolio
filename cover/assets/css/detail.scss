@@ -2,11 +2,9 @@
 
 /*----------------------- detail.html -----------------------*/
 .main__detail {
-  animation: detail_in 1s 1s backwards;
   opacity: 1;
   padding-top: 0;
   transition: .5s;
-  // transform: translate(0, 100%);
   width: 100%;
 
   &.deactive {
@@ -14,21 +12,21 @@
     padding-top: 100vh;
   }
 
+  &.animate {
+    animation: detail_in 1s 1s backwards;
+  }
+
+  &.stop_scroll {
+    height: 100vh;
+    left: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+  }
+
   &_visual {
     position: relative;
     width: 100%;
-
-    &:before {
-      @include setPosition(0, 0, 0, 0);
-      
-      background: $bgColor url(../img/detail/img_back.jpg) no-repeat top;
-      background-blend-mode: exclusion;
-      content: '';
-      height: 100%;
-      opacity: .3;
-      width: 100%;
-      z-index: -10;
-    }
 
     h3 {
       font-size: 2em;
@@ -46,6 +44,16 @@
       justify-content: center;
       padding: 4vw 0;
       width: 100%;
+    }
+
+    .back_img {
+      @include setPosition(0, 0, 0, 0);
+      background: $bgColor url(../img/detail/back/img_back.jpg) no-repeat top;
+      background-blend-mode: exclusion;
+      height: 100%;
+      opacity: .3;
+      width: 100%;
+      z-index: -10;
     }
   }
 

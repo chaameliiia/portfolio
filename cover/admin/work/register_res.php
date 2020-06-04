@@ -16,22 +16,22 @@
   // preview 등록
   $previewName = $preview['name'];
   $previewTmp = $preview['tmp_name'];
-  $previewFolder =  '../../assets/img/'.$previewName;
-  $previewDir = '/assets/img/'.$previewName;
+  $previewFolder =  '../../assets/img/thum/'.$previewName;
+  $previewDir = '/assets/img/thum/'.$previewName;
   move_uploaded_file($previewTmp, $previewFolder);
 
   // mockup 등록
   $mockupName = $mockup['name'];
   $mockupTmp = $mockup['tmp_name'];
-  $mockupFolder =  '../../assets/img/detail/'.$mockupName;
-  $mockupDir = '/assets/img/detail/'.$mockupName;
+  $mockupFolder =  '../../assets/img/detail/mockup/'.$mockupName;
+  $mockupDir = '/assets/img/detail/mockup/'.$mockupName;
   move_uploaded_file($mockupTmp, $mockupFolder);
 
-  // mockup 등록
+  // backImg 등록
   $backImgName = $backImg['name'];
   $backImgTmp = $backImg['tmp_name'];
-  $backImgFolder =  '../../assets/img/detail/'.$backImgName;
-  $backImgDir = '/assets/img/detail/'.$backImgName;
+  $backImgFolder =  '../../assets/img/detail/back/'.$backImgName;
+  $backImgDir = '/assets/img/detail/back/'.$backImgName;
   move_uploaded_file($backImgTmp, $backImgFolder);
 
 
