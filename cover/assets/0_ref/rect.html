@@ -1,0 +1,71 @@
+    <!doctype>
+<html>
+<body>
+   <style>
+       canvas{border:1px solid #f00; width:800px;height:500px;}
+    </style>
+    <canvas id="can" width="1200" height="1000"></canvas>
+    
+    
+    <script>
+        var can = document.querySelector('#can');
+        var ctx = can.getContext('2d');
+        var size = 1,
+            lineW=can.width*0.1,
+            lineH=can.height*0.1,
+            start,cIdx=0;
+        
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = 'rgba(255,100,0,1)';
+        ctx.fillStyle = 'rgba(255,100,0,1)';
+        ctx.globalAlpha = .4;
+        
+        
+        
+        function line(){
+            lineW += 40;
+            lineH += 30;
+            ctx.moveTo(can.width * 0.1,can.height * 0.5);
+            ctx.lineTo(lineW,can.height * 0.5);
+            ctx.closePath();
+
+            ctx.moveTo(can.width * 0.5,can.height * 0.1);
+            ctx.lineTo(can.width * 0.5,lineH);
+            ctx.stroke();
+            
+            
+            if(lineW <= can.width*0.9){
+                var aa = requestAnimationFrame(line);
+            }else{
+                cancelAnimationFrame(aa);
+                draw(100,100);
+            }
+            
+        }line();
+        
+        function draw(cw,ch){
+            cIdx++;
+            ctx.setTransform(1,0,0,1,0,0);
+            ctx.translate(can.width * 0.5,can.height * 0.5)
+            ctx.rotate((Math.PI/180)*45);
+            ctx.scale(size,size); 
+            size += 0.1;
+            
+            (cIdx == 1  ||  cIdx == 15 ||  cIdx == 30) ? ctx.fillRect(-50, -50, 100, 100) : '';
+            
+            if(size < 4){
+                start = requestAnimationFrame(draw);
+            }else{
+                cancelAnimationFrame(start);
+            }            
+        }
+        
+        
+        
+    
+    </script>
+    
+    
+    
+</body>
+</html>

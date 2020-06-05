@@ -79,10 +79,10 @@
           </p>
         </div>
       </article>
-      <article class="main__about_personality container">
+      <!-- <article class="main__about_personality container">
         <h3>personality</h3>
         <div>
           <canvas id="diagram"></canvas>
         </div>
-      </article>
+      </article> -->
     </section>

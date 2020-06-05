@@ -392,7 +392,6 @@ footer {
       position: absolute;
       top: 0;
       transform: translate(0, 0);
-      background: #2f3435 url(../img/detail/back/img_back.jpg) no-repeat top;
       background-blend-mode: exclusion;
       height: 100%;
       opacity: .3;

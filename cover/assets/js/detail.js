@@ -1,3 +1,4 @@
+
 $(function () {
   if (!sessionStorage.getItem("check")) {
     $('.main__detail').addClass('animate');
@@ -5,39 +6,34 @@ $(function () {
 
   sessionStorage.setItem("check", "ok");
 
-  
+  let prjNum = $(location).attr('href').split('=')[1];
+  $('.back_img').css({
+    'background': `#2f3435 url(/assets/img/detail/back/img_back${prjNum}.jpg) no-repeat top`
+  });
 
-  $(document).on('click', function (e) {
-    e.preventDefault();
-
+  $('.main__detail').on('click', function (e) {
     if ($(e.target).hasClass('top-btn')) { // top 버튼 클릭
-      $('html').animate({
+      $('body').animate({
         scrollTop: 0
       });
     }
 
-    let hrefTxt = $(location).attr('href');
-    let strNum = parseInt(hrefTxt.split('=')[1]);
-    let hrefNum = 0;
+    e.preventDefault();
+
+    let hrefNum;
 
     if ($(e.target).attr('href')) { // prev, next 버튼 클릭
-      switch ($(e.target).text()) {
-        case 'prev':
-          hrefNum = strNum - 1;
-          break;
-        case 'next':
-          hrefNum = strNum + 1;
-          break;
-        default:
-          return;
-      }
+      $(e.target).text() == 'prev' ? hrefNum = 0 : hrefNum = 1;
 
       $('.main__detail').addClass('deactive');
       sessionStorage.removeItem("check");
 
       setTimeout(function () {
-        $(location).attr('href', `detail.php?num=${hrefNum}`);
+        location.href = $('.main__detail_btn a').eq(hrefNum).attr('href');
+
       }, 1000);
     }
   });
+
+
 });
