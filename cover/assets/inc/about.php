@@ -1,4 +1,5 @@
-    <section class="main__about deactive">
+    <!-- <section class="main__about deactive"> -->
+    <section class="main__about">
       <h2 class="hidden">about</h2>
       <article class="main__about_profile container">
         <h3>chaemi lee</h3>
@@ -79,10 +80,16 @@
           </p>
         </div>
       </article>
-      <!-- <article class="main__about_personality container">
+      <article class="main__about_personality container">
         <h3>personality</h3>
         <div>
-          <canvas id="diagram"></canvas>
+          <strong>저는</strong>
+          <span>책임감 강한</span>
+          <span>지적호기심 가득한</span>
+          <span>목표지향적인</span>
+          <span>배려심이 많은</span>
+          <span>빨리 배우는</span>
+          <span>쉽게 적응하는</span>
         </div>
-      </article> -->
+      </article>
     </section>

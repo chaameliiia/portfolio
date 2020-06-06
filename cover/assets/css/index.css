@@ -230,14 +230,56 @@ li {
     border: 1px solid #f00;
     height: 400px;
     width: 100%;
-    position: relative; }
-    .main__about_personality > div canvas {
+    position: relative;
+    z-index: -10; }
+    .main__about_personality > div strong {
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
-      height: 400px;
-      width: 600px; }
+      font-size: 2em;
+      font-weight: bold; }
+    .main__about_personality > div span {
+      left: 0;
+      position: absolute;
+      top: 0;
+      transform: translate(0, 0); }
+    .main__about_personality > div span:after {
+      background: #efc050;
+      bottom: 0;
+      content: '';
+      left: 0;
+      height: 1px;
+      position: absolute;
+      width: 100px; }
+    .main__about_personality > div span:nth-of-type(1) {
+      font-size: 2.5rem;
+      left: 55%;
+      top: 20%; }
+      .main__about_personality > div span:nth-of-type(1):after {
+        left: -30%;
+        bottom: 0;
+        transform: skewX(40deg); }
+    .main__about_personality > div span:nth-of-type(2) {
+      font-size: 2rem;
+      left: 40%;
+      top: 75%; }
+    .main__about_personality > div span:nth-of-type(3) {
+      font-size: 2rem;
+      left: 25%;
+      top: 35%; }
+    .main__about_personality > div span:nth-of-type(4) {
+      font-size: 1.25rem;
+      left: 65%;
+      top: 60%; }
+    .main__about_personality > div span:nth-of-type(5) {
+      font-size: 1.25rem;
+      left: 25%;
+      top: 65%; }
+    .main__about_personality > div span:nth-of-type(6) {
+      font-size: 1.25rem;
+      left: 35%;
+      top: 10%; }
 
 /*----------------------- aside -----------------------*/
 .aside.active {
