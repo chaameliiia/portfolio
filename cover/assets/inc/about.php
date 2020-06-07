@@ -1,5 +1,5 @@
-    <!-- <section class="main__about deactive"> -->
-    <section class="main__about">
+    <section class="main__about deactive">
+    <!-- <section class="main__about"> -->
       <h2 class="hidden">about</h2>
       <article class="main__about_profile container">
         <h3>chaemi lee</h3>
@@ -18,7 +18,8 @@
         <article>
           <h3 class="hidden">introduction</h3>
           <p>
-            소개소개소개
+            어제와 같은 오늘을 살면서 오늘과 다른 내일을 꿈꾸지 말라고 합니다. 하루하루 더 나아지기 위한 노력을 게을리 하지 않고
+            항상 발전하는 프론트엔드 개발자가 되겠습니다.
           </p>
         </article>
       </div>

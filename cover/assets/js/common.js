@@ -1,4 +1,5 @@
 $(function () {
+  // load -------------------------------------------
   var bln = true;
   let url;
 
@@ -15,6 +16,7 @@ $(function () {
     $('.main__works').removeClass('animate');
   }
 
+  // click -------------------------------------------
   $(document).on('click', function (e) {
     if(!$(e.target).attr('type') == 'submit') {
       e.preventDefault();
@@ -99,7 +101,35 @@ $(function () {
       if ($('.aside').hasClass('active')) {
         $('#contact')[0].reset();
       }
-
     }
   });
+
+  // mousemove -------------------------------------------
+  // var personal = document.querySelectorAll('.main__about_personality span');
+
+  // for(var i = 0; i < personal.length; i++) {
+  //   personal[i].addEventListener('mouseenter', function(e) {
+  //     document.documentElement.style.setProperty('--mouseX', e.pageX);
+  //     document.documentElement.style.setProperty('--mouseY', e.pageY);
+  //   });
+  
+  // }
+
+  
+
+  $('.main__about_personality div span').on('mouseenter', function() {
+    $(this).addClass('active');
+    // var thisFont = parseInt($(this).css('font-size'));
+    // console.log(thisFont);
+  });
+
+  $('.main__about_personality div span').on('mouseleave', function() {
+    $(this).removeClass('active');
+    // var thisFont = parseInt($(this).css('font-size'));
+    // $(this).animate({
+    //   'font-size': thisFont / 12 * 10 + 'px'
+    // });
+    // console.log(thisFont);
+  });
+
 });

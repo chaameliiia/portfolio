@@ -198,7 +198,8 @@ li {
         background: url(../img/ic_github.png) no-repeat left; }
     .main__about_contacts article:nth-of-type(2) {
       text-align: right;
-      width: 54%; }
+      white-space: pre-line;
+      width: 55%; }
   .main__about_education p {
     align-items: flex-end;
     display: flex;
@@ -227,11 +228,9 @@ li {
         word-break: keep-all;
         word-wrap: break-word; }
   .main__about_personality > div {
-    border: 1px solid #f00;
     height: 400px;
     width: 100%;
-    position: relative;
-    z-index: -10; }
+    position: relative; }
     .main__about_personality > div strong {
       left: 50%;
       position: absolute;
@@ -243,7 +242,14 @@ li {
       left: 0;
       position: absolute;
       top: 0;
-      transform: translate(0, 0); }
+      transform: translate(0, 0);
+      background: #2f3435;
+      height: auto;
+      transition: .5s;
+      width: auto;
+      z-index: 20; }
+      .main__about_personality > div span.active {
+        transform: scale(1.2); }
     .main__about_personality > div span:after {
       background: #efc050;
       bottom: 0;
@@ -254,32 +260,56 @@ li {
       width: 100px; }
     .main__about_personality > div span:nth-of-type(1) {
       font-size: 2.5rem;
-      left: 55%;
+      left: 60%;
       top: 20%; }
       .main__about_personality > div span:nth-of-type(1):after {
+        bottom: -30%;
         left: -30%;
-        bottom: 0;
-        transform: skewX(40deg); }
+        transform: rotate(-40deg);
+        width: 80px; }
     .main__about_personality > div span:nth-of-type(2) {
       font-size: 2rem;
       left: 40%;
       top: 75%; }
+      .main__about_personality > div span:nth-of-type(2):after {
+        bottom: 180%;
+        left: 20%;
+        transform: rotate(90deg);
+        width: 70px; }
     .main__about_personality > div span:nth-of-type(3) {
       font-size: 2rem;
-      left: 25%;
+      left: 20%;
       top: 35%; }
+      .main__about_personality > div span:nth-of-type(3):after {
+        left: 100%;
+        transform: rotate(10deg);
+        width: 40px; }
     .main__about_personality > div span:nth-of-type(4) {
       font-size: 1.25rem;
       left: 65%;
       top: 60%; }
+      .main__about_personality > div span:nth-of-type(4):after {
+        bottom: 160%;
+        left: -80%;
+        transform: rotate(20deg); }
     .main__about_personality > div span:nth-of-type(5) {
       font-size: 1.25rem;
       left: 25%;
       top: 65%; }
+      .main__about_personality > div span:nth-of-type(5):after {
+        bottom: 180%;
+        left: 100%;
+        transform: rotate(-30deg);
+        width: 90px; }
     .main__about_personality > div span:nth-of-type(6) {
       font-size: 1.25rem;
       left: 35%;
       top: 10%; }
+      .main__about_personality > div span:nth-of-type(6):after {
+        bottom: -180%;
+        left: 30%;
+        transform: rotate(55deg);
+        width: 110px; }
 
 /*----------------------- aside -----------------------*/
 .aside.active {
@@ -289,17 +319,17 @@ li {
   transform: translate(0, 0);
   background: transparent;
   height: 100vh;
-  width: 100%; }
+  width: 100%;
+  z-index: 30; }
 .aside__modal {
-  display: none;
   background: #2f3435;
   border: 1px solid #efc050;
   border-radius: 10px;
   bottom: 4vw;
+  display: none;
   position: fixed;
   transition: .5s;
-  right: 7%;
-  z-index: 20; }
+  right: 7%; }
   .aside__modal.active {
     display: flex; }
   .aside__modal_to {
