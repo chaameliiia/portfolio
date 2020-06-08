@@ -40,14 +40,14 @@
         </span>
         <p><?=$row['d_description']?></p>
         <a href="<?=$row['url']?>">
-          <span>바로가기</span>
+          <span class="linkBtn">바로가기</span>
         </a>
       </article>
       <article class="main__detail_preview">
         <img src="assets/img/detail/img_page1.jpg" alt="">
         <img src="assets/img/detail/img_page2.jpg" alt="">
         <img src="assets/img/detail/img_page3.jpg" alt="">
-        page4 php 연결 후 캡쳐한 화면
+        <!-- page4 php 연결 후 캡쳐한 화면 -->
       </article>
       <div class="main__detail_btn">
         <a href="detail.php?num=<?=$prevC?>">prev</a>
