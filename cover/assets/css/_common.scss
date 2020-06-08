@@ -196,7 +196,7 @@ li {
     }
 
     img {
-      @include setPosition(50%, 10%, 0 , 0);
+      @include setPosition(55%, 10%, 0 , 0);
       animation: hovering 3s linear infinite;
     }
   }
