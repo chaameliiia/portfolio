@@ -227,6 +227,8 @@ li {
       text-align: right;
       white-space: pre-line;
       width: 55%; }
+      .main__about_contacts article:nth-of-type(2) p {
+        font-size: 1.15rem; }
   .main__about_education p {
     align-items: flex-end;
     display: flex;
