@@ -62,3 +62,41 @@
     transform: scale(1.4);
   }
 }
+
+@keyframes hovering {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  15% {
+    transform: translate(3px, -3px);
+  }
+
+  30% {
+    transform: translate(6px, -6px);
+  }
+
+  45% {
+    transform: translate(3px, -9px);
+  }
+
+  50% {
+    transform: translate(0, -12px);
+  }
+
+  60% {
+    transform: translate(-3px, -9px);
+  }
+
+  75% {
+    transform: translate(-6px, -6px);
+  }
+
+  90% {
+    transform: translate(-3px, -3px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}

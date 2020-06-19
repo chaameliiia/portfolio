@@ -17,8 +17,15 @@ $(function () {
         scrollTop: 0
       });
     }
-
     e.preventDefault();
+
+    if($(e.target).hasClass('linkBtn')) {
+      $(this).addClass('deactive');
+      setTimeout(function() {
+        location.href = $(e.target).parent().attr('href');
+      }, 500);
+    }
+
 
     let hrefNum;
 

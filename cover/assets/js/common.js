@@ -16,6 +16,26 @@ $(function () {
     $('.main__works').removeClass('animate');
   }
 
+  $(window).on('scroll', function() {
+    var winHeight = $(window).height();
+    var scrollTop = $(this).scrollTop();
+
+    $('.main__about .container').each(function(i) {
+      var conTop = $('.main__about .container').eq(i).offset().top;
+
+      if(conTop - winHeight < scrollTop) {
+        $('.main__about .container').eq(i).stop().animate({
+          'opacity': 1,
+          'padding-top': 0
+        }, 500, 'linear');
+
+        $('.main__about .container h3').addClass('active');
+      }
+    });
+  });
+
+  $(window).trigger('scroll');
+
   // click -------------------------------------------
   $(document).on('click', function (e) {
     if(!$(e.target).attr('type') == 'submit') {
@@ -103,33 +123,4 @@ $(function () {
       }
     }
   });
-
-  // mousemove -------------------------------------------
-  // var personal = document.querySelectorAll('.main__about_personality span');
-
-  // for(var i = 0; i < personal.length; i++) {
-  //   personal[i].addEventListener('mouseenter', function(e) {
-  //     document.documentElement.style.setProperty('--mouseX', e.pageX);
-  //     document.documentElement.style.setProperty('--mouseY', e.pageY);
-  //   });
-  
-  // }
-
-  
-
-  $('.main__about_personality div span').on('mouseenter', function() {
-    $(this).addClass('active');
-    // var thisFont = parseInt($(this).css('font-size'));
-    // console.log(thisFont);
-  });
-
-  $('.main__about_personality div span').on('mouseleave', function() {
-    $(this).removeClass('active');
-    // var thisFont = parseInt($(this).css('font-size'));
-    // $(this).animate({
-    //   'font-size': thisFont / 12 * 10 + 'px'
-    // });
-    // console.log(thisFont);
-  });
-
 });

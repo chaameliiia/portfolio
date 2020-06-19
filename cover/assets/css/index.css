@@ -28,6 +28,25 @@
     transform: scale(1); }
   100% {
     transform: scale(1.4); } }
+@keyframes hovering {
+  0% {
+    transform: translate(0, 0); }
+  15% {
+    transform: translate(3px, -3px); }
+  30% {
+    transform: translate(6px, -6px); }
+  45% {
+    transform: translate(3px, -9px); }
+  50% {
+    transform: translate(0, -12px); }
+  60% {
+    transform: translate(-3px, -9px); }
+  75% {
+    transform: translate(-6px, -6px); }
+  90% {
+    transform: translate(-3px, -3px); }
+  100% {
+    transform: translate(0, 0); } }
 @font-face {
   font-family: 'sCoreDream';
   src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_six@1.2/S-CoreDream-3Light.woff") format("woff");
@@ -148,12 +167,19 @@ li {
     top: 0;
     transform: translate(100%, 0); }
   .main__about .container {
-    padding-bottom: 6vw; }
+    opacity: 0;
+    overflow: hidden;
+    padding: 10vw 0 6vw;
+    width: 100%; }
+    .main__about .container h3 {
+      transform: translateX(-100%);
+      transition: 1s; }
+      .main__about .container h3.active {
+        transform: translateX(0); }
   .main__about_profile {
     height: 400px;
     margin-bottom: 5vw;
-    position: relative;
-    width: 100%; }
+    position: relative; }
     .main__about_profile h3 {
       left: 25%;
       position: absolute;
@@ -177,15 +203,16 @@ li {
       white-space: pre-line;
       z-index: 10; }
     .main__about_profile img {
-      left: 50%;
+      left: 55%;
       position: absolute;
       top: 10%;
-      transform: translate(0, 0); }
+      transform: translate(0, 0);
+      animation: hovering 3s linear infinite; }
   .main__about_contacts {
     display: flex;
-    justify-content: space-between;
-    width: 100%; }
+    justify-content: space-between; }
     .main__about_contacts article:nth-of-type(1) {
+      overflow: hidden;
       width: 250px; }
       .main__about_contacts article:nth-of-type(1) a {
         display: block;
@@ -200,6 +227,8 @@ li {
       text-align: right;
       white-space: pre-line;
       width: 55%; }
+      .main__about_contacts article:nth-of-type(2) p {
+        font-size: 1.15rem; }
   .main__about_education p {
     align-items: flex-end;
     display: flex;
@@ -212,8 +241,7 @@ li {
   .main__about_skills {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-    width: 100%; }
+    justify-content: space-between; }
     .main__about_skills h3 {
       width: 100%; }
     .main__about_skills > div {
@@ -229,15 +257,16 @@ li {
         word-wrap: break-word; }
   .main__about_personality > div {
     height: 400px;
-    width: 100%;
     position: relative; }
     .main__about_personality > div strong {
       left: 50%;
       position: absolute;
       top: 50%;
       transform: translate(-50%, -50%);
+      background: #2f3435;
       font-size: 2em;
-      font-weight: bold; }
+      font-weight: bold;
+      z-index: 20; }
     .main__about_personality > div span {
       left: 0;
       position: absolute;
@@ -248,7 +277,7 @@ li {
       transition: .5s;
       width: auto;
       z-index: 20; }
-      .main__about_personality > div span.active {
+      .main__about_personality > div span:hover {
         transform: scale(1.2); }
     .main__about_personality > div span:after {
       background: #efc050;
@@ -260,11 +289,11 @@ li {
       width: 100px; }
     .main__about_personality > div span:nth-of-type(1) {
       font-size: 2.5rem;
-      left: 60%;
-      top: 20%; }
+      left: 55%;
+      top: 15%; }
       .main__about_personality > div span:nth-of-type(1):after {
-        bottom: -30%;
-        left: -30%;
+        bottom: -35%;
+        left: -20%;
         transform: rotate(-40deg);
         width: 80px; }
     .main__about_personality > div span:nth-of-type(2) {
@@ -273,42 +302,43 @@ li {
       top: 75%; }
       .main__about_personality > div span:nth-of-type(2):after {
         bottom: 180%;
-        left: 20%;
+        left: 40%;
         transform: rotate(90deg);
-        width: 70px; }
+        width: 60px; }
     .main__about_personality > div span:nth-of-type(3) {
       font-size: 2rem;
-      left: 20%;
-      top: 35%; }
+      left: 25%;
+      top: 30%; }
       .main__about_personality > div span:nth-of-type(3):after {
+        bottom: -20%;
         left: 100%;
-        transform: rotate(10deg);
-        width: 40px; }
+        transform: rotate(15deg); }
     .main__about_personality > div span:nth-of-type(4) {
       font-size: 1.25rem;
       left: 65%;
-      top: 60%; }
+      top: 55%; }
       .main__about_personality > div span:nth-of-type(4):after {
-        bottom: 160%;
-        left: -80%;
-        transform: rotate(20deg); }
+        bottom: 125%;
+        left: -110%;
+        transform: rotate(10deg);
+        width: 120px; }
     .main__about_personality > div span:nth-of-type(5) {
       font-size: 1.25rem;
       left: 25%;
       top: 65%; }
       .main__about_personality > div span:nth-of-type(5):after {
-        bottom: 180%;
-        left: 100%;
-        transform: rotate(-30deg);
-        width: 90px; }
+        bottom: 170%;
+        left: 110%;
+        transform: rotate(-20deg);
+        width: 170px; }
     .main__about_personality > div span:nth-of-type(6) {
       font-size: 1.25rem;
       left: 35%;
-      top: 10%; }
+      top: 5%; }
       .main__about_personality > div span:nth-of-type(6):after {
-        bottom: -180%;
-        left: 30%;
-        transform: rotate(55deg);
+        bottom: -170%;
+        left: 70%;
+        transform: rotate(60deg);
         width: 110px; }
 
 /*----------------------- aside -----------------------*/
